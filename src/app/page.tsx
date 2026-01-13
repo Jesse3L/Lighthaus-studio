@@ -10,6 +10,7 @@ import { LocalArea } from "@/components/home/LocalArea"
 import { FAQ } from "@/components/home/FAQ"
 import { FinalCTA } from "@/components/home/FinalCTA"
 
+// Home Page Component
 export default function Home() {
   return (
     <>
