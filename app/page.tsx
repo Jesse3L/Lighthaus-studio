@@ -22,7 +22,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="mx-auto max-w-4xl text-center mb-8">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Interactive Experience</span>
-            <h2 className="mt-2 text-2xl font-bold text-white">Explore a Virtual Tour</h2>
+            <h2 className="mt-2 text-2xl font-bold text-white">Explore a Virtual Tour (Updated)</h2>
           </div>
           <div className="mx-auto max-w-5xl">
             <MatterportEmbed />
