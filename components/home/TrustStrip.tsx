@@ -27,7 +27,7 @@ export function TrustStrip() {
 
     return (
         <Section className="border-b border-white/5 bg-neutral-900/50" spacing="sm">
-            <div className="grid grid-cols-2 gap-12 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-12 lg:grid-cols-5">
                 <div className="col-span-full text-center mb-8 lg:text-left lg:mb-0 lg:col-span-1">
                     <h3 className="font-bold text-xl leading-tight">Media Designed to Help Listings Perform</h3>
                     <p className="text-sm text-muted-foreground mt-2">Attract more attention and make stronger first impressions.</p>
