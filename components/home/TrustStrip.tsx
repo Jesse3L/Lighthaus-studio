@@ -32,7 +32,7 @@ export function TrustStrip() {
                     <h3 className="font-bold text-xl leading-tight">Media Designed to Help Listings Perform</h3>
                     <p className="text-sm text-muted-foreground mt-2">Attract more attention and make stronger first impressions.</p>
                 </div>
-                {points.slice(0, 3).map((p, idx) => (
+                {points.map((p, idx) => (
                     <div key={idx} className="flex flex-col items-start space-y-3 group">
                         <div className="h-10 w-10 text-neutral-400 transition-colors group-hover:text-accent">
                             <p.icon className="h-full w-full" />

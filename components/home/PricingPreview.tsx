@@ -8,27 +8,27 @@ import { H2, Lead } from '@/components/shared/Typography'
 export function PricingPreview() {
     const tiers = [
         {
-            name: "Essentials",
-            price: "199",
+            name: "Base",
+            price: "200",
             desc: "For standard residential listings.",
-            features: ["Includes High-End HDR Photos", "Blue Sky Guarantee", "Next Business Day Delivery", "Print & Web Quality"],
+            features: ["20-25 High-End HDR Photos", "Floor Plan Layout", "Blue Sky Guarantee", "Next Business Day Delivery", "Print & Web Quality"],
             cta: "Get a Quote",
             variant: "outline" as const
         },
         {
             name: "Pro",
-            price: "249",
+            price: "275",
             isPopular: true,
             desc: "Most popular for agents.",
-            features: ["Essential Photos + Drone", "Marketing Kit", "Blue Sky Guarantee", "Social Media Size"],
+            features: ["25-30 High-End HDR Photos", "4 Drone / Aerial Photos", "Matterport 3D Walkthrough", "Floor Plan Layout", "Blue Sky Guarantee"],
             cta: "Get a Quote",
             variant: "default" as const
         },
         {
-            name: "Premium",
-            price: "299",
+            name: "Ultimate",
+            price: "350",
             desc: "For luxury & large estates.",
-            features: ["Pro Package + Video Tour", "Matterport 3D Tour", "Drone Video + Photos", "Floor Plan"],
+            features: ["All Pro Features Included", "60-Second Video Walkthrough", "Drone + Interior Footage", "Floor Plan Included"],
             cta: "Get a Quote",
             variant: "outline" as const
         },
@@ -42,7 +42,7 @@ export function PricingPreview() {
                     <H2 className="mt-2">Clear, Flexible Pricing</H2>
                 </div>
                 <div className="lg:text-right">
-                    <Lead>Packages start at $199. Transparent pricing with no hidden fees.</Lead>
+                    <Lead>Packages start at $200. Transparent pricing with no hidden fees.</Lead>
                 </div>
             </div>
 
