@@ -40,7 +40,7 @@ export function FAQ() {
     return (
         <Section className="bg-transparent">
             <div className="mx-auto max-w-4xl">
-                <div className="mb-16 text-center">
+                <div className="mb-10 lg:mb-16 text-center">
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Support</span>
                     <H2 className="mt-4">Common Questions</H2>
                     <Lead className="mt-4 mx-auto max-w-2xl">

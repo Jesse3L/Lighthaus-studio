@@ -9,10 +9,11 @@ export function ContactForm() {
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
+        const form = e.currentTarget
         setIsLoading(true)
         setStatus('idle')
 
-        const formData = new FormData(e.currentTarget)
+        const formData = new FormData(form)
         const data = Object.fromEntries(formData.entries())
         const webhookUrl = process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL
 
@@ -33,7 +34,7 @@ export function ContactForm() {
             // with no-cors we assume success if no network error
             setStatus('success')
             // Reset form
-            e.currentTarget.reset()
+            form.reset()
         } catch (error) {
             console.error('Submission error:', error)
             setStatus('error')

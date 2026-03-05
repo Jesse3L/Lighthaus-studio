@@ -12,13 +12,13 @@ export function LocalArea() {
     ]
 
     return (
-        <Section intent="dark" className="relative overflow-hidden py-32">
+        <Section intent="dark" className="relative overflow-hidden py-16 lg:py-32">
             {/* Abstract Background Pattern */}
             <div className="absolute inset-0 z-0 opacity-10 bg-[url('/noise.svg')] bg-repeat" />
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
 
             <div className="relative z-10 container-custom">
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-16">
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Service Area</span>
                     <H2 className="mt-4 text-white">We Come To You</H2>
                     <Lead className="mt-6 text-neutral-400 mx-auto">
@@ -28,7 +28,7 @@ export function LocalArea() {
 
                 <div className="grid gap-8 md:grid-cols-3">
                     {locations.map((loc, i) => (
-                        <div key={i} className="group relative overflow-hidden rounded-2xl bg-neutral-800/50 border border-white/5 p-8 hover:bg-neutral-800 transition-all duration-300 hover:border-accent/30 hover:-translate-y-1">
+                        <div key={i} className="group relative overflow-hidden rounded-2xl bg-neutral-800/50 border border-white/5 p-6 sm:p-8 hover:bg-neutral-800 transition-all duration-300 hover:border-accent/30 hover:-translate-y-1">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                                 <MapPin className="w-16 h-16 text-white" />
                             </div>

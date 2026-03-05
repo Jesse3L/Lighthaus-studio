@@ -4,7 +4,7 @@ import { Button } from '@/components/shared/Button'
 export function Header() {
     return (
         <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-            <div className="container-custom flex h-24 items-center justify-between">
+            <div className="container-custom flex h-16 md:h-24 items-center justify-between">
                 <div className="flex items-center gap-12">
                     <Link href="/" className="flex items-center space-x-1 group">
                         <span className="text-2xl font-bold uppercase tracking-[0.2em] text-[#FCD34D]">Light</span>

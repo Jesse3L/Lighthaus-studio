@@ -24,13 +24,13 @@ export function Testimonials() {
 
     return (
         <Section className="bg-transparent" intent="muted">
-            <div className="mb-20 text-center">
+            <div className="mb-12 lg:mb-20 text-center">
                 <H2>Client Success Stories</H2>
             </div>
 
             <div className="grid gap-8 md:grid-cols-3">
                 {reviews.map((r, i) => (
-                    <Card key={i} className="flex flex-col justify-between border-white/5 bg-neutral-900 p-10 shadow-sm hover:shadow-md transition-shadow">
+                    <Card key={i} className="flex flex-col justify-between border-white/5 bg-neutral-900 p-6 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
                         <div>
                             <Quote className="mb-6 h-8 w-8 text-accent/50" />
                             <p className="mb-8 text-lg font-medium leading-relaxed text-neutral-400">"{r.text}"</p>

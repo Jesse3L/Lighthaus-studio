@@ -10,12 +10,12 @@ export function Process() {
 
     return (
         <Section className="bg-neutral-50/50">
-            <div className="mb-20 text-center">
+            <div className="mb-12 lg:mb-20 text-center">
                 <H2>A Simple, Professional Process</H2>
                 <Lead className="mt-4">From booking to listing in 24 hours.</Lead>
             </div>
 
-            <div className="relative grid gap-12 md:grid-cols-3">
+            <div className="relative grid gap-8 md:gap-12 md:grid-cols-3">
                 {/* Connector Line (Desktop) */}
                 <div className="absolute top-8 left-0 hidden w-full md:block">
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent border-t border-dashed border-neutral-300" />

@@ -56,9 +56,9 @@ export function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(50,50,50,0.5),_rgba(0,0,0,1))] opacity-60 pointer-events-none" />
             <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
 
-            <div className="container-custom relative z-10 grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="container-custom relative z-10 grid gap-8 lg:gap-12 lg:grid-cols-2 lg:items-center">
                 {/* Text Content */}
-                <div className="space-y-8 animate-fade-in-up order-2 lg:order-1">
+                <div className="space-y-6 lg:space-y-8 animate-fade-in-up order-2 lg:order-1">
                     <div className="flex flex-col items-start gap-4">
                         <div className="flex items-center gap-2">
                             <span className="h-px w-8 bg-accent" />
@@ -77,14 +77,14 @@ export function Hero() {
                         </Lead>
                     </div>
 
-                    <div className="flex flex-col gap-4 sm:flex-row">
-                        <Link href={process.env.NEXT_PUBLIC_PRIMARY_CTA_URL || "/contact"}>
-                            <Button size="lg" className="min-w-[180px] bg-white text-black hover:bg-neutral-200">
+                    <div className="flex flex-col gap-4 sm:flex-row w-full">
+                        <Link href={process.env.NEXT_PUBLIC_PRIMARY_CTA_URL || "/contact"} className="w-full sm:w-auto">
+                            <Button size="lg" className="w-full sm:min-w-[180px] bg-white text-black hover:bg-neutral-200">
                                 Get a Quote
                             </Button>
                         </Link>
-                        <Link href="/portfolio">
-                            <Button variant="outline" size="lg" className="min-w-[180px] border-white/10 text-white hover:bg-white/5">
+                        <Link href="/portfolio" className="w-full sm:w-auto">
+                            <Button variant="outline" size="lg" className="w-full sm:min-w-[180px] border-white/10 text-white hover:bg-white/5">
                                 View Portfolio
                             </Button>
                         </Link>
@@ -97,7 +97,7 @@ export function Hero() {
                 </div>
 
                 {/* Carousel */}
-                <div className="relative h-[400px] lg:h-[600px] w-full animate-fade-in delay-200 order-1 lg:order-2 perspective-1000">
+                <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] w-full animate-fade-in delay-200 order-1 lg:order-2 perspective-1000">
                     <div className="relative w-full h-full flex items-center justify-center">
                         {images.map((img, index) => {
                             // Calculate position relative to current

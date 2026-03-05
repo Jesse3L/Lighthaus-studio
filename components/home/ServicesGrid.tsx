@@ -15,7 +15,7 @@ export function ServicesGrid() {
 
     return (
         <Section className="bg-secondary/50">
-            <div className="mb-20 text-center max-w-3xl mx-auto">
+            <div className="mb-12 lg:mb-20 text-center max-w-3xl mx-auto">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Offers</span>
                 <H2 className="mt-4 mb-6">Complete Media Solutions</H2>
                 <Lead>
@@ -26,7 +26,7 @@ export function ServicesGrid() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {services.map((s, i) => (
                     <Link key={i} href="/services" className="group block h-full">
-                        <Card variant="default" hover className="flex h-full flex-col p-8 transition-colors hover:border-accent/40 bg-neutral-900 border-white/5">
+                        <Card variant="default" hover className="flex h-full flex-col p-6 lg:p-8 transition-colors hover:border-accent/40 bg-neutral-900 border-white/5">
                             <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-sm bg-secondary text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                                 <s.icon className="h-6 w-6" />
                             </div>
