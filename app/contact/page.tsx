@@ -36,7 +36,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-bold uppercase text-muted-foreground">Phone</p>
-                                    <p className="font-bold text-lg">806-893-9691</p>
+                                    <p className="font-bold text-lg">806-341-9922</p>
                                 </div>
                             </Card>
 

@@ -42,7 +42,7 @@ export default function RootLayout({
     "@type": "LocalBusiness",
     "name": "Lighthaus Studio",
     "image": "https://lighthausstudio.com/og-image.jpg",
-    "telephone": "806-893-9691",
+    "telephone": "806-341-9922",
     "email": "natalie@lighthausstudio.com",
     "address": {
       "@type": "PostalAddress",
