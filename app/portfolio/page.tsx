@@ -4,6 +4,7 @@ import { PortfolioGallery } from "./PortfolioGallery"
 export const metadata: Metadata = {
     title: "Lubbock Real Estate Photo Portfolio | Lighthaus Studio",
     description: "Recent real estate photo shoots across Lubbock, Clovis, and West Texas. Interiors, drone aerials, Matterport 3D — see what Lighthaus Studio delivers.",
+    alternates: { canonical: "/portfolio" },
     openGraph: {
         title: "Lubbock Real Estate Photo Portfolio | Lighthaus Studio",
         description: "Recent real estate photo shoots across Lubbock, Clovis, and West Texas. Interiors, drone aerials, Matterport 3D — see what Lighthaus Studio delivers.",

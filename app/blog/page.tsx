@@ -6,6 +6,7 @@ import Link from "next/link"
 export const metadata = {
     title: "Blog | Lighthaus Studio",
     description: "Insights on real estate marketing and media trends.",
+    alternates: { canonical: "/blog" },
 }
 
 export default function BlogPage() {

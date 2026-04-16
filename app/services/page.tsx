@@ -10,6 +10,7 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Lubbock Real Estate Photography Services | Lighthaus Studio",
     description: "HDR photography, drone aerials, 4K video tours, Matterport 3D, and floor plans for Lubbock and Clovis real estate listings. Delivered in 48 hours.",
+    alternates: { canonical: "/services" },
     openGraph: {
         title: "Lubbock Real Estate Photography Services | Lighthaus Studio",
         description: "HDR photography, drone aerials, 4K video tours, Matterport 3D, and floor plans for Lubbock and Clovis real estate listings. Delivered in 48 hours.",

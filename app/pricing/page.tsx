@@ -9,6 +9,7 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Real Estate Photography Pricing in Lubbock | Lighthaus",
     description: "Transparent pricing for real estate photography — Base $199, Pro $275, Ultimate $350. Residential + commercial packages for Lubbock and Clovis.",
+    alternates: { canonical: "/pricing" },
     openGraph: {
         title: "Real Estate Photography Pricing in Lubbock | Lighthaus",
         description: "Transparent pricing for real estate photography — Base $199, Pro $275, Ultimate $350. Residential + commercial packages for Lubbock and Clovis.",

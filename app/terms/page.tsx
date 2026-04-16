@@ -4,6 +4,7 @@ import { H1, H2 } from "@/components/shared/Typography"
 export const metadata = {
     title: "Terms of Service | Lighthaus Studio",
     description: "Terms and conditions for real estate media services provided by Lighthaus Studio.",
+    alternates: { canonical: "/terms" },
 }
 
 export default function TermsPage() {

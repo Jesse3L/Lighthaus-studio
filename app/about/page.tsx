@@ -6,6 +6,7 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "About Natalie — Lubbock Real Estate Photographer | Lighthaus",
     description: "Meet Natalie, the Muleshoe-based photographer behind Lighthaus Studio. HDR, drone, and Matterport work for real estate agents in Lubbock and Clovis.",
+    alternates: { canonical: "/about" },
     openGraph: {
         title: "About Natalie — Lubbock Real Estate Photographer | Lighthaus",
         description: "Meet Natalie, the Muleshoe-based photographer behind Lighthaus Studio. HDR, drone, and Matterport work for real estate agents in Lubbock and Clovis.",

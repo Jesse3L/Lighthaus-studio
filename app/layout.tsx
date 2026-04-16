@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.lighthausstudio.com"),
   title: 'Lighthaus Studio — Real Estate Photography in Lubbock & Clovis',
   description: 'Real estate photography, drone aerials, and Matterport 3D tours for agents across Lubbock, TX and Clovis, NM. Listing-ready files in 48 hours.',
   openGraph: {

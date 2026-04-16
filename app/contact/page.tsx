@@ -10,6 +10,7 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Book Real Estate Photography in Lubbock, TX | Lighthaus",
     description: "Schedule a real estate photo shoot in Lubbock, Clovis, or elsewhere in West Texas. Call 806-341-9922 or request a quote in under two minutes.",
+    alternates: { canonical: "/contact" },
     openGraph: {
         title: "Book Real Estate Photography in Lubbock, TX | Lighthaus",
         description: "Schedule a real estate photo shoot in Lubbock, Clovis, or elsewhere in West Texas. Call 806-341-9922 or request a quote in under two minutes.",
