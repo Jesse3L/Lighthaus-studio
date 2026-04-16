@@ -5,16 +5,22 @@ import { Card } from "@/components/shared/Card"
 import { Mail, Phone, MapPin } from "lucide-react"
 import { ContactForm } from "@/components/contact/ContactForm"
 
-export const metadata = {
-    title: "Contact Us | Lighthaus Studio",
-    description: "Book your real estate photoshoot in Muleshoe, TX today.",
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Book Real Estate Photography in Lubbock, TX | Lighthaus",
+    description: "Schedule a real estate photo shoot in Lubbock, Clovis, or elsewhere in West Texas. Call 806-341-9922 or request a quote in under two minutes.",
+    openGraph: {
+        title: "Book Real Estate Photography in Lubbock, TX | Lighthaus",
+        description: "Schedule a real estate photo shoot in Lubbock, Clovis, or elsewhere in West Texas. Call 806-341-9922 or request a quote in under two minutes.",
+    }
 }
 
 export default function ContactPage() {
     return (
         <>
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
-                <H1 className="text-white mb-4">Book a Shoot</H1>
+                <H1 className="text-white mb-4">Book Your Real Estate Photo Shoot in Lubbock or Clovis</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
                     Ready to elevate your listing? Fill out the form below or give us a call.
                 </Lead>

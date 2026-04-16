@@ -5,9 +5,15 @@ import { Button } from "@/components/shared/Button"
 import Link from "next/link"
 import { Check } from "lucide-react"
 
-export const metadata = {
-    title: "Services | Lighthaus Studio",
-    description: "Real estate photography, video tours, drone footage, and Matterport services.",
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Lubbock Real Estate Photography Services | Lighthaus Studio",
+    description: "HDR photography, drone aerials, 4K video tours, Matterport 3D, and floor plans for Lubbock and Clovis real estate listings. Delivered in 48 hours.",
+    openGraph: {
+        title: "Lubbock Real Estate Photography Services | Lighthaus Studio",
+        description: "HDR photography, drone aerials, 4K video tours, Matterport 3D, and floor plans for Lubbock and Clovis real estate listings. Delivered in 48 hours.",
+    }
 }
 
 export default function ServicesPage() {
@@ -37,7 +43,7 @@ export default function ServicesPage() {
     return (
         <>
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
-                <H1 className="text-white mb-4">Premium Media Services</H1>
+                <H1 className="text-white mb-4">Real Estate Photography, Drone & 3D Tours for Lubbock Listings</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
                     Everything you need to list with confidence and sell faster.
                 </Lead>

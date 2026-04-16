@@ -4,15 +4,19 @@ import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "About Natalie | Lighthaus Studio",
-    description: "Meet Natalie, the lead photographer and founder of Lighthaus Studio based in Muleshoe, TX.",
+    title: "About Natalie — Lubbock Real Estate Photographer | Lighthaus",
+    description: "Meet Natalie, the Muleshoe-based photographer behind Lighthaus Studio. HDR, drone, and Matterport work for real estate agents in Lubbock and Clovis.",
+    openGraph: {
+        title: "About Natalie — Lubbock Real Estate Photographer | Lighthaus",
+        description: "Meet Natalie, the Muleshoe-based photographer behind Lighthaus Studio. HDR, drone, and Matterport work for real estate agents in Lubbock and Clovis.",
+    }
 }
 
 export default function AboutPage() {
     return (
         <>
             <Section className="pb-16 text-center" intent="default">
-                <H1 className="mb-4">Behind the Lens</H1>
+                <H1 className="mb-4">Meet Natalie, Your Lubbock & Clovis Real Estate Photographer</H1>
                 <Lead className="mx-auto max-w-2xl text-neutral-400">
                     Capturing the true essence of properties across West Texas.
                 </Lead>

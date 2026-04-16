@@ -4,16 +4,22 @@ import { PricingPreview } from "@/components/home/PricingPreview"
 import { CommercialPricing } from "@/components/home/CommercialPricing"
 import { FAQ } from "@/components/home/FAQ"
 
-export const metadata = {
-    title: "Pricing | Lighthaus Studio",
-    description: "Transparent pricing for real estate photography packages in Muleshoe, TX.",
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Real Estate Photography Pricing in Lubbock | Lighthaus",
+    description: "Transparent pricing for real estate photography — Base $199, Pro $275, Ultimate $350. Residential + commercial packages for Lubbock and Clovis.",
+    openGraph: {
+        title: "Real Estate Photography Pricing in Lubbock | Lighthaus",
+        description: "Transparent pricing for real estate photography — Base $199, Pro $275, Ultimate $350. Residential + commercial packages for Lubbock and Clovis.",
+    }
 }
 
 export default function PricingPage() {
     return (
         <>
             <Section className="text-center pb-8" intent="default">
-                <H1 className="mb-4">Packages & Pricing</H1>
+                <H1 className="mb-4">Real Estate Photo Packages for Lubbock & Clovis Listings</H1>
                 <Lead className="mx-auto max-w-2xl">
                     Straightforward pricing with no hidden fees. Volume discounts available for teams.
                 </Lead>
