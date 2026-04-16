@@ -15,12 +15,7 @@ export function Footer() {
                             className="w-64 h-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
                         />
                     </Link>
-                    <div className="flex gap-4 pt-4">
-                        {/* Social Placeholders */}
-                        <div className="h-8 w-8 bg-neutral-800 rounded-full hover:bg-accent transition-colors" />
-                        <div className="h-8 w-8 bg-neutral-800 rounded-full hover:bg-accent transition-colors" />
-                        <div className="h-8 w-8 bg-neutral-800 rounded-full hover:bg-accent transition-colors" />
-                    </div>
+
                 </div>
 
                 <div>
@@ -55,7 +50,7 @@ export function Footer() {
                         </li>
                         <li className="flex items-start">
                             <span className="block w-24 text-neutral-600">Email</span>
-                            <a href={`mailto:${process.env.NEXT_PUBLIC_BUSINESS_EMAIL}`} className="hover:text-white transition-colors text-white">
+                            <a href={`mailto:${process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "natalie@lighthausstudio.com"}`} className="hover:text-white transition-colors text-white">
                                 {process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "natalie@lighthausstudio.com"}
                             </a>
                         </li>
@@ -71,7 +66,7 @@ export function Footer() {
 
             <div className="container-custom mt-16 pt-8 border-t border-white/5">
                 <p className="text-center text-neutral-500 text-sm mb-8 max-w-4xl mx-auto">
-                    Premium real estate media for Muleshoe, Lubbock, Texas, and Clovis, New Mexico. Elevating listings with cinematic quality.
+                    Real estate photography, video, and 3D tours for agents and property owners in Muleshoe, Lubbock, Texas, and Clovis, New Mexico.
                 </p>
                 <div className="flex flex-col md:flex-row justify-between items-center text-xs text-neutral-600">
                     <p>&copy; {new Date().getFullYear()} Lighthaus Studio. All rights reserved.</p>
