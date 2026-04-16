@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Real Estate Media in Lubbock, TX | Lighthaus Studio',
-  description: 'Professional real estate media that helps listings stand out. Serving Lubbock and West Texas with photos, video, drone, and 3D tours. Starting at $199.',
+  title: 'Lighthaus Studio — Real Estate Photography in Lubbock & Clovis',
+  description: 'Real estate photography, drone aerials, and Matterport 3D tours for agents across Lubbock, TX and Clovis, NM. Listing-ready files in 48 hours.',
   openGraph: {
-    title: 'Real Estate Media in Lubbock, TX | Lighthaus Studio',
-    description: 'Professional real estate media that helps listings stand out. Serving Lubbock and West Texas with photos, video, drone, and 3D tours. Starting at $199.',
+    title: 'Lighthaus Studio — Real Estate Photography in Lubbock & Clovis',
+    description: 'Real estate photography, drone aerials, and Matterport 3D tours for agents across Lubbock, TX and Clovis, NM. Listing-ready files in 48 hours.',
     url: 'https://lighthausstudio.com',
     siteName: 'Lighthaus Studio',
     locale: 'en_US',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Real Estate Media in Lubbock, TX | Lighthaus Studio',
-    description: 'Professional real estate media that helps listings stand out. Serving Lubbock and West Texas.',
+    title: 'Lighthaus Studio — Real Estate Photography in Lubbock & Clovis',
+    description: 'Real estate photography, drone aerials, and Matterport 3D tours for agents across Lubbock, TX and Clovis, NM. Listing-ready files in 48 hours.',
   }
 }
 

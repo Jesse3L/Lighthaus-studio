@@ -11,6 +11,16 @@ import { Testimonials } from "@/components/home/Testimonials"
 import { LocalArea } from "@/components/home/LocalArea"
 import { FAQ } from "@/components/home/FAQ"
 import { FinalCTA } from "@/components/home/FinalCTA"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Real Estate Media in Lubbock, TX | Lighthaus Studio',
+    description: 'Professional real estate media that helps listings stand out. Serving Lubbock and West Texas with photos, video, drone, and 3D tours. Starting at $199.',
+    openGraph: {
+        title: 'Real Estate Media in Lubbock, TX | Lighthaus Studio',
+        description: 'Professional real estate media that helps listings stand out. Serving Lubbock and West Texas with photos, video, drone, and 3D tours. Starting at $199.',
+    }
+}
 
 // Home Page Component
 export default function Home() {
