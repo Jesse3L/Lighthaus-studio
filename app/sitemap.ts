@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9 
         },
         {
+          url: "https://www.lighthausstudio.com/real-estate-photography-clovis-nm",
+          lastModified: new Date(),
+          changeFrequency: "monthly",
+          priority: 0.9,
+        },
+        {
             url: `${baseUrl}/services`,
             lastModified: now,
             changeFrequency: 'monthly',

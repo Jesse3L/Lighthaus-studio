@@ -42,6 +42,10 @@ export function LocalArea() {
                                         <Link href="/real-estate-photography-lubbock-tx" className="hover:text-accent transition-colors underline decoration-white/20 underline-offset-4">
                                             {loc.city}
                                         </Link>
+                                    ) : loc.city === "Clovis, NM" ? (
+                                        <Link href="/real-estate-photography-clovis-nm" className="hover:text-accent transition-colors underline decoration-white/20 underline-offset-4">
+                                            {loc.city}
+                                        </Link>
                                     ) : (
                                         loc.city
                                     )}

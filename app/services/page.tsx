@@ -146,7 +146,7 @@ export default function ServicesPage() {
                 </Lead>
                 <div className="mt-6 mx-auto max-w-2xl">
                     <p className="text-neutral-300">
-                        Serving real estate agents across West Texas — most shoots happen in <Link href="/real-estate-photography-lubbock-tx" className="text-accent hover:underline font-medium">Lubbock</Link> and the surrounding MLS coverage area.
+                        Serving real estate agents across West Texas and Eastern New Mexico — most shoots happen in <Link href="/real-estate-photography-lubbock-tx" className="text-accent hover:underline font-medium">Lubbock</Link>, <Link href="/real-estate-photography-clovis-nm" className="text-accent hover:underline font-medium">Clovis</Link>, and the surrounding MLS coverage area.
                     </p>
                 </div>
             </Section>
