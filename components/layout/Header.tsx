@@ -14,6 +14,9 @@ export function Header() {
                         <Link href="/portfolio" className="text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary">
                             Portfolio
                         </Link>
+                        <Link href="/about" className="text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary">
+                            About
+                        </Link>
                         <Link href="/services" className="text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary">
                             Services
                         </Link>

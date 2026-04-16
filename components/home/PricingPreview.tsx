@@ -10,8 +10,14 @@ export function PricingPreview() {
         {
             name: "Base",
             price: "200",
-            desc: "For standard residential listings.",
-            features: ["20-25 High-End HDR Photos", "Floor Plan Layout", "Blue Sky Guarantee", "Next Business Day Delivery", "Print & Web Quality"],
+            desc: "Perfect for standard listings",
+            features: [
+                "20–25 professionally edited listing photos",
+                "Clean, natural lighting for bright, true-to-life spaces",
+                "Efficient coverage of all key rooms and angles",
+                "Consistent 48-hour delivery you can rely on",
+                "Ready for MLS, print, and online marketing"
+            ],
             cta: "Get a Quote",
             variant: "outline" as const
         },
@@ -19,16 +25,28 @@ export function PricingPreview() {
             name: "Pro",
             price: "275",
             isPopular: true,
-            desc: "Most popular for agents.",
-            features: ["25-30 High-End HDR Photos", "4 Drone / Aerial Photos", "Matterport 3D Walkthrough", "Floor Plan Layout", "Blue Sky Guarantee"],
+            desc: "Designed to help listings stand out",
+            features: [
+                "Everything in Base, plus:",
+                "Expanded photo coverage (25–30 images)",
+                "Aerial drone photos to showcase property + surroundings",
+                "Matterport 3D walkthrough for an immersive buyer experience",
+                "Stronger marketing presence across MLS and online platforms"
+            ],
             cta: "Get a Quote",
             variant: "default" as const
         },
         {
             name: "Ultimate",
             price: "350",
-            desc: "For luxury & large estates.",
-            features: ["All Pro Features Included", "60-Second Video Walkthrough", "Drone + Interior Footage", "Floor Plan Included"],
+            desc: "For luxury and high-visibility properties",
+            features: [
+                "Everything in Pro, plus:",
+                "60-second cinematic walkthrough video",
+                "Drone + interior video footage",
+                "Designed for premium listings and maximum exposure",
+                "Ideal for agents who want a full marketing package"
+            ],
             cta: "Get a Quote",
             variant: "outline" as const
         },
@@ -42,7 +60,7 @@ export function PricingPreview() {
                     <H2 className="mt-2">Clear, Flexible Pricing</H2>
                 </div>
                 <div className="lg:text-right">
-                    <Lead>Packages start at $200. Transparent pricing with no hidden fees.</Lead>
+                    <Lead>Simple, transparent pricing built for agents who want consistent, high-quality results.</Lead>
                 </div>
             </div>
 
@@ -83,6 +101,12 @@ export function PricingPreview() {
                         </Link>
                     </Card>
                 ))}
+            </div>
+
+            <div className="mt-12 text-center">
+                <p className="text-sm text-neutral-400 font-medium tracking-wide">
+                    All packages include a floor plan and are delivered within 48 hours.
+                </p>
             </div>
         </Section>
     )

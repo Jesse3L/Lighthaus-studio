@@ -1,10 +1,12 @@
 import { Hero } from "@/components/home/Hero"
 import { TrustStrip } from "@/components/home/TrustStrip"
 import { MatterportEmbed } from "@/components/shared/MatterportEmbed"
+import { AboutPreview } from "@/components/home/AboutPreview"
 import { PortfolioPreview } from "@/components/home/PortfolioPreview"
 import { ServicesGrid } from "@/components/home/ServicesGrid"
 import { Process } from "@/components/home/Process"
 import { PricingPreview } from "@/components/home/PricingPreview"
+import { CommercialPricing } from "@/components/home/CommercialPricing"
 import { Testimonials } from "@/components/home/Testimonials"
 import { LocalArea } from "@/components/home/LocalArea"
 import { FAQ } from "@/components/home/FAQ"
@@ -33,8 +35,10 @@ export default function Home() {
       <ServicesGrid />
       <Process />
       <PricingPreview />
+      <CommercialPricing />
       <Testimonials />
       <LocalArea />
+      <AboutPreview />
       <FAQ />
       <FinalCTA />
     </>

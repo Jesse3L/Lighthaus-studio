@@ -13,6 +13,13 @@ export default function PortfolioPage() {
     const categories = ["All", "Real Estate", "Airbnb", "Drone", "Video", "Matterport"]
 
     const works = [
+        { cat: "Airbnb", title: "Art Loft Exterior", loc: "Muleshoe Art Loft", image: "/Images/Art Loft Muleshoe/IMG_2551-HDR.jpg" },
+        { cat: "Airbnb", title: "Art Loft Unit 1 Interior", loc: "Muleshoe Art Loft", image: "/Images/Art Loft Muleshoe/Unit 1/IMG_2224-HDR.jpeg" },
+        { cat: "Airbnb", title: "Art Loft Unit 2 Detail", loc: "Muleshoe Art Loft", image: "/Images/Art Loft Muleshoe/Unit 2/IMG_2509-HDR.jpeg" },
+        { cat: "Real Estate", title: "Levelland Exterior", loc: "Levelland", image: "/Images/Levelland Property/1_IMG_2049-HDR.jpg" },
+        { cat: "Real Estate", title: "Spacious Living Area", loc: "Levelland", image: "/Images/Levelland Property/2_IMG_2046-HDR.jpg" },
+        { cat: "Real Estate", title: "Modern Interior", loc: "Levelland", image: "/Images/Levelland Property/1_IMG_1917-HDR.jpg" },
+        { cat: "Real Estate", title: "Kitchen and Dining", loc: "Levelland", image: "/Images/Levelland Property/5_IMG_1929-HDR.jpg" },
         { cat: "Real Estate", title: "Modern Brick Exterior", loc: "Muleshoe", image: "/Images/Rubys House/Front.jpg" },
         { cat: "Real Estate", title: "Bright Living Space", loc: "Muleshoe", image: "/Images/Aunt Lauras/2 - Livingroom..jpg" },
         { cat: "Real Estate", title: "Contemporary Kitchen", loc: "Muleshoe", image: "/Images/Rubys House/Kitchen.jpg" },

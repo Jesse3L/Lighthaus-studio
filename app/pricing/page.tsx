@@ -1,6 +1,7 @@
 import { Section } from "@/components/shared/Section"
 import { H1, Lead } from "@/components/shared/Typography"
 import { PricingPreview } from "@/components/home/PricingPreview"
+import { CommercialPricing } from "@/components/home/CommercialPricing"
 import { FAQ } from "@/components/home/FAQ"
 
 export const metadata = {
@@ -19,6 +20,8 @@ export default function PricingPage() {
             </Section>
 
             <PricingPreview />
+            
+            <CommercialPricing />
 
             <Section>
                 <div className="max-w-4xl mx-auto">
