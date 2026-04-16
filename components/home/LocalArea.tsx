@@ -37,7 +37,15 @@ export function LocalArea() {
                                 <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6 border border-accent/20">
                                     <CheckCircle2 className="w-5 h-5" />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-2">{loc.city}</h3>
+                                <h3 className="text-xl font-bold text-white mb-2">
+                                    {loc.city === "Lubbock, TX" ? (
+                                        <Link href="/real-estate-photography-lubbock-tx" className="hover:text-accent transition-colors underline decoration-white/20 underline-offset-4">
+                                            {loc.city}
+                                        </Link>
+                                    ) : (
+                                        loc.city
+                                    )}
+                                </h3>
                                 <p className="text-sm text-neutral-400 uppercase tracking-wider font-medium">{loc.desc}</p>
                             </div>
                         </div>

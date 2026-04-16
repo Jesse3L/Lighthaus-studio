@@ -144,6 +144,11 @@ export default function ServicesPage() {
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
                     Everything you need to list with confidence and sell faster.
                 </Lead>
+                <div className="mt-6 mx-auto max-w-2xl">
+                    <p className="text-neutral-300">
+                        Serving real estate agents across West Texas — most shoots happen in <Link href="/real-estate-photography-lubbock-tx" className="text-accent hover:underline font-medium">Lubbock</Link> and the surrounding MLS coverage area.
+                    </p>
+                </div>
             </Section>
 
             <Section>
