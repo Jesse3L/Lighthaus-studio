@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Section } from '@/components/shared/Section'
 import { Card } from '@/components/shared/Card'
@@ -12,28 +13,40 @@ export function PortfolioPreview() {
             category: "Interior",
             colSpan: "lg:col-span-2",
             aspect: "aspect-[16/9]",
-            image: "/Images/Aunt Lauras/2 - Dining and Livingroom.jpg"
+            image: "/images/open-concept-dining-living-lubbock.jpg",
+            alt: "Open-concept dining and living room — Lubbock real estate photography",
+            width: 1600,
+            height: 900
         },
         {
             label: "Modern Brick Exterior",
             category: "Exterior",
             colSpan: "lg:col-span-1",
             aspect: "aspect-[4/5]",
-            image: "/Images/Rubys House/Front.jpg"
+            image: "/images/modern-home-exterior-lubbock.jpg",
+            alt: "Modern brick exterior — Lubbock real estate photography",
+            width: 1200,
+            height: 1500
         },
         {
             label: "Contemporary Kitchen",
             category: "Interior",
             colSpan: "lg:col-span-1",
             aspect: "aspect-[4/5]",
-            image: "/Images/Rubys House/Kitchen.jpg"
+            image: "/images/contemporary-kitchen-lubbock.jpg",
+            alt: "Contemporary kitchen — Lubbock real estate photography",
+            width: 1200,
+            height: 1500
         },
         {
             label: "Bright Living Space",
             category: "Interior",
             colSpan: "lg:col-span-2",
             aspect: "aspect-[16/9]",
-            image: "/Images/Aunt Lauras/2 - Livingroom..jpg"
+            image: "/images/bright-open-living-room-lubbock.jpg",
+            alt: "Bright open living room — Lubbock real estate photography",
+            width: 1600,
+            height: 900
         },
 
     ]
@@ -61,9 +74,12 @@ export function PortfolioPreview() {
                 {works.map((work, i) => (
                     <Card key={i} hover className={`group relative cursor-pointer border-none bg-neutral-900 overflow-hidden ${work.colSpan} ${work.aspect}`}>
                         {/* Image */}
-                        <img
+                        <Image
                             src={work.image}
-                            alt={work.label}
+                            alt={work.alt}
+                            width={work.width}
+                            height={work.height}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
 

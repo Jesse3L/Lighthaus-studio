@@ -10,9 +10,12 @@ export function AboutPreview() {
             <div className="grid md:grid-cols-12 gap-10 lg:gap-16 items-center max-w-5xl mx-auto">
                 {/* Image Section */}
                 <div className="md:col-span-4 relative aspect-[4/5] object-cover rounded-2xl overflow-hidden shadow-2xl md:order-last mx-auto w-full max-w-sm">
-                    <img
-                        src="/Images/Natalie/4686A693-E576-4E1F-8D36-54BB007CCC7F.jpg"
-                        alt="Natalie - Owner of Lighthaus Studio"
+                    <Image
+                        src="/images/natalie-lighthaus-studio-photographer.jpg"
+                        alt="Natalie — lead real estate photographer and owner of Lighthaus Studio"
+                        width={800}
+                        height={1067}
+                        sizes="(max-width: 768px) 60vw, 400px"
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />
                     <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none" />

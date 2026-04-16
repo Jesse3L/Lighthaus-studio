@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/shared/Button'
 import { H1, Lead } from '@/components/shared/Typography'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -10,18 +11,18 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 export function Hero() {
     const images = [
         {
-            src: "/Images/Rubys House/Master Bath.jpg",
-            alt: "Luxury Master Bathroom",
+            src: "/images/luxury-master-bathroom-lubbock.jpg",
+            alt: "Luxury master bathroom photographed for a Lubbock real estate listing",
             label: "Luxury Interiors"
         },
         {
-            src: "/Images/Rubys House/Front.jpg",
-            alt: "Modern Home Exterior",
+            src: "/images/modern-home-exterior-lubbock.jpg",
+            alt: "Modern brick home exterior photographed for a Lubbock real estate listing",
             label: "Curb Appeal"
         },
         {
-            src: "/Images/Aunt Lauras/2 - Livingroom..jpg",
-            alt: "Bright Living Space",
+            src: "/images/bright-open-living-room-lubbock.jpg",
+            alt: "Bright open-concept living room photographed for a Lubbock real estate listing",
             label: "Spacious Living"
         }
     ]
@@ -132,9 +133,13 @@ export function Hero() {
                                     style={{ zIndex }}
                                 >
                                     <div className="relative w-full h-full rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-neutral-800">
-                                        <img
+                                        <Image
                                             src={img.src}
                                             alt={img.alt}
+                                            width={1200}
+                                            height={800}
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            priority
                                             className="w-full h-full object-cover"
                                         />
                                         {/* Overlay Gradient */}

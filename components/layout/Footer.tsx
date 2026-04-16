@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Footer() {
     return (
@@ -6,9 +7,11 @@ export function Footer() {
             <div className="container-custom grid gap-12 md:grid-cols-4 lg:gap-20">
                 <div className="md:col-span-1 space-y-2">
                     <Link href="/" className="flex items-center group -ml-2">
-                        <img
-                            src="/Images/Lighthaus Logo.png"
+                        <Image
+                            src="/images/lighthaus-studio-logo.png"
                             alt="Lighthaus Studio"
+                            width={256}
+                            height={256}
                             className="w-64 h-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
                         />
                     </Link>
