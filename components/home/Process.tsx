@@ -12,7 +12,7 @@ export function Process() {
         <Section className="bg-neutral-50/50">
             <div className="mb-12 lg:mb-20 text-center">
                 <H2>A Simple, Professional Process</H2>
-                <Lead className="mt-4">From booking to listing in 24 hours.</Lead>
+                <Lead className="mt-4">From booking to MLS-ready media in 48 hours.</Lead>
             </div>
 
             <div className="relative grid gap-8 md:gap-12 md:grid-cols-3">

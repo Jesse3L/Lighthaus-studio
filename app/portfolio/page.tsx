@@ -6,6 +6,16 @@ import { H1, Lead } from "@/components/shared/Typography"
 import { Button } from "@/components/shared/Button"
 import { Card } from "@/components/shared/Card"
 import { MatterportEmbed } from "@/components/shared/MatterportEmbed"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Lubbock Real Estate Photo Portfolio | Lighthaus Studio",
+    description: "Recent real estate photo shoots across Lubbock, Clovis, and West Texas. Interiors, drone aerials, Matterport 3D — see what Lighthaus Studio delivers.",
+    openGraph: {
+        title: "Lubbock Real Estate Photo Portfolio | Lighthaus Studio",
+        description: "Recent real estate photo shoots across Lubbock, Clovis, and West Texas. Interiors, drone aerials, Matterport 3D — see what Lighthaus Studio delivers.",
+    }
+}
 
 export default function PortfolioPage() {
     const [filter, setFilter] = useState("All")
@@ -36,7 +46,7 @@ export default function PortfolioPage() {
     return (
         <>
             <Section className="pb-8 text-center" intent="default">
-                <H1 className="mb-4">Our Work</H1>
+                <H1 className="mb-4">Recent Listings We've Shot in Lubbock, Clovis & West Texas</H1>
                 <Lead className="mx-auto max-w-2xl">
                     A selection of our latest projects across Muleshoe and West Texas.
                 </Lead>

@@ -31,7 +31,7 @@ export default function TermsPage() {
                         <section className="space-y-4">
                             <H2 className="text-2xl">2. Turnaround Time</H2>
                             <p className="text-neutral-600 leading-relaxed">
-                                Photos are typically delivered by 12:00 PM the next business day following the shoot. Video tours, Floor Plans, and Matterport 3D tours may require up to 48 hours for processing and delivery.
+                                Photos are typically delivered within 48 hours of the shoot. Video tours, Floor Plans, and Matterport 3D tours may require up to 72 hours for processing and delivery.
                             </p>
                         </section>
 

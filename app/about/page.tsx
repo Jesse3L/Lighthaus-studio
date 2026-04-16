@@ -47,7 +47,7 @@ export default function AboutPage() {
                             </p>
                             
                             <p>
-                                What truly sets Lighthaus apart is our commitment to a seamless, concierge-style experience. In the fast-paced real estate market, time is everything. I provide 24-48 hour turnarounds, guaranteed blue skies, and perfectly scaled, MLS-ready deliverables so my clients can list faster and sell higher. 
+                                What truly sets Lighthaus apart is our commitment to a seamless, concierge-style experience. In the fast-paced real estate market, time is everything. I deliver within 48 hours with guaranteed blue-sky replacements and MLS-ready files, so you can list fast and keep your listing schedule on track. 
                             </p>
 
                             <p>

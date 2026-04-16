@@ -5,7 +5,7 @@ export function FAQ() {
     const faqs = [
         {
             q: "What is included in basic real estate photography?",
-            a: "Our basic package covers all essential rooms and exterior angles, professionally edited with blue sky replacement and delivery by 12 PM the next business day."
+            a: "Our basic package covers every interior room and exterior angle, edited with blue-sky replacement where needed, and delivered within 48 hours of the shoot."
         },
         {
             q: "How does pricing work?",
@@ -13,7 +13,7 @@ export function FAQ() {
         },
         {
             q: "What is your turnaround time?",
-            a: "Photos are delivered by 12:00 PM the next business day. Video and Matterport 3D tours may take up to 48 hours."
+            a: "Photos deliver within 48 hours of the shoot. Video walkthroughs and Matterport 3D tours deliver within 72 hours. Need it faster? Rush availability is on request and quoted per job."
         },
         {
             q: "How should I prepare the property?",

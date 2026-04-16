@@ -39,7 +39,7 @@ export function CommercialPricing() {
                             "Clean, natural lighting (HDR)",
                             "Floor plan included",
                             "Web + MLS-ready delivery",
-                            "24–48 hour turnaround"
+                            "48-hour turnaround"
                         ].map((f, i) => (
                             <li key={i} className="flex items-start text-sm">
                                 <Check className="mr-3 h-5 w-5 shrink-0 text-accent opacity-80" />
@@ -96,7 +96,7 @@ export function CommercialPricing() {
                             "Detail + branding shots (signage, finishes, features)",
                             "Advanced editing for a polished, high-end look",
                             "Marketing-ready images (MLS, website, social media)",
-                            "Priority turnaround (24 hours)"
+                            "Priority scheduling with 48-hour delivery"
                         ].map((f, i) => (
                             <li key={i} className="flex items-start text-sm">
                                 <Check className="mr-3 h-5 w-5 shrink-0 text-accent" />
