@@ -9,9 +9,19 @@ export const metadata = {
     alternates: { canonical: "/blog" },
 }
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://www.lighthausstudio.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.lighthausstudio.com/blog" }
+  ]
+};
+
 export default function BlogPage() {
     return (
         <Section className="min-h-[60vh] flex flex-col items-center justify-center text-center">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <span className="px-3 py-1 rounded-full bg-secondary text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">
                 Coming Soon
             </span>

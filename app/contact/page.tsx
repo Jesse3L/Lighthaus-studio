@@ -17,9 +17,19 @@ export const metadata: Metadata = {
     }
 }
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://www.lighthausstudio.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.lighthausstudio.com/contact" }
+  ]
+};
+
 export default function ContactPage() {
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
                 <H1 className="text-white mb-4">Book Your Real Estate Photo Shoot in Lubbock or Clovis</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">

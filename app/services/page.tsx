@@ -17,6 +17,94 @@ export const metadata: Metadata = {
     }
 }
 
+const servicesSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.lighthausstudio.com/services#hdr-photography",
+    "name": "HDR Real Estate Photography",
+    "serviceType": "Real Estate Photography",
+    "description": "HDR interior and exterior photography for residential listings, builders, and short-term rentals in Lubbock, Clovis, and surrounding West Texas communities. Blue-sky replacement included when needed, delivered within 48 hours.",
+    "provider": { "@id": "https://www.lighthausstudio.com/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Muleshoe" },
+      { "@type": "City", "name": "Lubbock" },
+      { "@type": "City", "name": "Clovis" },
+      { "@type": "City", "name": "Portales" }
+    ],
+    "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "199", "availability": "https://schema.org/InStock" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.lighthausstudio.com/services#video-tours",
+    "name": "Cinematic Real Estate Video Tours",
+    "serviceType": "Real Estate Video Production",
+    "description": "Cinematic walkthrough video of the property, edited with music and branded intro/outro, delivered within 72 hours of the shoot. Used by agents for social posts, Reels, and MLS video fields.",
+    "provider": { "@id": "https://www.lighthausstudio.com/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Muleshoe" },
+      { "@type": "City", "name": "Lubbock" },
+      { "@type": "City", "name": "Clovis" },
+      { "@type": "City", "name": "Portales" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.lighthausstudio.com/services#aerial-drone",
+    "name": "Aerial and Drone Real Estate Photography",
+    "serviceType": "Aerial Photography",
+    "description": "FAA Part 107-compliant aerial stills and video capturing the lot, roofline, surrounding neighborhood, and acreage context. Useful for rural listings, larger lots, and properties where location matters as much as the structure.",
+    "provider": { "@id": "https://www.lighthausstudio.com/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Muleshoe" },
+      { "@type": "City", "name": "Lubbock" },
+      { "@type": "City", "name": "Clovis" },
+      { "@type": "City", "name": "Portales" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.lighthausstudio.com/services#matterport-3d",
+    "name": "Matterport 3D Virtual Tours",
+    "serviceType": "Virtual Tour",
+    "description": "Matterport-captured 3D walkthrough tours hosted with a shareable link. Buyers explore the floor plan at their own pace, which qualifies serious out-of-market leads and reduces wasted showings.",
+    "provider": { "@id": "https://www.lighthausstudio.com/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Muleshoe" },
+      { "@type": "City", "name": "Lubbock" },
+      { "@type": "City", "name": "Clovis" },
+      { "@type": "City", "name": "Portales" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.lighthausstudio.com/services#floor-plans",
+    "name": "2D Floor Plans for Real Estate Listings",
+    "serviceType": "Floor Plan Drawing",
+    "description": "Branded 2D floor plans with room dimensions for MLS, brochures, and open-house handouts. Generated on-site alongside photo and video capture so no extra visit is needed.",
+    "provider": { "@id": "https://www.lighthausstudio.com/#organization" },
+    "areaServed": [
+      { "@type": "City", "name": "Muleshoe" },
+      { "@type": "City", "name": "Lubbock" },
+      { "@type": "City", "name": "Clovis" },
+      { "@type": "City", "name": "Portales" }
+    ]
+  }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://www.lighthausstudio.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.lighthausstudio.com/services" }
+  ]
+};
+
 export default function ServicesPage() {
     const services = [
         {
@@ -43,6 +131,14 @@ export default function ServicesPage() {
 
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            {servicesSchema.map((s) => (
+              <script
+                key={s["@id"]}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+              />
+            ))}
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
                 <H1 className="text-white mb-4">Real Estate Photography, Drone & 3D Tours for Lubbock Listings</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">

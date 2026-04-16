@@ -7,9 +7,19 @@ export const metadata = {
     alternates: { canonical: "/terms" },
 }
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://www.lighthausstudio.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://www.lighthausstudio.com/terms" }
+  ]
+};
+
 export default function TermsPage() {
     return (
         <Section className="bg-background">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="mx-auto max-w-3xl space-y-12">
                 <div className="text-center">
                     <H1 className="mb-4">Terms of Service</H1>

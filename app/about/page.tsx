@@ -13,9 +13,44 @@ export const metadata: Metadata = {
     }
 }
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.lighthausstudio.com/about#natalie",
+  "name": "Natalie",
+  "jobTitle": "Lead Real Estate Photographer and Owner",
+  "image": "https://www.lighthausstudio.com/images/natalie-lighthaus-studio-photographer.jpg",
+  "url": "https://www.lighthausstudio.com/about",
+  "worksFor": { "@id": "https://www.lighthausstudio.com/#organization" },
+  "knowsAbout": [
+    "Real Estate Photography",
+    "HDR Interior Photography",
+    "Matterport 3D Virtual Tours",
+    "Real Estate Video Tours",
+    "Aerial Drone Photography"
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Lubbock" },
+    { "@type": "City", "name": "Clovis" },
+    { "@type": "City", "name": "Muleshoe" }
+  ],
+  "sameAs": []
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://www.lighthausstudio.com/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.lighthausstudio.com/about" }
+  ]
+};
+
 export default function AboutPage() {
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Section className="pb-16 text-center" intent="default">
                 <H1 className="mb-4">Meet Natalie, Your Lubbock & Clovis Real Estate Photographer</H1>
                 <Lead className="mx-auto max-w-2xl text-neutral-400">

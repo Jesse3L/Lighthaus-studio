@@ -41,8 +41,9 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://www.lighthausstudio.com/#organization",
     "name": "Lighthaus Studio",
-    "image": "https://lighthausstudio.com/og-image.jpg",
+    "image": "https://www.lighthausstudio.com/og-image.jpg",
     "telephone": "806-341-9922",
     "email": "natalie@lighthausstudio.com",
     "address": {
@@ -57,7 +58,7 @@ export default function RootLayout({
       "latitude": 34.2238,
       "longitude": -102.7238
     },
-    "url": "https://lighthausstudio.com",
+    "url": "https://www.lighthausstudio.com",
     "priceRange": "$$",
     "areaServed": [
       {
