@@ -54,7 +54,7 @@ export default function AboutPage() {
             <Section className="pb-16 text-center" intent="default">
                 <H1 className="mb-4">Meet Natalie, Your Lubbock & Clovis Real Estate Photographer</H1>
                 <Lead className="mx-auto max-w-2xl text-neutral-400">
-                    Capturing the true essence of properties across West Texas.
+                    Real estate photography for agents in Lubbock, Clovis, Portales, and the surrounding West Texas and Eastern New Mexico communities.
                 </Lead>
             </Section>
 
@@ -79,27 +79,27 @@ export default function AboutPage() {
                         
                         <div className="space-y-6 text-neutral-300 leading-relaxed text-lg font-light">
                             <p>
-                                I started Lighthaus Studio with a clear, singular vision: to elevate the standard of real estate media in West Texas. Based locally in Muleshoe, TX, I realized that many beautiful properties—from cozy residential homes to sprawling commercial estates—weren't getting the high-end visual representation they deserved.
-                            </p>
-                            
-                            <p>
-                                My background shaped my specialized approach to architectural and property photography. I don't just walk in and click a button. I analyze the layout, capture the natural flow of a space, and manipulate lighting to make rooms look as bright, spacious, and inviting as they feel in person. Whether it's a meticulously crafted Airbnb, a commercial retail space, or a suburban family home, every property has a unique story, and my job is to tell it flawlessly.
-                            </p>
-                            
-                            <p>
-                                What truly sets Lighthaus apart is our commitment to a seamless, concierge-style experience. In the fast-paced real estate market, time is everything. I deliver within 48 hours with guaranteed blue-sky replacements and MLS-ready files, so you can list fast and keep your listing schedule on track. 
+                                Lighthaus Studio is a new business, and I want to say that up front. The agents who do well with me are the ones who want a photographer who treats their listing like it matters, and that is easier to give you when I am not trying to shuffle a full team&apos;s schedule.
                             </p>
 
                             <p>
-                                From advanced HDR interior shots to sweeping drone aerials and immersive 3D Matterport tours, I continuously invest in industry-leading technology to ensure that my clients always stand out in a crowded digital landscape. I've had the privilege of working with top producers across Muleshoe, Lubbock, and Clovis, and there is nothing more rewarding than seeing a listing I shot generate massive interest and quick offers.
+                                I live in Muleshoe. I shoot across Lubbock, Clovis, Portales, and the smaller towns in between. Every part of the job is mine: the Canon R8 on a leveled tripod, the Matterport Pro3 for the 3D tour, the drone for the aerials, and the edit that same night. Your photos, video, tour, and floor plan are back in your inbox inside 48 hours.
+                            </p>
+
+                            <p>
+                                My goal for this business is simple. Help the agents I work with sell faster and win more listings, because when your business grows, mine grows with it. That shapes how I plan every shoot. I am thinking about your buyer, your MLS photo limits, and what the images need to do before a showing gets booked.
+                            </p>
+
+                            <p>
+                                I care about the craft. Window light held, verticals vertical, rooms shown at the scale they actually feel. HDR blending for interiors where the sun is strong. A Matterport Pro3 tour so an out-of-state buyer can walk the property at 2 a.m. before they book a flight. A drone for the acreage listings where the lot is the story and the structure is only half of it.
                             </p>
 
                             <p className="italic text-neutral-400">
-                                When I'm not behind the camera or editing timelines, you can find me exploring new techniques, analyzing interior design trends, and planning my next big project. 
+                                When I am not shooting or editing, I am usually studying other photographers&apos; work, testing a new lens angle on my own house, or driving a new back road between Muleshoe and Clovis.
                             </p>
 
                             <p className="font-medium text-white pt-4">
-                                I look forward to working with you and making your next property shine!
+                                If you are an agent in Lubbock, Clovis, or the surrounding area and you want the same photographer on every listing &mdash; same workflow, same edit style, same turnaround &mdash; let me shoot your next one.
                             </p>
                         </div>
                     </div>

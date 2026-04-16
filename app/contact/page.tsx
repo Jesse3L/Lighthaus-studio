@@ -33,7 +33,7 @@ export default function ContactPage() {
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
                 <H1 className="text-white mb-4">Book Your Real Estate Photo Shoot in Lubbock or Clovis</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
-                    Ready to elevate your listing? Fill out the form below or give us a call.
+                    Book a shoot, get a quote, or ask a quick question. The form below sends straight to my phone.
                 </Lead>
             </Section>
 
@@ -43,7 +43,7 @@ export default function ContactPage() {
                     <div className="space-y-8">
                         <H2>Get in Touch</H2>
                         <p className="text-muted-foreground leading-relaxed">
-                            We typically respond to inquiries within 1 hour during business hours. For urgent requests, please call or text.
+                            I answer the contact form from my phone. Inquiries during business hours usually get a reply the same day. For anything urgent, call or text 806-341-9922.
                         </p>
 
                         <div className="space-y-6">

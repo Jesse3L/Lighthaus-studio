@@ -50,7 +50,7 @@ const faqSchema = {
       "name": "How should I prepare the property?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We recommend ensuring the home is clean, decluttered, and well-lit. We will provide a specific prep checklist upon booking."
+        "text": "Counters clear, floors clean, blinds open, pets out of sight, all lamps and ceiling lights on. You will get a one-page prep checklist the night before the shoot."
       }
     },
     {
@@ -74,7 +74,7 @@ const faqSchema = {
       "name": "Who are your services for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We work with real estate agents, homeowners, builders, and Airbnb/VRBO hosts looking to market their properties professionally."
+        "text": "Real estate agents listing in Lubbock, Clovis, Portales, or the surrounding area; short-term rental hosts on Airbnb and VRBO; builders and small developers; and homeowners preparing a for-sale-by-owner listing."
       }
     },
     {
@@ -82,7 +82,7 @@ const faqSchema = {
       "name": "How do I get started?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Simply click 'Get a Quote' to fill out our request form. We'll confirm details and schedule your shoot as soon as possible."
+        "text": "Click Get a Quote, fill in the listing address and the package you want, and I will confirm the shoot time within the same business day."
       }
     }
   ]

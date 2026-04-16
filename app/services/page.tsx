@@ -109,22 +109,22 @@ export default function ServicesPage() {
     const services = [
         {
             title: "HDR Photography",
-            desc: "Hand-blended High Dynamic Range photos that make every room pop. We ensure perfect lighting, crisp details, and true-to-life colors.",
+            desc: "Hand-blended HDR frames shot with a Canon R8 on a leveled tripod. Window light holds, verticals stay vertical, floors read flat. Blue-sky replacement is included for the days the West Texas sky does not cooperate.",
             features: ["Blue Sky Guarantee", "TV Screen Replacement", "Fireplace Fire Addition", "Window View Clarity"]
         },
         {
             title: "Cinematic Video Tours",
-            desc: "Smooth, stabilized 4K video tours set to music. Perfect for social media reels and giving buyers a true feel for the layout.",
+            desc: "Stabilized 4K video walk-throughs with licensed music, delivered as a 16:9 cut for MLS and a 9:16 vertical for Reels and stories. One shoot, every format an agent actually posts.",
             features: ["4K Resolution", "Licensed Music", "Branded & Unbranded Links", "Social Media Cut (Vertical)"]
         },
         {
             title: "Aerial / Drone",
-            desc: "FAA Part 107 certified drone pilots capturing stunning aerial angles of the property, land, and surrounding neighborhood.",
-            features: ["High-Res Photos", "4K Video", "Property Boundary Lines", "Points of Interest Marking"]
+            desc: "FAA Part 107-compliant aerial stills and 4K video, flown to show the lot line, the roof condition, and the approach from the main road. Useful on acreage, corner lots, and rural listings where the structure is only half the story.",
+            features: ["High-Res Stills", "4K Aerial Video", "Lot and Approach Context", "Roof Condition Coverage"]
         },
         {
             title: "Matterport 3D Tours",
-            desc: "The gold standard for virtual open houses. Allows buyers to click through the home and view a dollhouse model.",
+            desc: "Captured with a Matterport Pro3 so buyers walk the floor plan themselves, measure rooms, and see the doll-house view before they ever book a showing. Cuts the tire-kicker tours out of your calendar.",
             features: ["Dollhouse View", "Measurement Tool", "Schematic Floor Plan Generation", "VR Compatible"]
         }
     ]
@@ -142,7 +142,7 @@ export default function ServicesPage() {
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
                 <H1 className="text-white mb-4">Real Estate Photography, Drone & 3D Tours for Lubbock Listings</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
-                    Everything you need to list with confidence and sell faster.
+                    Five deliverables, one photographer, 48-hour turnaround. Book one package, mix and match, or build a custom shoot around the listing in front of you.
                 </Lead>
                 <div className="mt-6 mx-auto max-w-2xl">
                     <p className="text-neutral-300">
@@ -188,7 +188,7 @@ export default function ServicesPage() {
                         <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Floor Plans</span>
                         <H2 className="mt-2 mb-6">Clear Layouts for Buyers</H2>
                         <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                            Give potential buyers a clear understanding of the property's flow with our professional 2D floor plans. Included measurements help buyers plan their furniture placement before they even step foot inside.
+                            Clean schematic 2D floor plans with room dimensions, generated from the Matterport scan so the numbers on the plan match the tour. Delivered as JPG and PDF for MLS, brochures, and open-house handouts.
                         </p>
                         <ul className="space-y-3 mb-8">
                             <li className="flex items-center"><Check className="mr-3 h-5 w-5 text-accent" /> Professional 2D Layout</li>
