@@ -26,10 +26,10 @@ export function AboutPreview() {
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-4">Behind the Lens</span>
                     <H2 className="mb-6">Meet Natalie, Lead Photographer</H2>
                     <Lead className="mb-6 text-neutral-400 text-lg leading-relaxed">
-                        Based in Muleshoe, TX, Natalie brings a refined, architectural approach to every property she captures. With a deep passion for showcasing homes and commercial spaces at their absolute best, she elevates listings into immersive, high-end visual experiences.
+                        I'm Natalie, and every photo, every video, and every delivery from Lighthaus Studio goes through me personally. I shoot stills and video with a Canon R8, capture 3D tours on a Matterport Pro3, and handle the drone work myself. No subcontractors. No shared inbox. No photographer you've never met showing up at your listing.
                     </Lead>
                     <p className="text-neutral-500 mb-8 leading-relaxed">
-                        Whether it is a sprawling luxury estate, a cozy Airbnb, or a large-scale commercial property, Lighthaus Studio was founded on the belief that premium marketing shouldn't be complicated. By combining expert lighting, advanced HDR techniques, and cutting-edge drone media, Natalie ensures every property stands out in a crowded market.
+                        I started Lighthaus because I love what good photography does for a listing — the way the right angle and the right light turn a 1,600-square-foot starter home into somewhere a buyer can picture themselves living. I want to help real estate agents across Lubbock, Clovis, and the surrounding West Texas communities sell faster by giving them media that actually shows what a property has to offer. When your listings move, my business grows. When your business grows, I get to keep doing work I care about. That is the relationship I am here to build.
                     </p>
                     <div>
                         <Link href="/about">

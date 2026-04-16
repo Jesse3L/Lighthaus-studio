@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Lighthaus Studio — Real Estate Photography in Lubbock & Clovis',
     description: 'Real estate photography, drone aerials, and Matterport 3D tours for agents across Lubbock, TX and Clovis, NM. Listing-ready files in 48 hours.',
-    url: 'https://lighthausstudio.com',
     siteName: 'Lighthaus Studio',
     locale: 'en_US',
     type: 'website',

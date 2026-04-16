@@ -5,23 +5,23 @@ export function TrustStrip() {
     const points = [
         {
             icon: Clock,
-            title: "Fast Turnaround",
-            desc: "Delivered ready for listing.",
+            title: "MLS-Ready Files",
+            desc: "Delivered in the exact dimensions and file sizes your MLS requires. No resizing on your end.",
         },
         {
             icon: Camera,
-            title: "Listing-Ready",
-            desc: "Optimized for MLS.",
+            title: "Blue-Sky Replacement Included",
+            desc: "Gray skies and flat light get swapped for clean blue at no extra cost.",
         },
         {
             icon: PackageCheck,
-            title: "High Quality",
-            desc: "Professional attention to detail.",
+            title: "FAA Part 107 Drone Coverage",
+            desc: "Aerial stills of the lot, roofline, and acreage context. Licensed for commercial use under FAA Part 107.",
         },
         {
             icon: Star,
-            title: "Consistent",
-            desc: "Reliable results every time.",
+            title: "Local to West Texas",
+            desc: "Based in Muleshoe. No travel fees in Lubbock, Clovis, Portales, or Plainview.",
         },
     ]
 
@@ -29,8 +29,8 @@ export function TrustStrip() {
         <Section className="border-b border-white/5 bg-neutral-900/50" spacing="sm">
             <div className="grid grid-cols-2 gap-8 lg:gap-12 lg:grid-cols-5">
                 <div className="col-span-full text-center mb-8 lg:text-left lg:mb-0 lg:col-span-1">
-                    <h3 className="font-bold text-xl leading-tight">Media Designed to Help Listings Perform</h3>
-                    <p className="text-sm text-muted-foreground mt-2">Attract more attention and make stronger first impressions.</p>
+                    <h3 className="font-bold text-xl leading-tight">48-Hour Turnaround</h3>
+                    <p className="text-sm text-muted-foreground mt-2">Photos in your inbox within two business days of the shoot. Every shoot, no exceptions.</p>
                 </div>
                 {points.map((p, idx) => (
                     <div key={idx} className="flex flex-col items-start space-y-3 group">

@@ -74,7 +74,7 @@ export function Hero() {
                         </H1>
 
                         <Lead className="max-w-xl text-neutral-400">
-                            Professional photography, video, drone, and 3D tours designed to help listings stand out and convert online.
+                            HDR photography, Matterport 3D tours, cinematic walkthrough video, and drone coverage for real estate agents in Lubbock, Clovis, and the West Texas surround. 48-hour delivery on every shoot.
                         </Lead>
                     </div>
 

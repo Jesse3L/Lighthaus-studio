@@ -3,9 +3,9 @@ import { H2, Lead } from '@/components/shared/Typography'
 
 export function Process() {
     const steps = [
-        { num: "01", title: "Request a Quote", desc: "Schedule your shoot based on your listing needs." },
-        { num: "02", title: "We Capture", desc: "We capture the property with care and consistency." },
-        { num: "03", title: "Receive Media", desc: "Receive polished, listing-ready media." },
+        { num: "01", title: "Request a Quote", desc: "Fill out the form or text 806-341-9922. We confirm shoot date within one business day." },
+        { num: "02", title: "We Shoot On-Site", desc: "60 to 90 minutes on location. Photos, video, 3D scan, drone, and floor plan captured in a single visit." },
+        { num: "03", title: "Media in 48 Hours", desc: "Private gallery link in your inbox. Download MLS-sized files, print-ready files, and raw video cuts." },
     ]
 
     return (

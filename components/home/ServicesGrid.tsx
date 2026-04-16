@@ -6,20 +6,20 @@ import { H2, Lead } from '@/components/shared/Typography'
 
 export function ServicesGrid() {
     const services = [
-        { icon: Camera, title: "Real Estate Photography", desc: "High-end HDR images that make every room look its best." },
-        { icon: Video, title: "Video Tours", desc: "Highlight the flow and lifestyle of the property." },
-        { icon: Scan, title: "Matterport 3D Tours", desc: "Allow buyers to explore the home from anywhere." },
-        { icon: Box, title: "Drone Photography & Video", desc: "Showcase the lot, location, and surrounding area." },
-        { icon: Map, title: "Floor Plan Layouts", desc: "Give buyers a clear understanding of the space." },
+        { icon: Camera, title: "HDR Real Estate Photography", desc: "20 to 30 HDR stills per listing, shot on a Canon R8. Every room, every key angle, exterior fronts, and twilight shots when the light works." },
+        { icon: Video, title: "Cinematic Video Tours", desc: "60 to 90 second walkthrough video, cut to music and branded with your logo and contact info. Uploads clean to MLS video fields and Instagram Reels." },
+        { icon: Scan, title: "Matterport Pro3 3D Tours", desc: "Dollhouse and walkthrough views captured on a Matterport Pro3. One shareable link — buyers qualify themselves before ever requesting a showing." },
+        { icon: Box, title: "FAA Part 107 Drone Coverage", desc: "Aerial stills and video of the lot, roofline, and acreage context. Especially useful for ranch listings and properties where location is part of the story." },
+        { icon: Map, title: "2D Floor Plans with Room Dimensions", desc: "Generated on-site during the shoot, no second visit needed. Branded with your contact info for MLS, brochures, and open-house handouts." },
     ]
 
     return (
         <Section className="bg-secondary/50">
             <div className="mb-12 lg:mb-20 text-center max-w-3xl mx-auto">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Offers</span>
-                <H2 className="mt-4 mb-6">Complete Media Solutions</H2>
+                <H2 className="mt-4 mb-6">What Lighthaus Delivers</H2>
                 <Lead>
-                    Everything you need to market your listing. Delivered with speed and precision.
+                    Five services, one shoot. Photos, video, 3D tour, drone, and floor plan captured in a single on-site visit.
                 </Lead>
             </div>
 

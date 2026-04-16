@@ -61,7 +61,7 @@ export function PortfolioPreview() {
                             Selected Work
                         </span>
                     </div>
-                    <H2>Visual Excellence <br /> <span className="text-neutral-400">In Every Shot.</span></H2>
+                    <H2>A look at recent <br /> <span className="text-neutral-400">Lubbock and Muleshoe listings.</span></H2>
                 </div>
                 <Link href="/portfolio">
                     <Button variant="link" className="hidden md:flex">
