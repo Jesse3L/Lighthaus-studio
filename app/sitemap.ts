@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { properties } from '@/lib/properties'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.lighthausstudio.com'
@@ -60,5 +61,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'yearly',
             priority: 0.2,
         },
+        ...properties.map((p) => ({
+            url: `${baseUrl}/portfolio/${p.slug}`,
+            lastModified: new Date(p.publishedAt),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        })),
     ]
 }
