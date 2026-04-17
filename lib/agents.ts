@@ -38,7 +38,7 @@ export const agents: Agent[] = [
     brokerageState: "TX",
     bio: "Landon Woods is a Realtor with Steen Realty Group at Keller Williams Lubbock. His background — staffing Congress and later the CEO's office at the Millennium Challenge Corporation — gave him a read on how capital moves and where risk sits, insight he brings to every deal. Landon works with young investors, business owners scaling, and portfolio managers raising equity. Off the clock he flips houses, collects passport stamps, and in 2026 is hosting a series called \"Water: The Lifeblood of West Texas.\"",
     headshot: {
-      src: "/images/agents/landon-woods.jpg",
+      src: "/images/agents/landon-woods.jpg.avif",
       alt: "Landon Woods, Realtor with Steen Realty Group at Keller Williams Lubbock",
     },
     phone: "806-292-7529",
