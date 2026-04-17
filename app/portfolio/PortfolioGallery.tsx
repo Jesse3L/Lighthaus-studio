@@ -7,14 +7,14 @@ import { H1, Lead } from "@/components/shared/Typography"
 import { Button } from "@/components/shared/Button"
 import { Card } from "@/components/shared/Card"
 import { MatterportEmbed } from "@/components/shared/MatterportEmbed"
-import { portfolioItems } from "@/lib/portfolio-items"
+import { flatGalleryItems } from "@/lib/properties"
 
 export function PortfolioGallery() {
     const [filter, setFilter] = useState("All")
 
-    const categories = ["All", ...Array.from(new Set(portfolioItems.map(i => i.cat)))]
+    const categories = ["All", ...Array.from(new Set(flatGalleryItems.map(i => i.category)))]
 
-    const filtered = filter === "All" ? portfolioItems : portfolioItems.filter(w => w.cat === filter)
+    const filtered = filter === "All" ? flatGalleryItems : flatGalleryItems.filter(w => w.category === filter)
 
     return (
         <>
@@ -43,8 +43,8 @@ export function PortfolioGallery() {
             <Section>
                 <div className="mx-auto max-w-5xl mb-16">
                     <div className="text-center mb-8">
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Featured 3D Tour</span>
-                        <h2 className="mt-2 text-2xl font-bold text-white">Experience the Space</h2>
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Featured 3D Tour — Muleshoe Open-Concept Home</span>
+                        <h2 className="mt-2 text-2xl font-bold text-white">Walk through a recent Muleshoe listing</h2>
                     </div>
                     <MatterportEmbed />
                 </div>
@@ -70,10 +70,10 @@ export function PortfolioGallery() {
                             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                 <div className="flex justify-between items-end">
                                     <div>
-                                        <p className="text-[10px] font-bold uppercase text-accent mb-1 tracking-widest">{w.cat}</p>
-                                        <h3 className="font-bold text-lg">{w.title}</h3>
+                                        <p className="text-[10px] font-bold uppercase text-accent mb-1 tracking-widest">{w.category}</p>
+                                        <h3 className="font-bold text-lg">{w.propertyTitle}</h3>
                                     </div>
-                                    <span className="text-xs text-neutral-300 font-medium">{w.loc}</span>
+                                    <span className="text-xs text-neutral-300 font-medium">{w.propertyLocation}</span>
                                 </div>
                             </div>
                         </Card>

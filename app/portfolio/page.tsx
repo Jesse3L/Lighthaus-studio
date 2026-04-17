@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { PortfolioGallery } from "./PortfolioGallery"
-import { portfolioItems } from "@/lib/portfolio-items"
+import { flatGalleryItems } from "@/lib/properties"
 
 export const metadata: Metadata = {
     title: "Real Estate Photography Portfolio — West TX & NM | Lighthaus",
@@ -33,12 +33,12 @@ const collectionSchema = {
     "@type": "ImageGallery",
     "@id": "https://www.lighthausstudio.com/portfolio#gallery",
     "name": "Lighthaus Studio Portfolio",
-    "image": portfolioItems.map(item => ({
+    "image": flatGalleryItems.map(item => ({
       "@type": "ImageObject",
       "contentUrl": `https://www.lighthausstudio.com${item.src}`,
-      "caption": item.title,
+      "caption": item.propertyTitle,
       "description": item.alt,
-      "contentLocation": { "@type": "Place", "name": item.loc }
+      "contentLocation": { "@type": "Place", "name": item.propertyLocation }
     }))
   }
 };
