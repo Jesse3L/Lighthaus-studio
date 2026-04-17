@@ -15,10 +15,10 @@ function getServiceLabel(service: PropertyService): string {
     }
 }
 
-export function PropertyCard({ property, priority = false }: { property: Property; priority?: boolean }) {
+export function PropertyCard({ property, priority = false, hrefOverride }: { property: Property; priority?: boolean; hrefOverride?: string }) {
     return (
         <Link 
-            href={`/portfolio/${property.slug}`}
+            href={hrefOverride || `/portfolio/${property.slug}`}
             data-category={property.category}
             className="block"
         >

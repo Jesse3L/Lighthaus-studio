@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { properties } from '@/lib/properties'
+import { agents } from '@/lib/agents'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.lighthausstudio.com'
@@ -66,6 +67,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(p.publishedAt),
             changeFrequency: 'monthly' as const,
             priority: 0.7,
+        })),
+        {
+            url: `${baseUrl}/agents`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        ...agents.map((a) => ({
+            url: `${baseUrl}/agents/${a.slug}`,
+            lastModified: new Date(a.publishedAt),
+            changeFrequency: 'monthly' as const,
+            priority: 0.6,
         })),
     ]
 }

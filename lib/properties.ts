@@ -57,7 +57,8 @@ export const properties: Property[] = [
       { src: "/images/portfolio/muleshoe-art-loft/exterior-street-view.jpg", alt: "Exterior of the Muleshoe Art Loft Airbnb, a short-term rental on a quiet street in Muleshoe, TX." },
       { src: "/images/portfolio/muleshoe-art-loft/unit-1-interior.jpg", alt: "Interior of Unit 1 at the Muleshoe Art Loft Airbnb featuring open-plan living with exposed structure and gallery styling." },
       { src: "/images/portfolio/muleshoe-art-loft/unit-2-detail.jpg", alt: "Interior detail shot of Unit 2 at the Muleshoe Art Loft Airbnb showing styled retail shelving and interior finishes." }
-    ]
+    ],
+    agentSlug: "landon-woods"
   },
   {
     slug: "levelland-ranch",
