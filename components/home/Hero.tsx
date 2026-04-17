@@ -69,8 +69,8 @@ export function Hero() {
                         </div>
 
                         <H1 className="text-white">
-                            Real Estate Media <br />
-                            <span className="text-neutral-500">That Sells in Lubbock, TX</span>
+                            Real Estate Photography, Video & 3D Tours <br />
+                            <span className="text-neutral-500">for West Texas and Eastern New Mexico Listings</span>
                         </H1>
 
                         <Lead className="max-w-xl text-neutral-400">

@@ -14,12 +14,12 @@ import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: 'Real Estate Media in Lubbock, TX | Lighthaus Studio',
-    description: 'Professional real estate media that helps listings stand out. Serving Lubbock and West Texas with photos, video, drone, and 3D tours. Starting at $199.',
+    title: 'Real Estate Photography | West Texas, Eastern NM | Lighthaus',
+    description: 'Real estate photography, 3D tours, and drone video for agents across Lubbock, Clovis, and the West Texas and Eastern NM market. 48-hour delivery.',
     alternates: { canonical: "/" },
     openGraph: {
-        title: 'Real Estate Media in Lubbock, TX | Lighthaus Studio',
-        description: 'Professional real estate media that helps listings stand out. Serving Lubbock and West Texas with photos, video, drone, and 3D tours. Starting at $199.',
+        title: 'Real Estate Photography | West Texas, Eastern NM | Lighthaus',
+        description: 'Real estate photography, 3D tours, and drone video for agents across Lubbock, Clovis, and the West Texas and Eastern NM market. 48-hour delivery.',
     }
 }
 
