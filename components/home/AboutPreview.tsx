@@ -11,7 +11,7 @@ export function AboutPreview() {
                 {/* Image Section */}
                 <div className="md:col-span-4 relative aspect-[4/5] object-cover rounded-2xl overflow-hidden shadow-2xl md:order-last mx-auto w-full max-w-sm">
                     <Image
-                        src="/images/natalie-lighthaus-studio-photographer.jpg"
+                        src="/images/about/natalie-lighthaus-studio-photographer.jpg"
                         alt="Natalie — lead real estate photographer and owner of Lighthaus Studio"
                         width={800}
                         height={1067}

@@ -19,7 +19,7 @@ const personSchema = {
   "@id": "https://www.lighthausstudio.com/about#natalie",
   "name": "Natalie",
   "jobTitle": "Lead Real Estate Photographer and Owner",
-  "image": "https://www.lighthausstudio.com/images/natalie-lighthaus-studio-photographer.jpg",
+  "image": "https://www.lighthausstudio.com/images/about/natalie-lighthaus-studio-photographer.jpg",
   "url": "https://www.lighthausstudio.com/about",
   "worksFor": { "@id": "https://www.lighthausstudio.com/#organization" },
   "knowsAbout": [
