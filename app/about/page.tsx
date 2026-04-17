@@ -74,32 +74,28 @@ export default function AboutPage() {
                     <div className="lg:col-span-7 flex flex-col space-y-8">
                         <div>
                             <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-4 block">Meet the Founder</span>
-                            <H2>Hi, I am Natalie.</H2>
+                            <H2>About Natalie</H2>
                         </div>
                         
                         <div className="space-y-6 text-neutral-300 leading-relaxed text-lg font-light">
                             <p>
-                                Lighthaus Studio is a new business, and I want to say that up front. The agents who do well with me are the ones who want a photographer who treats their listing like it matters, and that is easier to give you when I am not trying to shuffle a full team&apos;s schedule.
+                                I'm Natalie — the photographer behind Lighthaus Studio. I shoot real estate, Airbnb, and short-form listing video for agents and property owners across Lubbock, Clovis, Muleshoe, Portales, and the West Texas–Eastern New Mexico market.
                             </p>
 
                             <p>
-                                I live in Muleshoe. I shoot across Lubbock, Clovis, Portales, and the smaller towns in between. Every part of the job is mine: the Canon R8 on a leveled tripod, the Matterport Pro3 for the 3D tour, the drone for the aerials, and the edit that same night. Your photos, video, tour, and floor plan are back in your inbox inside 48 hours.
+                                My workflow is built around one rule: the photos an agent gets back should help them list the next business day. I shoot interiors in hand-blended HDR on a Canon R8, film 4K walkthroughs on a stabilized rig, scan homes with a Matterport Pro3 for full 3D tours, and add drone coverage for acreage, curb appeal, and neighborhood context. Every shoot delivers within 48 hours.
                             </p>
 
                             <p>
-                                My goal for this business is simple. Help the agents I work with sell faster and win more listings, because when your business grows, mine grows with it. That shapes how I plan every shoot. I am thinking about your buyer, your MLS photo limits, and what the images need to do before a showing gets booked.
+                                The work is built for agents whose listings deserve better than the phone-shot photos that still dominate small-market MLS feeds. Buyers scroll past bad listing photography in under a second. The job is to make them stop.
                             </p>
 
                             <p>
-                                I care about the craft. Window light held, verticals vertical, rooms shown at the scale they actually feel. HDR blending for interiors where the sun is strong. A Matterport Pro3 tour so an out-of-state buyer can walk the property at 2 a.m. before they book a flight. A drone for the acreage listings where the lot is the story and the structure is only half of it.
+                                Home base is Muleshoe, TX. I drive to shoots across West Texas and Eastern New Mexico — Lubbock and the surrounding metro, Clovis and Cannon AFB, Portales and ENMU, and the small-market towns in between. If your listing is in this corridor, it's a short drive.
                             </p>
 
                             <p className="italic text-neutral-400">
-                                When I am not shooting or editing, I am usually studying other photographers&apos; work, testing a new lens angle on my own house, or driving a new back road between Muleshoe and Clovis.
-                            </p>
-
-                            <p className="font-medium text-white pt-4">
-                                If you are an agent in Lubbock, Clovis, or the surrounding area and you want the same photographer on every listing &mdash; same workflow, same edit style, same turnaround &mdash; let me shoot your next one.
+                                When I'm not shooting, I'm usually studying other photographers' work, testing new lens angles on back roads, or politely arguing with my dogs about whether they're supposed to be in the frame.
                             </p>
                         </div>
                     </div>
