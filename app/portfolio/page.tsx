@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { PortfolioGallery } from "./PortfolioGallery"
+import { portfolioItems } from "@/lib/portfolio-items"
 
 export const metadata: Metadata = {
     title: "Real Estate Photography Portfolio — West TX & NM | Lighthaus",
@@ -20,10 +21,33 @@ const breadcrumbSchema = {
   ]
 };
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://www.lighthausstudio.com/portfolio#collection",
+  "url": "https://www.lighthausstudio.com/portfolio",
+  "name": "Real Estate Photography Portfolio — West Texas & Eastern NM",
+  "description": "Real estate, Airbnb, and aerial photography portfolio. Booking shoots in Lubbock, Clovis, Portales, and the West Texas–Eastern New Mexico corridor.",
+  "isPartOf": { "@id": "https://www.lighthausstudio.com/#localbusiness" },
+  "mainEntity": {
+    "@type": "ImageGallery",
+    "@id": "https://www.lighthausstudio.com/portfolio#gallery",
+    "name": "Lighthaus Studio Portfolio",
+    "image": portfolioItems.map(item => ({
+      "@type": "ImageObject",
+      "contentUrl": `https://www.lighthausstudio.com${item.src}`,
+      "caption": item.title,
+      "description": item.alt,
+      "contentLocation": { "@type": "Place", "name": item.loc }
+    }))
+  }
+};
+
 export default function PortfolioPage() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
             <PortfolioGallery />
         </>
     )
