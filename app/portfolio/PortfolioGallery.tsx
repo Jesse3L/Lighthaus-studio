@@ -5,16 +5,22 @@ import Link from "next/link"
 import { Section } from "@/components/shared/Section"
 import { H1, Lead } from "@/components/shared/Typography"
 import { Button } from "@/components/shared/Button"
-import { Card } from "@/components/shared/Card"
-import { MatterportEmbed } from "@/components/shared/MatterportEmbed"
-import { flatGalleryItems } from "@/lib/properties"
+import { properties } from "@/lib/properties"
+import { PropertyCard } from "@/components/portfolio/PropertyCard"
+
+// Sort properties: Featured first, then by published date descending.
+const sortedProperties = [...properties].sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+});
 
 export function PortfolioGallery() {
     const [filter, setFilter] = useState("All")
 
-    const categories = ["All", ...Array.from(new Set(flatGalleryItems.map(i => i.category)))]
+    const categories = ["All", ...Array.from(new Set(sortedProperties.map(p => p.category)))]
 
-    const filtered = filter === "All" ? flatGalleryItems : flatGalleryItems.filter(w => w.category === filter)
+    const filtered = filter === "All" ? sortedProperties : sortedProperties.filter(w => w.category === filter)
 
     return (
         <>
@@ -41,42 +47,9 @@ export function PortfolioGallery() {
             </Section>
 
             <Section>
-                <div className="mx-auto max-w-5xl mb-16">
-                    <div className="text-center mb-8">
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Featured 3D Tour — Muleshoe Open-Concept Home</span>
-                        <h2 className="mt-2 text-2xl font-bold text-white">Walk through a recent Muleshoe listing</h2>
-                    </div>
-                    <MatterportEmbed />
-                </div>
-            </Section>
-
-            <Section>
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {filtered.map((w, i) => (
-                        <Card key={i} hover className="group aspect-[4/3] bg-neutral-900 cursor-pointer relative overflow-hidden border-none">
-                            <img
-                                src={w.src}
-                                alt={w.alt}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span className="text-white font-bold uppercase tracking-wider border border-white px-4 py-2 hover:bg-white hover:text-black transition-colors">
-                                    View Project
-                                </span>
-                            </div>
-
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                <div className="flex justify-between items-end">
-                                    <div>
-                                        <p className="text-[10px] font-bold uppercase text-accent mb-1 tracking-widest">{w.category}</p>
-                                        <h3 className="font-bold text-lg">{w.propertyTitle}</h3>
-                                    </div>
-                                    <span className="text-xs text-neutral-300 font-medium">{w.propertyLocation}</span>
-                                </div>
-                            </div>
-                        </Card>
+                <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                    {filtered.map((p, i) => (
+                        <PropertyCard key={p.slug} property={p} priority={i < 2} />
                     ))}
                 </div>
             </Section>
