@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { agents, getAgentBySlug, getPropertiesForAgent } from "@/lib/agents";
+import { getAllAgentSlugs, getAgentBySlug, getPropertiesForAgent } from "@/sanity/lib/queries";
 import { AgentAvatar } from "@/components/agents/AgentAvatar";
 import { Section } from "@/components/shared/Section";
 import { PropertyCard } from "@/components/portfolio/PropertyCard";
@@ -13,12 +13,13 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return agents.map((agent) => ({ slug: agent.slug }));
+  const slugs = await getAllAgentSlugs();
+  return slugs.map(slug => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const agent = getAgentBySlug(slug);
+  const agent = await getAgentBySlug(slug);
   
   if (!agent) {
     return { title: "Agent Not Found | Lighthaus" };
@@ -43,11 +44,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function AgentDetailPage({ params }: Props) {
   const { slug } = await params;
-  const agent = getAgentBySlug(slug);
+  const agent = await getAgentBySlug(slug);
 
   if (!agent) notFound();
 
-  const agentProperties = getPropertiesForAgent(slug);
+  const agentProperties = await getPropertiesForAgent(slug);
 
   const jsonLd = {
     "@context": "https://schema.org",

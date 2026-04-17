@@ -29,6 +29,15 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   /* config options here */
   trailingSlash: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/h3o4j0c6/**",
+      },
+    ],
+  },
   async headers() {
     return [
       { source: "/(.*)", headers: securityHeaders },

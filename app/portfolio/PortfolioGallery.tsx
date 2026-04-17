@@ -5,17 +5,18 @@ import Link from "next/link"
 import { Section } from "@/components/shared/Section"
 import { H1, Lead } from "@/components/shared/Typography"
 import { Button } from "@/components/shared/Button"
-import { properties } from "@/lib/properties"
+import type { Property } from "@/lib/properties"
 import { PropertyCard } from "@/components/portfolio/PropertyCard"
 
-// Sort properties: Featured first, then by published date descending.
-const sortedProperties = [...properties].sort((a, b) => {
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-});
+export function PortfolioGallery({ properties }: { properties: Property[] }) {
+    // Sort properties: Featured first, then by published date descending.
+    const sortedProperties = [...properties].sort((a, b) => {
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    });
 
-export function PortfolioGallery() {
+
     const [filter, setFilter] = useState("All")
 
     const categories = ["All", ...Array.from(new Set(sortedProperties.map(p => p.category)))]

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getAgentBySlug } from "@/lib/agents";
+import { getAgentBySlug } from "@/sanity/lib/queries";
 import { AgentAvatar } from "@/components/agents/AgentAvatar";
 
-export function PropertyAgent({ agentSlug }: { agentSlug: string }) {
-    const agent = getAgentBySlug(agentSlug);
+export async function PropertyAgent({ agentSlug }: { agentSlug: string }) {
+    const agent = await getAgentBySlug(agentSlug);
 
     if (!agent) {
         return null;

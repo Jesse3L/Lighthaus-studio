@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { properties } from "@/lib/properties";
+import { getAllPropertySlugs, getPropertyBySlug } from "@/sanity/lib/queries";
 import { PropertyHero } from "@/components/portfolio/detail/PropertyHero";
 import { PropertyGallery } from "@/components/portfolio/detail/PropertyGallery";
 import { PropertyMatterport } from "@/components/portfolio/detail/PropertyMatterport";
@@ -10,13 +10,14 @@ import { PropertyAgent } from "@/components/portfolio/detail/PropertyAgent";
 import { PropertyCTA } from "@/components/portfolio/detail/PropertyCTA";
 import { PropertyBreadcrumb } from "@/components/portfolio/detail/PropertyBreadcrumb";
 
-export function generateStaticParams() {
-  return properties.map(p => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllPropertySlugs();
+  return slugs.map(slug => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const property = properties.find(p => p.slug === slug);
+  const property = await getPropertyBySlug(slug);
   if (!property) return {};
   const title = `${property.title} — ${property.city} Real Estate Photography | Lighthaus`;
   const description = property.shortDescription;
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PropertyPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const property = properties.find(p => p.slug === slug);
+  const property = await getPropertyBySlug(slug);
   if (!property) notFound();
 
   const schema = {

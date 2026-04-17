@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next'
-import { properties } from '@/lib/properties'
-import { agents } from '@/lib/agents'
+import { getAllPropertySlugs, getAllAgentSlugs } from '@/sanity/lib/queries'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.lighthausstudio.com'
     const now = new Date()
+    const propertySlugs = await getAllPropertySlugs()
+    const agentSlugs = await getAllAgentSlugs()
 
     return [
         {
@@ -62,9 +63,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'yearly',
             priority: 0.2,
         },
-        ...properties.map((p) => ({
-            url: `${baseUrl}/portfolio/${p.slug}`,
-            lastModified: new Date(p.publishedAt),
+        ...propertySlugs.map((slug) => ({
+            url: `${baseUrl}/portfolio/${slug}`,
+            lastModified: now,
             changeFrequency: 'monthly' as const,
             priority: 0.7,
         })),
@@ -74,9 +75,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.7,
         },
-        ...agents.map((a) => ({
-            url: `${baseUrl}/agents/${a.slug}`,
-            lastModified: new Date(a.publishedAt),
+        ...agentSlugs.map((slug) => ({
+            url: `${baseUrl}/agents/${slug}`,
+            lastModified: now,
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),

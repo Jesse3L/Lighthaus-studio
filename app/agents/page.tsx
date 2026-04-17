@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { agents } from "@/lib/agents";
+import { getAllAgents } from "@/sanity/lib/queries";
 import { AgentAvatar } from "@/components/agents/AgentAvatar";
 import { Section } from "@/components/shared/Section";
 import { H1, H3, Lead } from "@/components/shared/Typography";
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   }
 };
 
-export default function AgentsIndexPage() {
+export default async function AgentsIndexPage() {
+  const agents = await getAllAgents();
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [

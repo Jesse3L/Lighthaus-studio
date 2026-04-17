@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { properties } from "@/lib/properties";
-import { getAgentBySlug, agents } from "@/lib/agents";
+import { getAllAgentSlugs, getAgentBySlug, getPropertiesForAgent, getPropertyBySlug } from "@/sanity/lib/queries";
 import { PropertyHero } from "@/components/portfolio/detail/PropertyHero";
 import { PropertyGallery } from "@/components/portfolio/detail/PropertyGallery";
 import { PropertyMatterport } from "@/components/portfolio/detail/PropertyMatterport";
@@ -17,20 +16,20 @@ interface Props {
 
 export async function generateStaticParams() {
   const params: { slug: string; property: string }[] = [];
-  agents.forEach(agent => {
-    properties
-      .filter(p => p.agentSlug === agent.slug)
-      .forEach(p => {
-        params.push({ slug: agent.slug, property: p.slug });
-      });
-  });
+  const slugs = await getAllAgentSlugs();
+  for (const slug of slugs) {
+    const properties = await getPropertiesForAgent(slug);
+    for (const p of properties) {
+      params.push({ slug, property: p.slug });
+    }
+  }
   return params;
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug, property: propertySlug } = await params;
-  const agent = getAgentBySlug(slug);
-  const property = properties.find(p => p.slug === propertySlug);
+  const agent = await getAgentBySlug(slug);
+  const property = await getPropertyBySlug(propertySlug);
 
   if (!agent || !property || property.agentSlug !== agent.slug) return {};
 
@@ -53,8 +52,8 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function CoBrandedPropertyPage({ params }: Props) {
   const { slug, property: propertySlug } = await params;
-  const agent = getAgentBySlug(slug);
-  const property = properties.find(p => p.slug === propertySlug);
+  const agent = await getAgentBySlug(slug);
+  const property = await getPropertyBySlug(propertySlug);
 
   if (!agent || !property || property.agentSlug !== agent.slug) notFound();
 
