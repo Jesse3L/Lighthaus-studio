@@ -8,7 +8,7 @@ export function Footer() {
                 <div className="md:col-span-1 space-y-2">
                     <Link href="/" className="flex items-center group -ml-2">
                         <Image
-                            src="/images/lighthaus-studio-logo.png"
+                            src="/images/brand/lighthaus-logo.png"
                             alt="Lighthaus Studio"
                             width={256}
                             height={256}

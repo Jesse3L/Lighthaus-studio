@@ -94,7 +94,7 @@ export default function LubbockRealEstatePhotographyPage() {
                     </div>
                     <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in delay-200">
                         <Image 
-                            src="/images/modern-home-exterior-lubbock.jpg" 
+                            src="/images/home/modern-home-exterior-lubbock.jpg"
                             alt="Lubbock real estate listing photographed by Lighthaus Studio" 
                             fill 
                             sizes="(max-width: 768px) 100vw, 50vw"

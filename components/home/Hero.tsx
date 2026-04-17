@@ -11,17 +11,17 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 export function Hero() {
     const images = [
         {
-            src: "/images/luxury-master-bathroom-lubbock.jpg",
+            src: "/images/home/luxury-master-bathroom-lubbock.jpg",
             alt: "Luxury master bathroom photographed for a Lubbock real estate listing",
             label: "Luxury Interiors"
         },
         {
-            src: "/images/modern-home-exterior-lubbock.jpg",
+            src: "/images/home/modern-home-exterior-lubbock.jpg",
             alt: "Modern brick home exterior photographed for a Lubbock real estate listing",
             label: "Curb Appeal"
         },
         {
-            src: "/images/bright-open-living-room-lubbock.jpg",
+            src: "/images/home/bright-open-living-room-lubbock.jpg",
             alt: "Bright open-concept living room photographed for a Lubbock real estate listing",
             label: "Spacious Living"
         }

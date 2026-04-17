@@ -13,7 +13,7 @@ export function PortfolioPreview() {
             category: "Interior",
             colSpan: "lg:col-span-2",
             aspect: "aspect-[16/9]",
-            image: "/images/open-concept-dining-living-lubbock.jpg",
+            image: "/images/home/open-concept-dining-living-lubbock.jpg",
             alt: "Open-concept dining and living room — Lubbock real estate photography",
             width: 1600,
             height: 900
@@ -23,7 +23,7 @@ export function PortfolioPreview() {
             category: "Exterior",
             colSpan: "lg:col-span-1",
             aspect: "aspect-[4/5]",
-            image: "/images/modern-home-exterior-lubbock.jpg",
+            image: "/images/home/modern-home-exterior-lubbock.jpg",
             alt: "Modern brick exterior — Lubbock real estate photography",
             width: 1200,
             height: 1500
@@ -33,7 +33,7 @@ export function PortfolioPreview() {
             category: "Interior",
             colSpan: "lg:col-span-1",
             aspect: "aspect-[4/5]",
-            image: "/images/contemporary-kitchen-lubbock.jpg",
+            image: "/images/home/contemporary-kitchen-lubbock.jpg",
             alt: "Contemporary kitchen — Lubbock real estate photography",
             width: 1200,
             height: 1500
@@ -43,7 +43,7 @@ export function PortfolioPreview() {
             category: "Interior",
             colSpan: "lg:col-span-2",
             aspect: "aspect-[16/9]",
-            image: "/images/bright-open-living-room-lubbock.jpg",
+            image: "/images/home/bright-open-living-room-lubbock.jpg",
             alt: "Bright open living room — Lubbock real estate photography",
             width: 1600,
             height: 900

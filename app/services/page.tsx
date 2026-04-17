@@ -198,7 +198,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="bg-neutral-800 p-8 rounded-lg">
                         <img
-                            src="/Images/Floor Plan Layout Example.jpg"
+                            src="/images/services/floor-plan-example.jpg"
                             alt="Floor Plan Example"
                             className="w-full h-auto shadow-lg rounded"
                         />

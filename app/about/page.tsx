@@ -63,7 +63,7 @@ export default function AboutPage() {
                     {/* Sticky Image Section */}
                     <div className="lg:col-span-5 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl lg:sticky lg:top-32">
                         <img
-                            src="/Images/Natalie/4686A693-E576-4E1F-8D36-54BB007CCC7F.jpg"
+                            src="/images/about/natalie-lighthaus-studio-photographer.jpg"
                             alt="Natalie - Owner of Lighthaus Studio"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
