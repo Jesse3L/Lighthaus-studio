@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-[#050505] pt-10 pb-8 md:py-20 text-neutral-400 border-t border-white/5">
       <div className="container-custom grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 md:gap-12 lg:gap-20">
         {/* Brand + social */}
-        <div className="col-span-2 md:col-span-1 flex flex-row md:flex-col items-center md:items-start justify-between md:justify-start">
+        <div className="col-span-2 md:col-span-1 grid grid-cols-2 gap-x-4 items-center md:flex md:flex-col md:items-start md:gap-0">
           <Link href="/" className="inline-flex items-center group -ml-2 md:-ml-3 flex-shrink-0">
             <Image
               src="/images/brand/lighthaus-logo.png"
@@ -20,7 +20,7 @@ export function Footer() {
               className="w-40 sm:w-48 md:w-56 h-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </Link>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-4 pt-1 md:pt-6 w-max ml-auto md:ml-0 shrink-0">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-4 pt-1 md:pt-6 w-max shrink-0">
             <a
               href="https://www.instagram.com/thelighthausstudio"
               target="_blank"
