@@ -10,8 +10,8 @@ export function Footer() {
     <footer className="bg-[#050505] py-12 md:py-20 text-neutral-400 border-t border-white/5">
       <div className="container-custom grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-12 lg:gap-20">
         {/* Brand + social */}
-        <div className="col-span-2 md:col-span-1 space-y-4">
-          <Link href="/" className="inline-flex items-center group -ml-2">
+        <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start space-y-4">
+          <Link href="/" className="inline-flex items-center group md:-ml-2">
             <Image
               src="/images/brand/lighthaus-logo.png"
               alt="Lighthaus Studio"
