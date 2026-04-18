@@ -221,11 +221,14 @@ export default function ServicesPage() {
                 </div>
             </Section >
 
-            <Section intent="primary" className="text-center">
-                <H2 className="text-black mb-6">Not sure what you need?</H2>
+            <Section className="bg-neutral-900 border-t border-white/5 text-center py-20 lg:py-32" intent="dark">
+                <H2 className="text-white mb-6">Not sure what you need?</H2>
+                <p className="text-lg text-neutral-400 max-w-2xl mx-auto mb-8 data-fade-in">
+                    Reach out and let us know about your listing. We'll help you build the perfect media package.
+                </p>
                 <div className="flex justify-center gap-4">
                     <Link href="/contact">
-                        <Button size="lg" className="bg-black text-white hover:bg-neutral-800">Contact Us</Button>
+                        <Button size="lg" variant="primary">Contact Us</Button>
                     </Link>
                 </div>
             </Section>
