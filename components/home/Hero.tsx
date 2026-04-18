@@ -67,7 +67,7 @@ export function Hero() {
                             </span>
                         </div>
 
-                        <H1 className="text-white">
+                        <H1 className="text-white lg:!text-5xl xl:!text-6xl">
                             Real Estate Photography, Video & 3D Tours <br />
                             <span className="text-neutral-500">for West Texas and Eastern New Mexico Listings</span>
                         </H1>
