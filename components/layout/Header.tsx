@@ -1,126 +1,134 @@
 "use client"
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Menu, X } from 'lucide-react'
-import { Button } from '@/components/shared/Button'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
+import { Button } from '@/components/shared/Button'
+
+const navItems = [
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
+]
+
+const PHONE_DISPLAY = '(806) 341-9922'
+const PHONE_HREF = 'tel:+18063419922'
 
 export function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
-    // Hide site header on Sanity Studio routes so its native UI renders unobstructed
-    if (pathname?.startsWith('/studio')) {
-        return null
-    }
+  // Hide the marketing header on Sanity Studio routes so the Studio UI
+  // (dropdowns, panes) isn't covered by the fixed nav.
+  if (pathname?.startsWith('/studio')) return null
 
-    const closeMenu = () => setIsMenuOpen(false)
+  const closeMenu = () => setIsMenuOpen(false)
+  const ctaHref = process.env.NEXT_PUBLIC_PRIMARY_CTA_URL || '/contact'
 
-    return (
-        <>
-            <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-                <div className="container-custom flex h-16 md:h-24 items-center justify-between">
-                    <div className="flex items-center gap-12">
-                        <Link href="/" className="flex items-center space-x-1 group" onClick={closeMenu}>
-                            <span className="text-2xl font-bold uppercase tracking-[0.2em] text-[#FCD34D]">Light</span>
-                            <span className="text-2xl font-bold uppercase tracking-[0.2em] text-primary group-hover:text-accent transition-colors duration-300">haus</span>
-                        </Link>
-                        <nav className="hidden md:flex items-center gap-8">
-                            <Link href="/portfolio" className="text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary">
-                                Portfolio
-                            </Link>
-                            <Link href="/about" className="text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary">
-                                About
-                            </Link>
-                            <Link href="/services" className="text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary">
-                                Services
-                            </Link>
-                            <Link href="/pricing" className="text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary">
-                                Pricing
-                            </Link>
-                        </nav>
-                    </div>
-                    <div className="flex items-center gap-2 md:gap-4">
-                        <a
-                            href="tel:8063419922"
-                            aria-label="Call Lighthaus Studio at 806-341-9922"
-                            className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
-                        >
-                            <Phone className="h-4 w-4" />
-                            <span>806-341-9922</span>
-                        </a>
-                        <a
-                            href="tel:8063419922"
-                            aria-label="Call Lighthaus Studio at 806-341-9922"
-                            className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/5 text-primary hover:bg-white/10 transition-colors"
-                        >
-                            <Phone className="h-4 w-4" />
-                        </a>
-                        <Link href={process.env.NEXT_PUBLIC_PRIMARY_CTA_URL || "/contact"}>
-                            <Button size="md" variant="primary">Get a Quote</Button>
-                        </Link>
-                        <button
-                            type="button"
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                            aria-expanded={isMenuOpen}
-                            aria-controls="mobile-menu"
-                            className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/5 text-primary hover:bg-white/10 transition-colors"
-                        >
-                            {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-                        </button>
-                    </div>
-                </div>
-            </header>
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/95 backdrop-blur-sm border-b border-neutral-800">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo — image is desktop-only; wordmark shows at all breakpoints */}
+          <Link href="/" onClick={closeMenu} className="flex items-center flex-shrink-0">
+            <Image
+              src="/images/brand/lighthaus-logo.png"
+              alt="Lighthaus Studio"
+              width={40}
+              height={40}
+              priority
+              className="hidden md:block h-10 w-auto"
+            />
+            <span className="md:ml-2 text-white font-semibold tracking-wide text-base md:text-base">
+              LIGHTHAUS
+            </span>
+          </Link>
 
-            {/* Mobile menu dropdown — visible only when toggled, mobile only */}
-            {isMenuOpen && (
-                <div
-                    id="mobile-menu"
-                    className="md:hidden fixed inset-x-0 top-16 z-40 bg-background/95 backdrop-blur-xl border-b border-white/5"
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-neutral-300 hover:text-white transition-colors text-sm lg:text-base"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Right cluster */}
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Desktop-only phone icon */}
+            <Link
+              href={PHONE_HREF}
+              aria-label={`Call ${PHONE_DISPLAY}`}
+              className="hidden md:inline-flex items-center justify-center h-10 w-10 rounded-full border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+            </Link>
+
+            {/* Desktop-only Get a Quote CTA */}
+            <Link href={ctaHref} className="hidden md:inline-block">
+              <Button size="md" variant="primary">Get a Quote</Button>
+            </Link>
+
+            {/* Mobile-only hamburger */}
+            <button
+              type="button"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setIsMenuOpen((v) => !v)}
+              className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md text-neutral-200 hover:text-white hover:bg-neutral-800 transition-colors"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile dropdown */}
+        {isMenuOpen && (
+          <nav
+            id="mobile-menu"
+            className="md:hidden border-t border-neutral-800 py-4"
+          >
+            <ul className="flex flex-col gap-1">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
                     onClick={closeMenu}
+                    className="block px-2 py-3 text-neutral-200 hover:text-white hover:bg-neutral-800 rounded-md text-base"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href={PHONE_HREF}
+                  onClick={closeMenu}
+                  className="flex items-center gap-3 px-2 py-3 text-neutral-200 hover:text-white hover:bg-neutral-800 rounded-md text-base"
                 >
-                    <nav className="container-custom flex flex-col py-2">
-                        <Link
-                            href="/portfolio"
-                            onClick={closeMenu}
-                            className="py-4 text-sm font-semibold uppercase tracking-widest text-primary border-b border-white/5 hover:text-accent transition-colors"
-                        >
-                            Portfolio
-                        </Link>
-                        <Link
-                            href="/about"
-                            onClick={closeMenu}
-                            className="py-4 text-sm font-semibold uppercase tracking-widest text-primary border-b border-white/5 hover:text-accent transition-colors"
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="/services"
-                            onClick={closeMenu}
-                            className="py-4 text-sm font-semibold uppercase tracking-widest text-primary border-b border-white/5 hover:text-accent transition-colors"
-                        >
-                            Services
-                        </Link>
-                        <Link
-                            href="/pricing"
-                            onClick={closeMenu}
-                            className="py-4 text-sm font-semibold uppercase tracking-widest text-primary border-b border-white/5 hover:text-accent transition-colors"
-                        >
-                            Pricing
-                        </Link>
-                        <a
-                            href="tel:8063419922"
-                            onClick={closeMenu}
-                            className="py-4 text-sm font-semibold tracking-wider text-primary flex items-center gap-3 hover:text-accent transition-colors"
-                        >
-                            <Phone className="h-4 w-4" />
-                            806-341-9922
-                        </a>
-                    </nav>
-                </div>
-            )}
-        </>
-    )
+                  <Phone className="h-4 w-4" />
+                  Call {PHONE_DISPLAY}
+                </Link>
+              </li>
+              <li className="pt-2">
+                <Link href={ctaHref} onClick={closeMenu} className="block">
+                  <Button size="md" variant="primary" className="w-full">
+                    Get a Quote
+                  </Button>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        )}
+      </div>
+    </header>
+  )
 }
