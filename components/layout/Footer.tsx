@@ -8,9 +8,9 @@ export function Footer() {
 
   return (
     <footer className="bg-[#050505] py-12 md:py-20 text-neutral-400 border-t border-white/5">
-      <div className="container-custom grid gap-8 md:gap-12 md:grid-cols-4 lg:gap-20">
+      <div className="container-custom grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-12 lg:gap-20">
         {/* Brand + social */}
-        <div className="md:col-span-1 space-y-4">
+        <div className="col-span-2 md:col-span-1 space-y-4">
           <Link href="/" className="inline-flex items-center group -ml-2">
             <Image
               src="/images/brand/lighthaus-logo.png"
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
 
         {/* Services */}
-        <div>
+        <div className="col-span-1">
           <h3 className="mb-3 md:mb-6 text-xs font-bold uppercase tracking-[0.2em] text-white">Services</h3>
           <ul className="space-y-2 md:space-y-4 text-sm">
             <li><Link href="/services" className="hover:text-white transition-colors">HDR Photography</Link></li>
@@ -73,7 +73,7 @@ export function Footer() {
         </div>
 
         {/* Company */}
-        <div>
+        <div className="col-span-1">
           <h3 className="mb-3 md:mb-6 text-xs font-bold uppercase tracking-[0.2em] text-white">Company</h3>
           <ul className="space-y-2 md:space-y-4 text-sm">
             <li><Link href="/portfolio" className="hover:text-white transition-colors">Our Portfolio</Link></li>
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
 
         {/* Contact */}
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <h3 className="mb-3 md:mb-6 text-xs font-bold uppercase tracking-[0.2em] text-white">Contact</h3>
           <ul className="space-y-2 md:space-y-4 text-sm">
             <li className="flex items-start">
@@ -113,8 +113,8 @@ export function Footer() {
           Real estate photography, video, and 3D tours for agents and property owners in Muleshoe, Lubbock, Texas, and Clovis, New Mexico.
         </p>
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-neutral-600 gap-1 md:gap-2">
-          <p>&copy; {currentYear} Lighthaus Studio. All rights reserved.</p>
-          <p>Designed &amp; Developed by Antigravity.</p>
+          <p className="text-center">&copy; {currentYear} Lighthaus Studio. All rights reserved.</p>
+          <p className="text-center">Designed &amp; Developed by Antigravity.</p>
         </div>
       </div>
     </footer>
