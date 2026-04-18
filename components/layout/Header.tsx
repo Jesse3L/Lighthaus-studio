@@ -33,17 +33,24 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo — image is desktop-only; wordmark shows at all breakpoints */}
-          <Link href="/" onClick={closeMenu} className="flex items-center flex-shrink-0">
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className="flex items-center space-x-1 group flex-shrink-0"
+          >
             <Image
               src="/images/brand/lighthaus-logo.png"
               alt="Lighthaus Studio"
               width={40}
               height={40}
               priority
-              className="hidden md:block h-10 w-auto"
+              className="hidden md:block h-10 w-auto mr-2"
             />
-            <span className="md:ml-2 text-white font-semibold tracking-wide text-base md:text-base">
-              LIGHTHAUS
+            <span className="text-2xl font-bold uppercase tracking-[0.2em] text-[#FCD34D]">
+              Light
+            </span>
+            <span className="text-2xl font-bold uppercase tracking-[0.2em] text-primary group-hover:text-accent transition-colors duration-300">
+              haus
             </span>
           </Link>
 
