@@ -10,17 +10,17 @@ export function Footer() {
     <footer className="bg-[#050505] pt-10 pb-8 md:py-20 text-neutral-400 border-t border-white/5">
       <div className="container-custom grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 md:gap-12 lg:gap-20">
         {/* Brand + social */}
-        <div className="col-span-2 md:col-span-1 flex flex-col items-start space-y-2">
-          <Link href="/" className="inline-flex items-center group -ml-2 md:-ml-3">
+        <div className="col-span-2 md:col-span-1 flex flex-row md:flex-col items-center md:items-start justify-between md:justify-start">
+          <Link href="/" className="inline-flex items-center group -ml-2 md:-ml-3 flex-shrink-0">
             <Image
               src="/images/brand/lighthaus-logo.png"
               alt="Lighthaus Studio"
               width={256}
               height={256}
-              className="w-48 md:w-56 h-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
+              className="w-40 sm:w-48 md:w-56 h-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </Link>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-4 pt-4 w-max ml-1 md:ml-0">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-4 pt-1 md:pt-6 w-max ml-auto md:ml-0 shrink-0">
             <a
               href="https://www.instagram.com/thelighthausstudio"
               target="_blank"
@@ -28,7 +28,7 @@ export function Footer() {
               aria-label="Lighthaus Studio on Instagram"
               className="text-neutral-500 hover:text-white transition-colors"
             >
-              <Instagram className="h-6 w-6" />
+              <Instagram className="h-7 w-7" />
             </a>
             <a
               href="https://www.facebook.com/lighthausstudio"
@@ -37,7 +37,7 @@ export function Footer() {
               aria-label="Lighthaus Studio on Facebook"
               className="text-neutral-500 hover:text-white transition-colors"
             >
-              <Facebook className="h-6 w-6" />
+              <Facebook className="h-7 w-7" />
             </a>
             <a
               href="https://share.google/1tkTwCY4ZBdHVCHEQ"
@@ -46,7 +46,7 @@ export function Footer() {
               aria-label="Lighthaus Studio on Google"
               className="text-neutral-500 hover:text-white transition-colors"
             >
-              <MapPin className="h-6 w-6" />
+              <MapPin className="h-7 w-7" />
             </a>
             <a
               href="https://g.page/r/CUiuqaVKRFWKEBM/review"
@@ -55,7 +55,7 @@ export function Footer() {
               aria-label="Leave a Google review"
               className="text-neutral-500 hover:text-white transition-colors"
             >
-              <Star className="h-6 w-6" />
+              <Star className="h-7 w-7" />
             </a>
           </div>
         </div>
