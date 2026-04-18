@@ -53,9 +53,8 @@ export function Hero() {
 
     return (
         <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-neutral-900 pt-20">
-            {/* Background with noise/gradient overlay */}
+            {/* Background gradient overlay */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(50,50,50,0.5),_rgba(0,0,0,1))] opacity-60 pointer-events-none" />
-            <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
 
             <div className="container-custom relative z-10 grid gap-8 lg:gap-12 lg:grid-cols-2 lg:items-center">
                 {/* Text Content */}

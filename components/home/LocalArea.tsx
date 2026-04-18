@@ -14,7 +14,6 @@ export function LocalArea() {
     return (
         <Section intent="dark" className="relative overflow-hidden py-16 lg:py-32">
             {/* Abstract Background Pattern */}
-            <div className="absolute inset-0 z-0 opacity-10 bg-[url('/noise.svg')] bg-repeat" />
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
 
             <div className="relative z-10 container-custom">

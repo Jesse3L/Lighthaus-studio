@@ -76,7 +76,6 @@ export default function LubbockRealEstatePhotographyPage() {
             {/* Section 1 - Hero */}
             <Section className="relative flex min-h-[90vh] items-center overflow-hidden bg-neutral-900 pt-20" intent="dark">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(50,50,50,0.5),_rgba(0,0,0,1))] opacity-60 pointer-events-none" />
-                <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
                 <div className="container-custom relative z-10 grid gap-12 lg:grid-cols-2 items-center">
                     <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
                         <H1 className="text-white">Real Estate Photography in Lubbock, TX</H1>
