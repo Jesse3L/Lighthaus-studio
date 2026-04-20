@@ -72,7 +72,14 @@ export const propertyType = defineType({
       description: "First image is the hero. 25–50 images ideal.",
     }),
     defineField({ name: "videoUrl", type: "url" }),
-    defineField({ name: "matterportUrl", type: "url" }),
+    defineField({ 
+      name: "matterportUrls", 
+      title: "Matterport 3D Tours",
+      type: "array", 
+      of: [{ type: "url" }],
+      description: "Add one or multiple Matterport URLs here"
+    }),
+    defineField({ name: "matterportUrl", type: "url", hidden: true }),
     defineField({ name: "floorPlanImage", type: "propertyImage" }),
     defineField({ name: "facts", type: "propertyFacts" }),
     defineField({

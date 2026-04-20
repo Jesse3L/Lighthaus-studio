@@ -32,7 +32,8 @@ export type Property = {
   shortDescription: string;       // 1 sentence for cards / meta description
   images: PropertyImage[];        // images[0] is the hero by convention
   videoUrl?: string;              // omit if none
-  matterportUrl?: string;         // omit if none
+  matterportUrls?: string[];      // omit if none
+  matterportUrl?: string;         // legacy, kept for types
   floorPlanImage?: PropertyImage; // omit if none
   facts?: PropertyFacts;          // omit if none
   agentSlug?: string;             // omit if none — will link to /agents/[slug] in Fix #18

@@ -129,7 +129,7 @@ export default async function CoBrandedPropertyPage({ params }: Props) {
         </section>
         {property.facts && <PropertyFacts facts={property.facts} />}
         {property.images.length > 1 && <PropertyGallery images={property.images.slice(1)} />}
-        {property.matterportUrl && <PropertyMatterport url={property.matterportUrl} title={`${property.title} 3D Tour`} />}
+        {(property.matterportUrls || property.matterportUrl) && <PropertyMatterport urls={property.matterportUrls} url={property.matterportUrl} title={`${property.title} 3D Tour`} />}
         {property.videoUrl && <PropertyVideo url={property.videoUrl} title={`${property.title} Video Tour`} />}
         {property.floorPlanImage && <PropertyFloorPlan image={property.floorPlanImage} />}
       </article>

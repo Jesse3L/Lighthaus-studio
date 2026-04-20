@@ -20,6 +20,7 @@ const propertyProjection = groq`{
     alt
   },
   videoUrl,
+  matterportUrls,
   matterportUrl,
   "floorPlanImage": floorPlanImage {
     "src": image.asset->url,
@@ -27,7 +28,13 @@ const propertyProjection = groq`{
     "height": image.asset->metadata.dimensions.height,
     alt
   },
-  facts,
+  "facts": {
+    "beds": facts.bedrooms,
+    "baths": facts.bathrooms,
+    "sqft": facts.squareFeet,
+    "lotSize": facts.lotSize,
+    "yearBuilt": facts.yearBuilt
+  },
   "agentSlug": agent->slug.current,
   shotDate,
   publishedAt,
