@@ -25,7 +25,7 @@ export function CommercialPricing() {
                     <div className="mb-8">
                         <h3 className="text-2xl font-bold uppercase tracking-wide opacity-90">Commercial Basic</h3>
                         <div className="mt-2 flex items-baseline">
-                            <span className="text-accent font-bold tracking-widest text-sm uppercase">Starting at $250</span>
+                            <span className="text-accent font-bold tracking-widest text-sm uppercase">Pricing starts at $250</span>
                         </div>
                         <p className="mt-4 text-sm text-neutral-400">
                             Ideal for standard listings that need clean, professional coverage for MLS and marketing.
@@ -49,25 +49,7 @@ export function CommercialPricing() {
                     </ul>
 
                     <div className="mt-auto border-t border-white/10 pt-6">
-                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 mb-4">Pricing Breakdown</div>
-                        <ul className="space-y-3 text-sm text-neutral-300">
-                            <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                                <span>Up to 3,000 sq ft</span>
-                                <span className="font-semibold text-white">$250</span>
-                            </li>
-                            <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                                <span>3,000 – 6,000 sq ft</span>
-                                <span className="font-semibold text-white">$400</span>
-                            </li>
-                            <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                                <span>6,000 – 10,000 sq ft</span>
-                                <span className="font-semibold text-white">$650</span>
-                            </li>
-                            <li className="flex justify-between items-center">
-                                <span>10,000+ sq ft</span>
-                                <span className="font-semibold text-white">Custom Quote</span>
-                            </li>
-                        </ul>
+                        <p className="text-sm text-neutral-300 font-medium">Every project is quoted based on size and scope.</p>
                     </div>
                 </Card>
 
@@ -81,7 +63,7 @@ export function CommercialPricing() {
                     <div className="mb-8">
                         <h3 className="text-2xl font-bold uppercase tracking-wide opacity-90">Commercial Premier</h3>
                         <div className="mt-2 flex items-baseline">
-                            <span className="text-accent font-bold tracking-widest text-sm uppercase">Starting at $350</span>
+                            <span className="text-accent font-bold tracking-widest text-sm uppercase">Pricing starts at $350</span>
                         </div>
                         <p className="mt-4 text-sm text-neutral-300">
                             Best for high-end listings, developers, and businesses that need standout marketing content.
@@ -106,25 +88,7 @@ export function CommercialPricing() {
                     </ul>
 
                     <div className="mt-auto border-t border-white/10 pt-6">
-                        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400 mb-4">Pricing Breakdown</div>
-                        <ul className="space-y-3 text-sm text-neutral-200">
-                            <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                                <span>Up to 3,000 sq ft</span>
-                                <span className="font-semibold text-white">$350</span>
-                            </li>
-                            <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                                <span>3,000 – 6,000 sq ft</span>
-                                <span className="font-semibold text-white">$650</span>
-                            </li>
-                            <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                                <span>6,000 – 10,000 sq ft</span>
-                                <span className="font-semibold text-white">$1,100</span>
-                            </li>
-                            <li className="flex justify-between items-center">
-                                <span>10,000+ sq ft</span>
-                                <span className="font-semibold text-white">Custom Quote</span>
-                            </li>
-                        </ul>
+                        <p className="text-sm text-neutral-200 font-medium">Every project is quoted based on size and scope.</p>
                     </div>
                 </Card>
             </div>
@@ -146,12 +110,11 @@ export function CommercialPricing() {
                     </ul>
                 </Card>
 
-                {/* Clarity */}
+                {/* Agency Partnerships */}
                 <Card variant="outline" className="bg-transparent border-white/10 p-6 lg:p-8 flex flex-col justify-center">
-                    <h3 className="text-lg font-bold mb-4 text-white tracking-wide uppercase">How Pricing Works</h3>
+                    <h3 className="text-lg font-bold mb-4 text-white tracking-wide uppercase">Bulk & Agency Partnerships</h3>
                     <p className="text-sm text-neutral-400 leading-relaxed">
-                        Pricing is based on total square footage and project scope. 
-                        Larger properties, multi-building sites, and custom projects are quoted individually to ensure accurate coverage.
+                        Targeting real estate companies and brokerages looking for a reliable media partner. We offer a <span className="text-accent font-semibold">10% to 15% discount</span> for bulk jobs and multi-property contracts. Every project is quoted individually based on size and specific scope.
                     </p>
                 </Card>
             </div>
