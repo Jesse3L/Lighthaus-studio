@@ -7,12 +7,12 @@ import { FAQ } from "@/components/home/FAQ"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Real Estate Photography Pricing in Lubbock | Lighthaus",
-    description: "Transparent pricing for real estate photography — Base $199, Pro $275, Ultimate $350. Residential + commercial packages for Lubbock and Clovis.",
+    title: "Real Estate Photography Pricing — Clovis NM & Lubbock TX | Lighthaus Studio",
+    description: "Transparent pricing for real estate photography in Clovis NM and Lubbock TX. Base $199, Pro $275, Ultimate $350. HDR photos, 3D tours, drone, and video. No hidden fees.",
     alternates: { canonical: "/pricing" },
     openGraph: {
-        title: "Real Estate Photography Pricing in Lubbock | Lighthaus",
-        description: "Transparent pricing for real estate photography — Base $199, Pro $275, Ultimate $350. Residential + commercial packages for Lubbock and Clovis.",
+        title: "Real Estate Photography Pricing — Clovis NM & Lubbock TX | Lighthaus Studio",
+        description: "Transparent pricing for real estate photography in Clovis NM and Lubbock TX. Base $199, Pro $275, Ultimate $350. HDR photos, 3D tours, drone, and video. No hidden fees.",
     }
 }
 
@@ -58,7 +58,7 @@ const faqSchema = {
       "name": "What areas do you service?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are based in Muleshoe, TX and serve Lubbock, Clovis, Portales, and surrounding West Texas communities. Travel fees may apply for distant locations."
+        "text": "We are based in Muleshoe, TX and serve two primary markets: Lubbock, TX and Clovis, NM. The Clovis corridor includes Portales, Cannon AFB, Texico, Farwell, and Melrose in Eastern New Mexico. The Lubbock corridor includes Plainview, Slaton, Wolfforth, and the surrounding South Plains. Travel fees may apply for locations beyond 60 miles from Muleshoe."
       }
     },
     {
@@ -103,9 +103,9 @@ export default function PricingPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Section className="text-center pb-8" intent="default">
-                <H1 className="mb-4">Real Estate Photo Packages for Lubbock & Clovis Listings</H1>
+                <H1 className="mb-4">Real Estate Photography Pricing — Clovis NM & Lubbock TX</H1>
                 <Lead className="mx-auto max-w-2xl">
-                    Straightforward pricing with no hidden fees. Volume discounts available for teams.
+                    Straightforward pricing with no hidden fees. Serving Clovis NM, Portales NM, and Lubbock TX. Volume discounts available for teams.
                 </Lead>
             </Section>
 

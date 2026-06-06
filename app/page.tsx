@@ -14,12 +14,12 @@ import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: 'Real Estate Photography | West Texas, Eastern NM | Lighthaus',
-    description: 'Real estate photography, 3D tours, and drone video for agents across Lubbock, Clovis, and the West Texas and Eastern NM market. 48-hour delivery.',
+    title: 'Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus Studio',
+    description: 'Real estate photographer serving Clovis NM, Portales NM, Lubbock TX, and Cannon AFB. HDR listing photos, 3D Matterport tours, drone aerials, and walk-through video. MLS-ready files in 48 hours.',
     alternates: { canonical: "/" },
     openGraph: {
-        title: 'Real Estate Photography | West Texas, Eastern NM | Lighthaus',
-        description: 'Real estate photography, 3D tours, and drone video for agents across Lubbock, Clovis, and the West Texas and Eastern NM market. 48-hour delivery.',
+        title: 'Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus Studio',
+        description: 'Real estate photographer serving Clovis NM, Portales NM, Lubbock TX, and Cannon AFB. HDR listing photos, 3D Matterport tours, drone aerials, and walk-through video. MLS-ready files in 48 hours.',
     }
 }
 
@@ -54,10 +54,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How should I prepare the property?",
+      "name": "Do you serve Clovis and Portales, New Mexico?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We recommend ensuring the home is clean, decluttered, and well-lit. We will provide a specific prep checklist upon booking."
+        "text": "Yes — Clovis NM and Portales NM are a core part of our service area. We cover Clovis (Curry County), Portales (Roosevelt County), Texico, Melrose, Farwell, and the surrounding Eastern New Mexico market with no trip charge within 60 miles of Clovis. We're based in Muleshoe, TX — about 30 minutes from Clovis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you photograph listings near Cannon Air Force Base?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, frequently. Cannon AFB is about 7.5 miles west of Clovis on US-84. PCS listings near Cannon are a specialty — we prioritize the Matterport 3D tour and floor plan for those shoots because most buyers are shopping from out of state and can't visit in person before deciding."
       }
     },
     {
@@ -65,7 +73,15 @@ const faqSchema = {
       "name": "What areas do you service?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are based in Muleshoe, TX and serve Lubbock, Clovis, Portales, and surrounding West Texas communities. Travel fees may apply for distant locations."
+        "text": "We are based in Muleshoe, TX and serve two primary markets: Lubbock, TX and Clovis, NM. The Clovis corridor includes Portales, Cannon AFB, Texico, Farwell, and Melrose in Eastern New Mexico. The Lubbock corridor includes Plainview, Slaton, Wolfforth, and the surrounding South Plains. Travel fees may apply for locations beyond 60 miles from Muleshoe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I prepare the property?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend ensuring the home is clean, decluttered, and well-lit. We will provide a specific prep checklist upon booking."
       }
     },
     {
@@ -81,7 +97,7 @@ const faqSchema = {
       "name": "Who are your services for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We work with real estate agents, homeowners, builders, and Airbnb/VRBO hosts looking to market their properties professionally."
+        "text": "We work with real estate agents, homeowners, builders, and Airbnb/VRBO hosts looking to market their properties professionally. We frequently serve CPAR (Clovis/Portales Association of REALTORS) members and Cannon AFB relocation agents."
       }
     },
     {
@@ -111,7 +127,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="mx-auto max-w-4xl text-center mb-8">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Interactive Experience</span>
-            <h2 className="mt-2 text-2xl font-bold text-white">Explore a Virtual Tour (Updated)</h2>
+            <h2 className="mt-2 text-2xl font-bold text-white">Explore a Virtual Tour</h2>
           </div>
           <div className="mx-auto max-w-5xl">
             <MatterportEmbed />

@@ -8,12 +8,12 @@ import { ContactForm } from "@/components/contact/ContactForm"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Book Real Estate Photography in Lubbock, TX | Lighthaus",
-    description: "Schedule a real estate photo shoot in Lubbock, Clovis, or elsewhere in West Texas. Call 806-341-9922 or request a quote in under two minutes.",
+    title: "Book Real Estate Photography — Clovis NM & Lubbock TX | Lighthaus Studio",
+    description: "Schedule a real estate photo shoot in Clovis NM, Portales NM, Lubbock TX, or Cannon AFB. Call 806-341-9922 or request a quote in under two minutes.",
     alternates: { canonical: "/contact" },
     openGraph: {
-        title: "Book Real Estate Photography in Lubbock, TX | Lighthaus",
-        description: "Schedule a real estate photo shoot in Lubbock, Clovis, or elsewhere in West Texas. Call 806-341-9922 or request a quote in under two minutes.",
+        title: "Book Real Estate Photography — Clovis NM & Lubbock TX | Lighthaus Studio",
+        description: "Schedule a real estate photo shoot in Clovis NM, Portales NM, Lubbock TX, or Cannon AFB. Call 806-341-9922 or request a quote in under two minutes.",
     }
 }
 
@@ -31,9 +31,9 @@ export default function ContactPage() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
-                <H1 className="text-white mb-4">Book Your Real Estate Photo Shoot in Lubbock or Clovis</H1>
+                <H1 className="text-white mb-4">Book Your Real Estate Photo Shoot — Clovis NM & Lubbock TX</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
-                    Book a shoot, get a quote, or ask a quick question. The form below sends straight to my phone.
+                    Serving Clovis NM, Portales NM, Cannon AFB, and Lubbock TX. Book a shoot, get a quote, or ask a quick question. The form below sends straight to my phone.
                 </Lead>
             </Section>
 

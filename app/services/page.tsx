@@ -9,12 +9,12 @@ import { Check } from "lucide-react"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Lubbock Real Estate Photography Services | Lighthaus Studio",
-    description: "HDR photography, drone aerials, 4K video tours, Matterport 3D, and floor plans for Lubbock and Clovis real estate listings. Delivered in 48 hours.",
+    title: "Real Estate Photography Services — Clovis NM & Lubbock TX | Lighthaus Studio",
+    description: "HDR listing photos, Matterport 3D virtual tours, drone photography, 4K video, and floor plans for Clovis NM, Portales NM, Lubbock TX, and Eastern New Mexico. 48-hour delivery.",
     alternates: { canonical: "/services" },
     openGraph: {
-        title: "Lubbock Real Estate Photography Services | Lighthaus Studio",
-        description: "HDR photography, drone aerials, 4K video tours, Matterport 3D, and floor plans for Lubbock and Clovis real estate listings. Delivered in 48 hours.",
+        title: "Real Estate Photography Services — Clovis NM & Lubbock TX | Lighthaus Studio",
+        description: "HDR listing photos, Matterport 3D virtual tours, drone photography, 4K video, and floor plans for Clovis NM, Portales NM, Lubbock TX, and Eastern New Mexico. 48-hour delivery.",
     }
 }
 
@@ -149,13 +149,13 @@ export default function ServicesPage() {
               />
             ))}
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
-                <H1 className="text-white mb-4">Real Estate Photography, Drone & 3D Tours for Lubbock Listings</H1>
+                <H1 className="text-white mb-4">Real Estate Photography, Drone & 3D Tours — Clovis NM & Lubbock TX</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
                     Five deliverables, one photographer, 48-hour turnaround. Book one package, mix and match, or build a custom shoot around the listing in front of you.
                 </Lead>
                 <div className="mt-6 mx-auto max-w-2xl">
                     <p className="text-neutral-300">
-                        Serving real estate agents across West Texas and Eastern New Mexico — most shoots happen in <Link href="/real-estate-photography-lubbock-tx" className="text-accent hover:underline font-medium">Lubbock</Link>, <Link href="/real-estate-photography-clovis-nm" className="text-accent hover:underline font-medium">Clovis</Link>, and the surrounding MLS coverage area.
+                        Serving real estate agents across Clovis NM, Portales NM, Cannon AFB, and Lubbock TX — most shoots happen in <Link href="/real-estate-photography-lubbock-tx" className="text-accent hover:underline font-medium">Lubbock</Link>, <Link href="/real-estate-photography-clovis-nm" className="text-accent hover:underline font-medium">Clovis NM</Link>, and the surrounding MLS coverage area.
                     </p>
                 </div>
             </Section>

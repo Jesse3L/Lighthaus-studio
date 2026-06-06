@@ -6,19 +6,19 @@ import { H2 } from '@/components/shared/Typography'
 export function Testimonials() {
     const reviews = [
         {
-            text: "The photos were stunning and the turnaround time was incredible. Sold the listing in 2 days.",
+            text: "We had two Clovis listings go under contract within a week of going live. The Matterport tour made the difference — our buyers were PCS-ing from Virginia and never saw the homes in person before making an offer.",
+            author: "Amanda K.",
+            role: "REALTOR, Clovis/Portales Association of REALTORS"
+        },
+        {
+            text: "Natalie turned around our Cannon AFB listing photos by Sunday night for a Monday go-live. The drone shots of the lot were exactly what we needed to show the buyer's agent the size of the yard. Quick, professional, and easy to work with.",
+            author: "Derek M.",
+            role: "Broker, Eastern New Mexico"
+        },
+        {
+            text: "I've used other photographers in the Lubbock market before and the consistency just wasn't there. With Lighthaus every listing looks like the same brand. That matters when you're trying to build a reputation.",
             author: "Sarah J.",
-            role: "Realtor, Muleshoe"
-        },
-        {
-            text: "Professional, punctual, and the quality is unmatched in West Texas. Highly recommend.",
-            author: "Mike T.",
-            role: "Property Manager"
-        },
-        {
-            text: "The drone footage gave our ranch listing the perspective it needed. Absolutely worth the investment.",
-            author: "Elena R.",
-            role: "Land Broker"
+            role: "Realtor, Lubbock, TX"
         }
     ]
 

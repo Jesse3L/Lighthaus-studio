@@ -20,8 +20,8 @@ export function TrustStrip() {
         },
         {
             icon: Star,
-            title: "Local to West Texas",
-            desc: "Based in Muleshoe. No travel fees in Lubbock, Clovis, Portales, or Plainview.",
+            title: "Clovis NM & Lubbock TX — No Travel Fees",
+            desc: "Based in Muleshoe, TX — 30 minutes from Clovis, NM and 90 minutes from Lubbock. No trip charge for Clovis, Portales, Cannon AFB, Lubbock, or Plainview.",
         },
     ]
 

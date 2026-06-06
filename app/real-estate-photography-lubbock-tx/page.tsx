@@ -7,16 +7,88 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Real Estate Photography in Lubbock, TX | Lighthaus Studio",
-  description: "HDR photography, 3D tours, video, and drone for Lubbock real estate listings. 48-hour delivery, packages from $199. Serving every Lubbock neighborhood.",
+  title: "Real Estate Photographer Lubbock TX | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
+  description: "Real estate photographer serving Lubbock TX and the South Plains. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages from $199.",
   alternates: {
     canonical: "/real-estate-photography-lubbock-tx",
   },
   openGraph: {
-    title: "Real Estate Photography in Lubbock, TX | Lighthaus Studio",
-    description: "HDR photography, 3D tours, video, and drone for Lubbock real estate listings. 48-hour delivery, packages from $199.",
+    title: "Real Estate Photographer Lubbock TX | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
+    description: "Real estate photographer serving Lubbock TX and the South Plains. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages from $199.",
     type: "website",
   },
+};
+
+const lubbockFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.lighthausstudio.com/real-estate-photography-lubbock-tx#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best real estate photographer in Lubbock TX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lighthaus Studio is a real estate photographer serving Lubbock TX and the South Plains. Owner-operator Natalie shoots, edits, and delivers every listing herself. Services include HDR listing photos, Matterport 3D virtual tours, FAA Part 107 aerial drone photography, and walk-through video. Files are delivered within 48 hours of every shoot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer listing photos for the Lubbock TX MLS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Photos are delivered in the exact dimensions and file sizes the Lubbock Association of Realtors MLS requires, sized for both thumbnail and full-gallery display. No resizing work on your end."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer 3D virtual tours in Lubbock TX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Lighthaus Studio offers Matterport 3D virtual tours for listings in Lubbock TX and the surrounding South Plains. Tours are captured with a Matterport Pro3 and delivered on a shareable link. Useful for Texas Tech relocations, Dallas and Austin buyer leads, and any listing where the buyer can't visit in person."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer aerial drone photography in Lubbock TX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Lighthaus Studio provides FAA Part 107 licensed aerial drone photography and video for Lubbock listings. Especially valuable for LakeRidge, Vintage Township, and larger-lot properties where location and lot size are part of the story."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge travel fees for Lubbock shoots?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Lighthaus does not charge travel fees for any listing inside Lubbock city limits, including Wolfforth, Slaton, and Shallowater. Listings more than 20 miles outside Lubbock proper may carry a modest travel quote, which we confirm upfront before booking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can you book a Lubbock listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Lubbock shoots get scheduled within one business day of your request. Weekend availability is subject to booking load — text 806-341-9922 if you need same-day scheduling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time of day works best for Lubbock exterior shots?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "West Texas exteriors photograph best about two hours after sunrise or two hours before sunset, when the sun is angled enough to show texture on brick and siding without blowing out the sky. Twilight exteriors — shot during the 20-minute blue hour after sunset — work especially well for higher-end LakeRidge and Vintage Township listings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my Lubbock listing has a pool, a large lot, or an outbuilding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pool photos are included in every standard package. Large lots, acreage, and outbuildings are where the FAA Part 107 drone coverage pays off the most — aerial stills give buyers a sense of property scale and neighborhood context that interior photos cannot show."
+      }
+    }
+  ]
 };
 
 const breadcrumbSchema = {
@@ -47,6 +119,18 @@ const lubbockServiceSchema = {
 export default function LubbockRealEstatePhotographyPage() {
     const faqs = [
         {
+            q: "Who is the best real estate photographer in Lubbock TX?",
+            a: "Lighthaus Studio is a real estate photographer serving Lubbock TX and the South Plains. Owner-operator Natalie shoots, edits, and delivers every listing herself — HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video, all delivered within 48 hours."
+        },
+        {
+            q: "Do you offer listing photos for the Lubbock TX MLS?",
+            a: "Yes. Photos are delivered in the exact dimensions and file sizes the Lubbock Association of Realtors MLS requires, sized for both thumbnail and full-gallery display. No resizing work on your end."
+        },
+        {
+            q: "Do you offer 3D virtual tours in Lubbock TX?",
+            a: "Yes. Lighthaus Studio offers Matterport 3D virtual tours for listings in Lubbock TX and the surrounding South Plains. Tours are captured with a Matterport Pro3 and delivered on a shareable link. Useful for Texas Tech relocations, Dallas and Austin buyer leads, and any listing where the buyer can't visit in person."
+        },
+        {
             q: "Do you charge travel fees for Lubbock shoots?",
             a: "No. Lighthaus does not charge travel fees for any listing inside Lubbock city limits, including Wolfforth, Slaton, and Shallowater. Listings more than 20 miles outside Lubbock proper may carry a modest travel quote, which we confirm upfront before booking."
         },
@@ -72,15 +156,16 @@ export default function LubbockRealEstatePhotographyPage() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(lubbockServiceSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(lubbockFaqSchema) }} />
 
             {/* Section 1 - Hero */}
             <Section className="relative flex min-h-[90vh] items-center overflow-hidden bg-neutral-900 pt-20" intent="dark">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(50,50,50,0.5),_rgba(0,0,0,1))] opacity-60 pointer-events-none" />
                 <div className="container-custom relative z-10 grid gap-12 lg:grid-cols-2 items-center">
                     <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
-                        <H1 className="text-white">Real Estate Photography in Lubbock, TX</H1>
+                        <H1 className="text-white">Real Estate Photographer in Lubbock, TX</H1>
                         <Lead className="max-w-xl text-neutral-400">
-                            HDR stills, Matterport 3D tours, cinematic walkthrough video, drone coverage, and floor plans for Lubbock agents and homeowners. Every shoot delivered within 48 hours.
+                            HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for Lubbock TX agents and the South Plains MLS. Every shoot delivered within 48 hours.
                         </Lead>
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <Link href="/contact" className="w-full sm:w-auto">
@@ -125,27 +210,27 @@ export default function LubbockRealEstatePhotographyPage() {
             {/* Section 3 - What We Shoot in Lubbock */}
             <Section className="bg-secondary/50">
                 <div className="mb-12 max-w-3xl">
-                    <H2 className="mb-6">What We Shoot in Lubbock</H2>
+                    <H2 className="mb-6">Real estate media services for Lubbock TX listings</H2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Every Lubbock shoot combines five deliverables in a single on-site visit — no scheduling a second appointment, no paying a separate vendor for video or drone coverage. Here is what is included:
+                        Every Lubbock shoot combines five deliverables in a single on-site visit — no scheduling a second appointment, no paying a separate vendor for video or drone coverage. Whether you need listing photos, a 3D virtual tour, aerial drone photography, or the full Lubbock TX real estate media stack, here is what is included:
                     </p>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
-                        <h3 className="mb-3 text-xl font-bold text-primary">HDR Real Estate Photography</h3>
-                        <p className="text-muted-foreground leading-relaxed">20 to 30 hand-blended HDR stills per Lubbock listing, shot on a Canon R8. Every room, every exterior angle, and twilight exteriors when the West Texas sky cooperates.</p>
+                        <h3 className="mb-3 text-xl font-bold text-primary">HDR Listing Photos — Lubbock TX</h3>
+                        <p className="text-muted-foreground leading-relaxed">20 to 30 hand-blended HDR stills per Lubbock listing, shot on a Canon R8. Every room, every exterior angle, and twilight exteriors when the West Texas sky cooperates. MLS-ready file sizes delivered with every package.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
-                        <h3 className="mb-3 text-xl font-bold text-primary">Matterport Pro3 3D Tours</h3>
-                        <p className="text-muted-foreground leading-relaxed">Walkthrough and dollhouse scans that let out-of-town buyers tour a Lubbock home from anywhere. Useful for Texas Tech families, relocations from Dallas and Austin, and listings aimed at buyers who cannot tour in person before making an offer.</p>
+                        <h3 className="mb-3 text-xl font-bold text-primary">3D Virtual Tours — Lubbock TX</h3>
+                        <p className="text-muted-foreground leading-relaxed">Matterport 3D virtual tours captured with a Matterport Pro3. Let out-of-town buyers tour a Lubbock home from anywhere — useful for Texas Tech families, relocations from Dallas and Austin, and listings aimed at buyers who cannot tour in person before making an offer.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
                         <h3 className="mb-3 text-xl font-bold text-primary">Cinematic Video Tours</h3>
                         <p className="text-muted-foreground leading-relaxed">60 to 90 second branded video for Lubbock MLS video fields, Instagram Reels, and agent social posts. Music-matched and cut to highlight the home's flow.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
-                        <h3 className="mb-3 text-xl font-bold text-primary">FAA Part 107 Drone Coverage</h3>
-                        <p className="text-muted-foreground leading-relaxed">Aerial stills and video of the lot, roofline, and neighborhood context. Licensed for commercial use under FAA Part 107 — especially valuable for listings in LakeRidge, Vintage Township, and properties on larger lots where location is part of the story.</p>
+                        <h3 className="mb-3 text-xl font-bold text-primary">Aerial Drone Photography — Lubbock TX</h3>
+                        <p className="text-muted-foreground leading-relaxed">FAA Part 107 licensed aerial drone photography and video of the lot, roofline, and neighborhood context — especially valuable for listings in LakeRidge, Vintage Township, and properties on larger lots where location is part of the story.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
                         <h3 className="mb-3 text-xl font-bold text-primary">2D Floor Plans with Room Dimensions</h3>
@@ -235,7 +320,7 @@ export default function LubbockRealEstatePhotographyPage() {
             <Section className="bg-transparent">
                 <div className="mx-auto max-w-4xl">
                     <div className="mb-10 lg:mb-16 text-center">
-                        <H2 className="mt-4">Lubbock Real Estate Photography — Common Questions</H2>
+                        <H2 className="mt-4">Lubbock TX Real Estate Photographer — Common Questions</H2>
                     </div>
 
                     <div className="divide-y divide-white/10">

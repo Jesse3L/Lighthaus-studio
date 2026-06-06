@@ -115,3 +115,22 @@ export async function getAllAgentSlugs(): Promise<string[]> {
     { next: { revalidate: 60, tags: ["agent"] } }
   );
 }
+
+export async function getSelectedWork() {
+  return client.fetch(
+    groq`*[_type == "homepageSettings"][0] {
+      "selectedWork": selectedWork[] {
+        "label": coalesce(label, property->title),
+        "category": coalesce(category, "Interior"),
+        "propertySlug": property->slug.current,
+        "src": image.asset->url,
+        "width": image.asset->metadata.dimensions.width,
+        "height": image.asset->metadata.dimensions.height,
+        "lqip": image.asset->metadata.lqip,
+        "alt": coalesce(image.asset->altText, label, property->title)
+      }
+    }`,
+    {},
+    { next: { revalidate: 60, tags: ["homepageSettings"] } }
+  );
+}

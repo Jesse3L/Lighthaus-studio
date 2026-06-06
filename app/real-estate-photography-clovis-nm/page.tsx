@@ -2,18 +2,90 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Real Estate Photography in Clovis, NM | Lighthaus Studio",
+  title: "Real Estate Photographer Clovis NM | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
   description:
-    "HDR real estate photography, 3D Matterport tours, video walk-throughs, and drone coverage for listings in Clovis and Portales, NM. 48-hour delivery. Packages start at $199.",
+    "Real estate photographer serving Clovis NM, Portales NM, and Cannon AFB. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages start at $199.",
   alternates: {
     canonical: "/real-estate-photography-clovis-nm",
   },
   openGraph: {
-    title: "Real Estate Photography in Clovis, NM | Lighthaus Studio",
+    title: "Real Estate Photographer Clovis NM | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
     description:
-      "HDR real estate photography, 3D Matterport tours, video walk-throughs, and drone coverage for listings in Clovis and Portales, NM. 48-hour delivery. Packages start at $199.",
+      "Real estate photographer serving Clovis NM, Portales NM, and Cannon AFB. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages start at $199.",
     type: "website",
   },
+};
+
+const clovisFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.lighthausstudio.com/real-estate-photography-clovis-nm#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best real estate photographer in Clovis NM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lighthaus Studio is a real estate photographer based in Muleshoe, TX — about 30 minutes from Clovis, NM. Owner-operator Natalie shoots, edits, and delivers every listing herself. Services include HDR interior photography, Matterport 3D virtual tours, aerial drone photography, and walk-through video. Files are delivered within 48 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer 3D virtual tours in Clovis NM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Lighthaus Studio offers Matterport 3D virtual tours for listings in Clovis NM and Portales NM. Tours are captured with a Matterport Pro3 and hosted on a shareable link. Ideal for out-of-state buyers and Cannon AFB PCS relocation listings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer aerial drone photography in Clovis NM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Lighthaus Studio provides FAA Part 107 licensed aerial drone photography and video for listings in Clovis, Portales, Texico, Melrose, and surrounding Eastern New Mexico. Especially useful for acreage, agricultural, and large-lot listings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover both Clovis and Portales in the same shoot day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Portales is 20 minutes south of Clovis, so we schedule two shoots on the same day regularly. No extra trip fee between the two towns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with Cannon AFB relocation listings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, often. For PCS listings we recommend the Matterport tour and floor plan at minimum, because most of your buyer pool is shopping from another state and needs to measure rooms before they can decide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can you turn a shoot around for a Monday listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shoot on Friday or Saturday, deliver by Sunday night, live Monday. If the timeline is tighter than 48 hours, ask and we will tell you honestly whether we can hit it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a full Clovis listing package cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Packages start at $199. Most Clovis and Portales agents book the middle tier that includes HDR photos, drone, video, and the Matterport tour. Full pricing is on the pricing page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you travel outside Clovis and Portales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, within a 60-mile radius of Clovis at no trip charge. That covers Melrose, Texico, Farwell, Muleshoe, and most of the small towns along US-60 and US-84. Farther out, ask and we will quote travel."
+      }
+    }
+  ]
 };
 
 const breadcrumbSchema = {
@@ -73,16 +145,13 @@ export default function ClovisPage() {
       {/* HERO */}
       <section className="px-6 py-20 md:py-28 max-w-5xl mx-auto">
         <p className="text-sm uppercase tracking-widest text-neutral-500 mb-4">
-          Serving Clovis, Portales, and Eastern New Mexico
+          Clovis NM Real Estate Photographer — Serving Clovis, Portales, Cannon AFB & Eastern New Mexico
         </p>
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-          Real Estate Photography in Clovis, NM
+          Real Estate Photographer in Clovis, NM
         </h1>
         <p className="text-lg md:text-xl text-neutral-700 max-w-3xl mb-8">
-          HDR interior photography, 3D Matterport tours, walk-through video, and drone
-          coverage for listings across Clovis, Cannon Air Force Base, Portales, and the
-          small towns between. Shot with a Canon R8, edited the same night, delivered
-          inside 48 hours. Packages start at $199.
+          HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for agents in Clovis NM, Portales NM, and Cannon AFB. MLS-ready files delivered inside 48 hours. Packages start at $199.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
@@ -131,29 +200,33 @@ export default function ClovisPage() {
       {/* SERVICES */}
       <section className="px-6 py-20 max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-          What we shoot for Clovis listings
+          Real estate media services for Clovis NM listings
         </h2>
         <p className="text-neutral-700 mb-10 max-w-3xl">
           Every package is built around how Eastern New Mexico buyers actually search.
           A lot of out-of-state military families never see your listing in person
-          before they make an offer, so the visuals have to do the walkthrough for you.
+          before they make an offer — the visuals have to do the walkthrough for you.
+          Whether you need listing photos, a 3D virtual tour, drone aerials, or all of
+          the above, we cover the full Clovis NM real estate media stack in one shoot.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="border border-neutral-200 p-6 rounded">
-            <h3 className="text-xl font-semibold mb-2">HDR interior photography</h3>
+            <h3 className="text-xl font-semibold mb-2">HDR listing photos — Clovis NM</h3>
             <p className="text-neutral-700">
               Hand-blended HDR frames that hold window detail on Clovis&apos; bright
-              west-facing exposures without blowing out. Shot with a Canon R8 on a
-              leveled tripod so the verticals stay vertical and the floors read flat.
+              west-facing exposures without blowing out. Shot on a leveled tripod so
+              the verticals stay vertical and the floors read flat. MLS-ready file
+              sizes delivered with every package.
             </p>
           </div>
           <div className="border border-neutral-200 p-6 rounded">
-            <h3 className="text-xl font-semibold mb-2">3D Matterport tours</h3>
+            <h3 className="text-xl font-semibold mb-2">3D virtual tours — Clovis NM</h3>
             <p className="text-neutral-700">
-              Captured with a Matterport Pro3 so a PCS buyer stationed at Cannon can
-              walk your listing from anywhere in the world at 2 a.m. and still measure
-              a bedroom before their in-person window closes.
+              Matterport 3D virtual tours captured with a Matterport Pro3 so a PCS
+              buyer stationed at Cannon can walk your listing from anywhere in the
+              world at 2 a.m. and still measure a bedroom before their in-person
+              window closes.
             </p>
           </div>
           <div className="border border-neutral-200 p-6 rounded">
@@ -165,11 +238,11 @@ export default function ClovisPage() {
             </p>
           </div>
           <div className="border border-neutral-200 p-6 rounded">
-            <h3 className="text-xl font-semibold mb-2">Aerial photography and video</h3>
+            <h3 className="text-xl font-semibold mb-2">Aerial drone photography — Clovis NM</h3>
             <p className="text-neutral-700">
-              Drone coverage flown under FAA Part 107 standards for acreage listings
-              west of Clovis, agricultural property around Melrose and Texico, and
-              larger lots in Portales where lot size is the whole story.
+              FAA Part 107 licensed aerial drone photography and video for acreage
+              listings west of Clovis, agricultural property around Melrose and Texico,
+              and larger lots in Portales where lot size is the whole story.
             </p>
           </div>
           <div className="border border-neutral-200 p-6 rounded md:col-span-2">
@@ -336,10 +409,14 @@ export default function ClovisPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ with FAQPage schema */}
       <section className="px-6 py-20 max-w-5xl mx-auto">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(clovisFaqSchema) }}
+        />
         <h2 className="text-3xl md:text-4xl font-semibold mb-10">
-          Clovis real estate photography FAQ
+          Clovis NM real estate photographer — FAQ
         </h2>
         <div className="space-y-8">
           <div>
@@ -398,11 +475,12 @@ export default function ClovisPage() {
       <section className="px-6 py-20 bg-black text-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-semibold mb-6">
-            Next shoot starts at $199
+            Real estate photographer in Clovis NM — starting at $199
           </h2>
           <p className="text-lg text-neutral-300 mb-10">
-            Book your Clovis or Portales listing now. Photos, video, Matterport, and
-            drone back in your inbox inside 48 hours.
+            Book your Clovis NM or Portales listing now. HDR photos, walk-through video,
+            Matterport 3D virtual tour, and aerial drone photography — back in your inbox
+            inside 48 hours.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link

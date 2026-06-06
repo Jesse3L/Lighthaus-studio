@@ -6,9 +6,10 @@ import Link from 'next/link'
 
 export function LocalArea() {
     const locations = [
-        { city: "Muleshoe, TX", desc: "Home Base", delay: "0" },
-        { city: "Lubbock, TX", desc: "Primary Market", delay: "100" },
-        { city: "Clovis, NM", desc: "Service Region", delay: "200" },
+        { city: "Muleshoe, TX", desc: "Home Base", detail: "Our home base in Bailey County, TX — centrally located between both our primary markets.", delay: "0" },
+        { city: "Lubbock, TX", desc: "Primary Market", detail: "Serving Lubbock and the surrounding South Plains communities. HDR photography, video, drone, and Matterport for all price points.", delay: "100" },
+        { city: "Clovis, NM", desc: "Eastern NM Market", detail: "Real estate photographer serving Clovis, NM (Curry County), Portales, Cannon AFB, and Eastern New Mexico. No trip charge within 60 miles of Clovis.", delay: "200" },
+        { city: "Portales, NM", desc: "Roosevelt County", detail: "Covering Portales and ENMU-area listings. Faculty housing, first-time buyers, and rural properties — 20 miles south of Clovis, same-day shoot scheduling.", delay: "300" },
     ]
 
     return (
@@ -21,11 +22,11 @@ export function LocalArea() {
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Service Area</span>
                     <H2 className="mt-4 text-white">We Come To You</H2>
                     <Lead className="mt-6 text-neutral-400 mx-auto">
-                        Lighthaus Studio provides on-location real estate media services across West Texas and Eastern New Mexico. No travel fees within our primary zones.
+                        Lighthaus Studio provides real estate photography, 3D tours, drone coverage, and listing video across West Texas and Eastern New Mexico — including Clovis NM, Portales NM, Cannon AFB, and Lubbock TX. No travel fees within our primary zones.
                     </Lead>
                 </div>
 
-                <div className="grid gap-8 md:grid-cols-3">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {locations.map((loc, i) => (
                         <div key={i} className="group relative overflow-hidden rounded-2xl bg-neutral-800/50 border border-white/5 p-6 sm:p-8 hover:bg-neutral-800 transition-all duration-300 hover:border-accent/30 hover:-translate-y-1">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -45,11 +46,16 @@ export function LocalArea() {
                                         <Link href="/real-estate-photography-clovis-nm" className="hover:text-accent transition-colors underline decoration-white/20 underline-offset-4">
                                             {loc.city}
                                         </Link>
+                                    ) : loc.city === "Portales, NM" ? (
+                                        <Link href="/real-estate-photography-clovis-nm" className="hover:text-accent transition-colors underline decoration-white/20 underline-offset-4">
+                                            {loc.city}
+                                        </Link>
                                     ) : (
                                         loc.city
                                     )}
                                 </h3>
-                                <p className="text-sm text-neutral-400 uppercase tracking-wider font-medium">{loc.desc}</p>
+                                <p className="text-sm text-neutral-400 uppercase tracking-wider font-medium mb-3">{loc.desc}</p>
+                                <p className="text-sm text-neutral-500 leading-relaxed">{loc.detail}</p>
                             </div>
                         </div>
                     ))}

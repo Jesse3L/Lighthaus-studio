@@ -16,12 +16,20 @@ export function FAQ() {
             a: "Photos deliver within 48 hours of the shoot. Video walkthroughs and Matterport 3D tours deliver within 72 hours. Need it faster? Rush availability is on request and quoted per job."
         },
         {
-            q: "How should I prepare the property?",
-            a: "We recommend ensuring the home is clean, decluttered, and well-lit. We will provide a specific prep checklist upon booking."
+            q: "Do you serve Clovis and Portales, New Mexico?",
+            a: "Yes — Clovis NM and Portales NM are a core part of our service area. We cover Clovis (Curry County), Portales (Roosevelt County), Texico, Melrose, Farwell, and the surrounding Eastern New Mexico market with no trip charge within 60 miles of Clovis. We're based in Muleshoe, TX — about 30 minutes from Clovis."
+        },
+        {
+            q: "Do you photograph listings near Cannon Air Force Base?",
+            a: "Yes, frequently. Cannon AFB is about 7.5 miles west of Clovis on US-84. PCS listings near Cannon are a specialty — we prioritize the Matterport 3D tour and floor plan for those shoots because most buyers are shopping from out of state and can't visit in person before deciding."
         },
         {
             q: "What areas do you service?",
-            a: "We are based in Muleshoe, TX and serve Lubbock, Clovis, Portales, and surrounding West Texas communities. Travel fees may apply for distant locations."
+            a: "We are based in Muleshoe, TX and serve two primary markets: Lubbock, TX and Clovis, NM. The Clovis corridor includes Portales, Cannon AFB, Texico, Farwell, and Melrose in Eastern New Mexico. The Lubbock corridor includes Plainview, Slaton, Wolfforth, and the surrounding South Plains. Travel fees may apply for locations beyond 60 miles from Muleshoe."
+        },
+        {
+            q: "How should I prepare the property?",
+            a: "We recommend ensuring the home is clean, decluttered, and well-lit. We will provide a specific prep checklist upon booking."
         },
         {
             q: "How are files delivered?",
@@ -29,7 +37,7 @@ export function FAQ() {
         },
         {
             q: "Who are your services for?",
-            a: "We work with real estate agents, homeowners, builders, and Airbnb/VRBO hosts looking to market their properties professionally."
+            a: "We work with real estate agents, homeowners, builders, and Airbnb/VRBO hosts looking to market their properties professionally. We frequently serve CPAR (Clovis/Portales Association of REALTORS) members and Cannon AFB relocation agents."
         },
         {
             q: "How do I get started?",

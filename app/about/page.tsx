@@ -4,12 +4,12 @@ import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "About Natalie — Lubbock Real Estate Photographer | Lighthaus",
-    description: "Meet Natalie, the Muleshoe-based photographer behind Lighthaus Studio. HDR, drone, and Matterport work for real estate agents in Lubbock and Clovis.",
+    title: "About Natalie — Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus",
+    description: "Meet Natalie, the photographer behind Lighthaus Studio. Real estate photography, drone aerials, and Matterport 3D tours for agents in Clovis NM, Portales NM, and Lubbock TX.",
     alternates: { canonical: "/about" },
     openGraph: {
-        title: "About Natalie — Lubbock Real Estate Photographer | Lighthaus",
-        description: "Meet Natalie, the Muleshoe-based photographer behind Lighthaus Studio. HDR, drone, and Matterport work for real estate agents in Lubbock and Clovis.",
+        title: "About Natalie — Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus",
+        description: "Meet Natalie, the photographer behind Lighthaus Studio. Real estate photography, drone aerials, and Matterport 3D tours for agents in Clovis NM, Portales NM, and Lubbock TX.",
     }
 }
 
@@ -19,6 +19,7 @@ const personSchema = {
   "@id": "https://www.lighthausstudio.com/about#natalie",
   "name": "Natalie",
   "jobTitle": "Lead Real Estate Photographer and Owner",
+  "description": "Natalie is the owner and photographer behind Lighthaus Studio, providing real estate photography, Matterport 3D virtual tours, aerial drone photography, and listing video for agents in Clovis NM, Portales NM, Lubbock TX, and the Cannon AFB corridor.",
   "image": "https://www.lighthausstudio.com/images/about/natalie-lighthaus-studio-photographer.jpg",
   "url": "https://www.lighthausstudio.com/about",
   "worksFor": { "@id": "https://www.lighthausstudio.com/#organization" },
@@ -27,12 +28,16 @@ const personSchema = {
     "HDR Interior Photography",
     "Matterport 3D Virtual Tours",
     "Real Estate Video Tours",
-    "Aerial Drone Photography"
+    "Aerial Drone Photography",
+    "Listing Photography Clovis NM",
+    "MLS Photos Clovis NM"
   ],
   "areaServed": [
-    { "@type": "City", "name": "Lubbock" },
-    { "@type": "City", "name": "Clovis" },
-    { "@type": "City", "name": "Muleshoe" }
+    { "@type": "City", "name": "Lubbock", "containedInPlace": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "Clovis", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
+    { "@type": "City", "name": "Portales", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
+    { "@type": "City", "name": "Cannon Air Force Base", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
+    { "@type": "City", "name": "Muleshoe", "containedInPlace": { "@type": "State", "name": "Texas" } }
   ],
   "sameAs": []
 };
