@@ -300,7 +300,7 @@ export default function LubbockRealEstatePhotographyPage() {
                     </section>
                     <section>
                         <h3 className="text-xl font-bold mb-3">Property managers and short-term rental hosts</h3>
-                        <p className="text-lg text-muted-foreground leading-relaxed">Airbnb and VRBO hosts near Texas Tech, downtown Lubbock, and the Depot District use the same photo and 3D tour package to stand out against the hundreds of Lubbock-area rentals competing for weekend bookings.</p>
+                        <p className="text-lg text-muted-foreground leading-relaxed">Airbnb and VRBO hosts near Texas Tech, downtown Lubbock, and the Depot District use our specialized <Link href="/airbnb-photography-lubbock-tx-clovis-nm" className="text-accent hover:underline font-medium">Airbnb & Short-Term Rental Photography</Link> packages to stand out against the hundreds of Lubbock-area rentals competing for weekend bookings.</p>
                     </section>
                     <section>
                         <h3 className="text-xl font-bold mb-3">On-Location Shoots vs. Physical Rental Studios</h3>

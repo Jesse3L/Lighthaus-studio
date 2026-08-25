@@ -68,7 +68,7 @@ export function Footer() {
             <li><Link href="/services" className="hover:text-white transition-colors">Cinematic Video</Link></li>
             <li><Link href="/services" className="hover:text-white transition-colors">Matterport 3D</Link></li>
             <li><Link href="/services" className="hover:text-white transition-colors">Drone / Aerial</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors">Virtual Staging</Link></li>
+            <li><Link href="/airbnb-photography-lubbock-tx-clovis-nm" className="hover:text-white transition-colors">Airbnb Photography</Link></li>
           </ul>
         </div>
 
