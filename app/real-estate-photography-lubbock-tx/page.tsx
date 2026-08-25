@@ -87,6 +87,14 @@ const lubbockFaqSchema = {
         "@type": "Answer",
         "text": "Pool photos are included in every standard package. Large lots, acreage, and outbuildings are where the FAA Part 107 drone coverage pays off the most — aerial stills give buyers a sense of property scale and neighborhood context that interior photos cannot show."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the story behind the name Lighthaus Studio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lighthaus Studio (often spelled 'Light Haus' or referred to as the 'haus of light') represents our commitment to capturing West Texas and Eastern New Mexico homes in the best possible light. We focus on bright, natural interior illumination and clean architectural lines."
+      }
     }
   ]
 };
@@ -149,6 +157,10 @@ export default function LubbockRealEstatePhotographyPage() {
         {
             q: "What if my Lubbock listing has a pool, a large lot, or an outbuilding?",
             a: "Pool photos are included in every standard package. Large lots, acreage, and outbuildings are where the FAA Part 107 drone coverage pays off the most — aerial stills give buyers a sense of property scale and neighborhood context that interior photos cannot show. Ranch-style listings outside the city are a common use case."
+        },
+        {
+            q: "What is the story behind the name Lighthaus Studio?",
+            a: "Lighthaus Studio (often spelled 'Light Haus' or referred to as the 'haus of light') represents our commitment to capturing West Texas and Eastern New Mexico homes in the best possible light. We focus on bright, natural interior illumination and clean architectural lines."
         }
     ]
 
@@ -165,7 +177,7 @@ export default function LubbockRealEstatePhotographyPage() {
                     <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
                         <H1 className="text-white">Real Estate Photographer in Lubbock, TX</H1>
                         <Lead className="max-w-xl text-neutral-400">
-                            HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for Lubbock TX agents and the South Plains MLS. Every shoot delivered within 48 hours.
+                            HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for Lubbock TX agents and the South Plains MLS. As one of the leading Lubbock photography studios, we deliver every shoot within 48 hours.
                         </Lead>
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <Link href="/contact" className="w-full sm:w-auto">
@@ -212,7 +224,7 @@ export default function LubbockRealEstatePhotographyPage() {
                 <div className="mb-12 max-w-3xl">
                     <H2 className="mb-6">Real estate media services for Lubbock TX listings</H2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Every Lubbock shoot combines five deliverables in a single on-site visit — no scheduling a second appointment, no paying a separate vendor for video or drone coverage. Whether you need listing photos, a 3D virtual tour, aerial drone photography, or the full Lubbock TX real estate media stack, here is what is included:
+                        Every Lubbock shoot combines five deliverables in a single on-site visit — no scheduling a second appointment, no paying a separate vendor for video or drone coverage. While many general <strong>photography studios in Lubbock</strong> focus on traditional portraits, Lighthaus Studio is a dedicated <strong>Lubbock photography studio</strong> specializing exclusively in high-end real estate, architecture, and commercial space marketing. If you are comparing local <strong>Lubbock photo studios</strong> to find the right partner for your listings, here is what is included in our comprehensive photography packages:
                     </p>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -289,6 +301,10 @@ export default function LubbockRealEstatePhotographyPage() {
                     <section>
                         <h3 className="text-xl font-bold mb-3">Property managers and short-term rental hosts</h3>
                         <p className="text-lg text-muted-foreground leading-relaxed">Airbnb and VRBO hosts near Texas Tech, downtown Lubbock, and the Depot District use the same photo and 3D tour package to stand out against the hundreds of Lubbock-area rentals competing for weekend bookings.</p>
+                    </section>
+                    <section>
+                        <h3 className="text-xl font-bold mb-3">On-Location Shoots vs. Physical Rental Studios</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">While portrait photographers, influencers, and product creators often search for a physical creative rental space like a <strong>light room in Lubbock</strong> or a local <strong>Lubbock lightroom</strong> studio to host their clients, Lighthaus Studio is built for on-site execution. We bring the studio lighting, drone capabilities, and high-end cameras directly to your listing or commercial property, turning the property itself into the perfect photography environment.</p>
                     </section>
                 </div>
             </Section>

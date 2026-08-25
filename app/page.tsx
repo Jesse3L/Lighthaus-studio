@@ -14,12 +14,12 @@ import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: 'Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus Studio',
-    description: 'Real estate photographer serving Clovis NM, Portales NM, Lubbock TX, and Cannon AFB. HDR listing photos, 3D Matterport tours, drone aerials, and walk-through video. MLS-ready files in 48 hours.',
+    title: 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio',
+    description: 'Lighthaus Studio is a premier real estate photographer and Lubbock photography studio. Serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D virtual tours, and drone aerials.',
     alternates: { canonical: "/" },
     openGraph: {
-        title: 'Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus Studio',
-        description: 'Real estate photographer serving Clovis NM, Portales NM, Lubbock TX, and Cannon AFB. HDR listing photos, 3D Matterport tours, drone aerials, and walk-through video. MLS-ready files in 48 hours.',
+        title: 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio',
+        description: 'Lighthaus Studio is a premier real estate photographer and Lubbock photography studio. Serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D virtual tours, and drone aerials.',
     }
 }
 

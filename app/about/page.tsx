@@ -84,7 +84,7 @@ export default function AboutPage() {
                         
                         <div className="space-y-6 text-neutral-300 leading-relaxed text-lg font-light">
                             <p>
-                                I'm Natalie — the photographer behind Lighthaus Studio. I shoot real estate, Airbnb, and short-form listing video for agents and property owners across Lubbock, Clovis, Muleshoe, Portales, and the West Texas–Eastern New Mexico market.
+                                I'm Natalie — the photographer behind Lighthaus Studio (often spelled Light Haus or referred to as the "haus of light"). I shoot real estate, Airbnb, and short-form listing video for agents and property owners across Lubbock, Clovis, Muleshoe, Portales, and the West Texas–Eastern New Mexico market.
                             </p>
 
                             <p>

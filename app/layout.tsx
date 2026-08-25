@@ -16,19 +16,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lighthausstudio.com"),
-  title: 'Lighthaus Studio — Real Estate Photographer in Clovis NM & Lubbock TX',
-  description: 'Real estate photographer serving Clovis NM, Lubbock TX, Portales NM, and Cannon AFB. HDR listing photos, Matterport 3D tours, drone aerials, and video. MLS-ready files in 48 hours.',
+  title: 'Lighthaus Studio — Real Estate Photographer & Lubbock Photography Studio',
+  description: 'Real estate photographer and Lubbock photography studio serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D tours, drone aerials, and video.',
   openGraph: {
-    title: 'Lighthaus Studio — Real Estate Photographer in Clovis NM & Lubbock TX',
-    description: 'Real estate photographer serving Clovis NM, Lubbock TX, Portales NM, and Cannon AFB. HDR listing photos, Matterport 3D tours, drone aerials, and video. MLS-ready files in 48 hours.',
+    title: 'Lighthaus Studio — Real Estate Photographer & Lubbock Photography Studio',
+    description: 'Real estate photographer and Lubbock photography studio serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D tours, drone aerials, and video.',
     siteName: 'Lighthaus Studio',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lighthaus Studio — Real Estate Photographer in Clovis NM & Lubbock TX',
-    description: 'Real estate photographer serving Clovis NM, Lubbock TX, Portales NM, and Cannon AFB. HDR listing photos, Matterport 3D tours, drone aerials, and video. MLS-ready files in 48 hours.',
+    title: 'Lighthaus Studio — Real Estate Photographer & Lubbock Photography Studio',
+    description: 'Real estate photographer and Lubbock photography studio serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D tours, drone aerials, and video.',
   }
 }
 
