@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getSitePhotos } from "@/sanity/lib/site-photos"
 import { Section } from "@/components/shared/Section";
 import { H1, H2, H3, Lead } from "@/components/shared/Typography";
 import { Card } from "@/components/shared/Card";
@@ -94,7 +95,8 @@ const airbnbServiceSchema = {
   "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "199", "availability": "https://schema.org/InStock" }
 };
 
-export default function AirbnbPhotographyPage() {
+export default async function AirbnbPhotographyPage() {
+  const photos = await getSitePhotos()
   const benefits = [
     {
       icon: Eye,
@@ -182,8 +184,9 @@ export default function AirbnbPhotographyPage() {
           </div>
           <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in delay-200">
             <Image 
-              src="/images/home/bright-open-living-room-lubbock.jpg"
-              alt="Lubbock Airbnb listing showing beautiful interior lighting and staging by Lighthaus Studio" 
+              src={photos.airbnbHero.src}
+              alt={photos.airbnbHero.alt}
+              style={photos.airbnbHero.position ? { objectPosition: photos.airbnbHero.position } : undefined} 
               fill 
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover" 
@@ -240,8 +243,9 @@ export default function AirbnbPhotographyPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl">
             <Image 
-              src="/images/home/luxury-master-bathroom-lubbock.jpg"
-              alt="Editorial close-up and staging details captured by Lighthaus Studio" 
+              src={photos.airbnbSecond.src}
+              alt={photos.airbnbSecond.alt}
+              style={photos.airbnbSecond.position ? { objectPosition: photos.airbnbSecond.position } : undefined} 
               fill 
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover" 

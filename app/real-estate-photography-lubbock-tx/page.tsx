@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getSitePhotos } from "@/sanity/lib/site-photos"
 import { Section } from "@/components/shared/Section";
 import { H1, H2, Lead } from "@/components/shared/Typography";
 import { Card } from "@/components/shared/Card";
@@ -125,7 +126,8 @@ const lubbockServiceSchema = {
   "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "199", "availability": "https://schema.org/InStock" }
 };
 
-export default function LubbockRealEstatePhotographyPage() {
+export default async function LubbockRealEstatePhotographyPage() {
+    const { lubbockHero } = await getSitePhotos()
     const faqs = [
         {
             q: "Who is the best real estate photographer in Lubbock TX?",
@@ -191,8 +193,9 @@ export default function LubbockRealEstatePhotographyPage() {
                     </div>
                     <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in delay-200">
                         <Image 
-                            src="/images/home/modern-home-exterior-lubbock.jpg"
-                            alt="Lubbock real estate listing photographed by Lighthaus Studio" 
+                            src={lubbockHero.src}
+                            alt={lubbockHero.alt}
+                            style={lubbockHero.position ? { objectPosition: lubbockHero.position } : undefined} 
                             fill 
                             sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover" 

@@ -25,9 +25,18 @@ export default defineConfig({
                   .schemaType("homepageSettings")
                   .documentId("homepageSettings")
               ),
+            S.listItem()
+              .title("Site Photos")
+              .id("sitePhotos")
+              .icon(() => "📷")
+              .child(
+                S.document()
+                  .schemaType("sitePhotos")
+                  .documentId("sitePhotos")
+              ),
             S.divider(),
             // Standard document lists
-            S.documentTypeListItem("property").title("Properties"),
+            S.documentTypeListItem("property").title("Properties (portfolio listings)"),
             S.documentTypeListItem("agent").title("Agents"),
           ]),
     }),

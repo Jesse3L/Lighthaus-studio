@@ -1,14 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
+import { getSitePhotos } from "@/sanity/lib/site-photos"
 
-export function AboutPreview() {
+export async function AboutPreview() {
+  const { aboutPhoto: p } = await getSitePhotos()
   return (
     <section className="bg-neutral-900 py-20 md:py-28">
       <div className="container-custom grid items-center gap-12 md:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-md md:max-w-none">
           <Image
-            src="/images/about/natalie-lighthaus-studio-photographer.jpg"
-            alt="Natalie, owner and lead real estate photographer at Lighthaus Studio"
+            src={p.src}
+            alt={p.alt}
+            style={p.position ? { objectPosition: p.position } : undefined}
             fill
             sizes="(max-width: 768px) 80vw, 40vw"
             className="object-cover"

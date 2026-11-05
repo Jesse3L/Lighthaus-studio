@@ -8,6 +8,7 @@ import { faqSchema } from '@/lib/home-faq'
 import { FAQ } from '@/components/home/FAQ'
 import { PricingPreview } from '@/components/home/PricingPreview'
 import { FinalCTA } from '@/components/home/FinalCTA'
+import { getSitePhotos } from '@/sanity/lib/site-photos'
 
 // Only the towns listed in lib/service-areas.ts exist; anything else 404s.
 export const dynamicParams = false
@@ -30,13 +31,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const PHOTOS = [
-  '/images/home/modern-home-exterior-lubbock.jpg',
-  '/images/home/bright-open-living-room-lubbock.jpg',
-  '/images/home/contemporary-kitchen-lubbock.jpg',
-  '/images/home/open-concept-dining-living-lubbock.jpg',
-  '/images/home/luxury-master-bathroom-lubbock.jpg',
-]
 
 export default async function ServiceAreaPage({ params }: Props) {
   const { area } = await params
@@ -44,6 +38,7 @@ export default async function ServiceAreaPage({ params }: Props) {
   if (!a) notFound()
 
   const index = SERVICE_AREAS.indexOf(a)
+  const heroPhoto = (await getSitePhotos()).townPhoto(a.slug, index)
   const url = `${SITE_URL}/${a.slug}`
   const place = `${a.city}, ${a.state}`
   const servesHosts = a.listingTypes.some((t) => /airbnb|vrbo|short-term/i.test(t.title))
@@ -84,7 +79,7 @@ export default async function ServiceAreaPage({ params }: Props) {
       ))}
 
       <section className="relative isolate overflow-hidden bg-neutral-950 pt-32 pb-16 md:pt-44 md:pb-20">
-        <Image src={PHOTOS[index % PHOTOS.length]} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-35" />
+        <Image src={heroPhoto.src} alt="" fill priority sizes="100vw" style={heroPhoto.position ? { objectPosition: heroPhoto.position } : undefined} className="-z-20 object-cover opacity-35" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40" />
         <div className="container-custom">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-neutral-400">

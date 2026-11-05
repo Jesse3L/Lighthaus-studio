@@ -1,4 +1,5 @@
 import { Section } from "@/components/shared/Section"
+import { getSitePhotos } from "@/sanity/lib/site-photos"
 import { H1, H2, Lead } from "@/components/shared/Typography"
 import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
@@ -51,7 +52,8 @@ const breadcrumbSchema = {
   ]
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    const { aboutPhoto } = await getSitePhotos()
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
@@ -68,8 +70,9 @@ export default function AboutPage() {
                     {/* Sticky Image Section */}
                     <div className="lg:col-span-5 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl lg:sticky lg:top-32">
                         <img
-                            src="/images/about/natalie-lighthaus-studio-photographer.jpg"
-                            alt="Natalie - Owner of Lighthaus Studio"
+                            src={aboutPhoto.src}
+                            alt={aboutPhoto.alt}
+                            style={aboutPhoto.position ? { objectPosition: aboutPhoto.position } : undefined}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none" />

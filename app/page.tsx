@@ -13,6 +13,7 @@ import { FAQ } from "@/components/home/FAQ"
 import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
 import { HOME_FAQS, faqSchema } from "@/lib/home-faq"
+import { getSitePhotos } from "@/sanity/lib/site-photos"
 
 export const metadata: Metadata = {
     title: 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio',
@@ -25,14 +26,15 @@ export const metadata: Metadata = {
 }
 
 // Home Page Component
-export default function Home() {
+export default async function Home() {
+  const photos = await getSitePhotos()
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(HOME_FAQS, "https://www.lighthausstudio.com/#faq")) }}
       />
-      <Hero />
+      <Hero slides={photos.heroSlides} />
       <TrustStrip />
       <PortfolioPreview />
 

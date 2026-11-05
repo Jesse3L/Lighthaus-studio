@@ -5,6 +5,8 @@ import { propertyImageType } from "./objects/propertyImage";
 import { propertyFactsType } from "./objects/propertyFacts";
 import { agentSocialLinksType } from "./objects/agentSocialLinks";
 import { homepageSettingsType } from "./homepageSettings";
+import { sitePhotosType } from "./sitePhotos";
+import { sitePhotoType } from "./objects/sitePhoto";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -14,5 +16,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     propertyFactsType,
     agentSocialLinksType,
     homepageSettingsType,
+    sitePhotosType,
+    sitePhotoType,
   ],
 };

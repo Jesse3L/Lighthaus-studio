@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { getSitePhotos } from '@/sanity/lib/site-photos'
 
 const SERVICES = [
   {
@@ -29,7 +30,9 @@ const SERVICES = [
   },
 ]
 
-export function ServicesGrid() {
+export async function ServicesGrid() {
+  const { services } = await getSitePhotos()
+  const fp = services.floorPlan
   return (
     <section className="bg-neutral-900 py-20 md:py-28">
       <div className="container-custom grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
@@ -41,8 +44,9 @@ export function ServicesGrid() {
           </p>
           <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-lg lg:block">
             <Image
-              src="/images/services/floor-plan-example.jpg"
-              alt="2D floor plan with room dimensions created from a Matterport scan"
+              src={fp.src}
+              alt={fp.alt}
+              style={fp.position ? { objectPosition: fp.position } : undefined}
               fill
               sizes="40vw"
               className="object-cover"

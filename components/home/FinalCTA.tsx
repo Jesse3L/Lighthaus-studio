@@ -1,13 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { BUSINESS, STARTING_PRICE } from '@/lib/business'
+import { getSitePhotos } from '@/sanity/lib/site-photos'
 
-export function FinalCTA({ heading = 'Get your next listing on the market looking its best' }: { heading?: string }) {
+export async function FinalCTA({ heading = 'Get your next listing on the market looking its best' }: { heading?: string }) {
+  const { ctaBackground: bg } = await getSitePhotos()
   return (
     <section className="relative isolate overflow-hidden bg-neutral-950">
       <Image
-        src="/images/home/open-concept-dining-living-lubbock.jpg"
+        src={bg.src}
         alt=""
+        style={bg.position ? { objectPosition: bg.position } : undefined}
         fill
         sizes="100vw"
         className="-z-20 object-cover opacity-40"

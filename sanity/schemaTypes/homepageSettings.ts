@@ -9,11 +9,11 @@ export const homepageSettingsType = defineType({
   fields: [
     defineField({
       name: "selectedWork",
-      title: "Selected Work",
+      title: "Recent listings (home page)",
       type: "array",
       description:
-        "Choose up to 6 photos to feature in the 'Selected Work' section on the homepage. Drag to reorder. The first and fourth images display wide (16:9); the rest display tall (4:5).",
-      validation: (r) => r.max(6),
+        "Photos for the 'Recent listings' grid on the home page. Use 3, 6, or 9 photos so the grid fills evenly. The first photo displays large. Drag to reorder.",
+      validation: (r) => r.max(9),
       of: [
         {
           type: "object",
@@ -41,7 +41,7 @@ export const homepageSettingsType = defineType({
               title: "Label",
               type: "string",
               description:
-                "Short caption shown on hover (e.g. 'Open Concept Living'). Defaults to property title if left blank.",
+                "Short caption shown under the photo (e.g. 'Open Concept Living'). Defaults to the property title if left blank.",
             }),
             defineField({
               name: "category",

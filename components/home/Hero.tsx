@@ -4,40 +4,21 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { STARTING_PRICE } from '@/lib/business'
+import type { HeroSlide } from '@/sanity/lib/site-photos'
 
-const SLIDES = [
-  {
-    src: '/images/home/modern-home-exterior-lubbock.jpg',
-    alt: 'Brick home exterior photographed for a West Texas real estate listing',
-    label: 'Exterior',
-  },
-  {
-    src: '/images/home/bright-open-living-room-lubbock.jpg',
-    alt: 'Bright open-concept living room photographed for a real estate listing',
-    label: 'Living room',
-  },
-  {
-    src: '/images/home/contemporary-kitchen-lubbock.jpg',
-    alt: 'Contemporary kitchen with balanced window light, photographed for an MLS listing',
-    label: 'Kitchen',
-  },
-  {
-    src: '/images/home/luxury-master-bathroom-lubbock.jpg',
-    alt: 'Master bathroom photographed with HDR for a real estate listing',
-    label: 'Primary bath',
-  },
-]
 
-export function Hero() {
+export function Hero({ slides }: { slides: HeroSlide[] }) {
+  const SLIDES = slides
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
 
   useEffect(() => {
     if (paused) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (SLIDES.length < 2) return
     const t = setInterval(() => setCurrent((c) => (c + 1) % SLIDES.length), 6500)
     return () => clearInterval(t)
-  }, [paused])
+  }, [paused, SLIDES.length])
 
   return (
     <section className="relative isolate flex min-h-[92svh] items-end overflow-hidden bg-neutral-950">
@@ -50,6 +31,7 @@ export function Hero() {
           fill
           priority={i === 0}
           sizes="100vw"
+          style={s.position ? { objectPosition: s.position } : undefined}
           className={`-z-20 object-cover transition-opacity duration-[1400ms] ease-out ${i === current ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
@@ -90,7 +72,7 @@ export function Hero() {
             </dl>
           </div>
 
-          <div
+          {SLIDES.length > 1 && <div
             className="flex gap-2"
             role="group"
             aria-label="Choose a photo"
@@ -109,7 +91,7 @@ export function Hero() {
                 <Image src={s.src} alt="" fill sizes="96px" className="object-cover" />
               </button>
             ))}
-          </div>
+          </div>}
         </div>
       </div>
     </section>

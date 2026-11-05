@@ -1,4 +1,5 @@
 import { Section } from "@/components/shared/Section"
+import { getSitePhotos } from "@/sanity/lib/site-photos"
 import { H1, H2, Lead } from "@/components/shared/Typography"
 import { Card } from "@/components/shared/Card"
 import { Button } from "@/components/shared/Button"
@@ -106,39 +107,36 @@ const breadcrumbSchema = {
   ]
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+    const { services: sp } = await getSitePhotos()
     const services = [
         {
             id: "hdr-photography",
             title: "HDR Photography",
             desc: "Hand-blended HDR frames shot with a Canon R8 on a leveled tripod. Window light holds, verticals stay vertical, floors read flat. Blue-sky replacement is included for the days the West Texas sky does not cooperate.",
             features: ["Blue Sky Guarantee", "TV Screen Replacement", "Fireplace Fire Addition", "Window View Clarity"],
-            image: "/images/home/luxury-master-bathroom-lubbock.jpg",
-            imageAlt: "HDR interior photograph of a Lubbock master bathroom with balanced window light and warm fixtures"
+            photo: sp.hdr
         },
         {
             id: "video",
             title: "Cinematic Video Tours",
             desc: "Stabilized 4K video walk-throughs with licensed music, delivered as a 16:9 cut for MLS and a 9:16 vertical for Reels and stories. One shoot, every format an agent actually posts.",
             features: ["4K Resolution", "Licensed Music", "Branded & Unbranded Links", "Social Media Cut (Vertical)"],
-            image: "/images/home/open-concept-dining-living-lubbock.jpg",
-            imageAlt: "Open-concept dining and living room in a Lubbock listing, framed for video walkthrough"
+            photo: sp.video
         },
         {
             id: "drone",
             title: "Aerial / Drone",
             desc: "FAA Part 107-compliant aerial stills and 4K video, flown to show the lot line, the roof condition, and the approach from the main road. Useful on acreage, corner lots, and rural listings where the structure is only half the story.",
             features: ["High-Res Stills", "4K Aerial Video", "Lot and Approach Context", "Roof Condition Coverage"],
-            image: "/images/home/modern-home-exterior-lubbock.jpg",
-            imageAlt: "Exterior of a modern Lubbock home, the type of property where drone coverage adds lot and roofline context"
+            photo: sp.drone
         },
         {
             id: "matterport",
             title: "Matterport 3D Tours",
             desc: "Captured with a Matterport Pro3 so buyers walk the floor plan themselves, measure rooms, and see the doll-house view before they ever book a showing. Cuts the tire-kicker tours out of your calendar.",
             features: ["Dollhouse View", "Measurement Tool", "Schematic Floor Plan Generation", "VR Compatible"],
-            image: "/images/home/bright-open-living-room-lubbock.jpg",
-            imageAlt: "Bright open living room in a Lubbock listing, the kind of volume Matterport's 3D capture showcases clearly"
+            photo: sp.matterport
         }
     ]
 
@@ -188,8 +186,9 @@ export default function ServicesPage() {
                             <div className={`${i % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                                 <div className="relative aspect-video rounded-lg overflow-hidden bg-neutral-800">
                                     <Image
-                                        src={s.image}
-                                        alt={s.imageAlt}
+                                        src={s.photo.src}
+                                        alt={s.photo.alt}
+                                        style={s.photo.position ? { objectPosition: s.photo.position } : undefined}
                                         fill
                                         sizes="(max-width: 1024px) 100vw, 50vw"
                                         className="object-cover"
@@ -216,8 +215,8 @@ export default function ServicesPage() {
                     </div>
                     <div className="bg-neutral-800 p-8 rounded-lg">
                         <img
-                            src="/images/services/floor-plan-example.jpg"
-                            alt="Example 2D floor plan with room dimensions generated from a Matterport scan"
+                            src={sp.floorPlan.src}
+                            alt={sp.floorPlan.alt}
                             className="w-full h-auto shadow-lg rounded"
                         />
                     </div>
