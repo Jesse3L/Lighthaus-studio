@@ -1,5 +1,5 @@
 const STEPS = [
-  { title: 'Request a quote', body: 'Fill out the form or text (806) 341-9922. We confirm a shoot date within one business day.' },
+  { title: 'Request a shoot', body: 'Pick a package and a date online, or text (806) 341-9922. Natalie emails to confirm the time and total.' },
   { title: 'We shoot on site', body: 'About 60 to 90 minutes at the property. Photos, 3D scan, drone, video, and floor plan in one visit.' },
   { title: 'Media in your inbox', body: 'Photos within 48 hours, video and 3D tours within 72. One gallery link with every file you need.' },
 ]

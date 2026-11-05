@@ -36,12 +36,12 @@ export function PricingPreview({ heading = 'Straightforward pricing' }: { headin
                   ))}
                 </ul>
                 <Link
-                  href="/contact"
+                  href={`/contact?package=${encodeURIComponent(p.name)}`}
                   className={`mt-9 inline-flex h-11 items-center justify-center rounded-md text-sm font-semibold transition-colors ${
                     popular ? 'bg-accent text-accent-foreground hover:bg-accent-hover' : 'border border-neutral-600 text-neutral-100 hover:border-neutral-300'
                   }`}
                 >
-                  Book {p.name}
+                  Request {p.name}
                 </Link>
               </div>
             )

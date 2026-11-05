@@ -26,7 +26,7 @@ const COMPANY_LINKS = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/about', label: 'About Natalie' },
   { href: '/agents', label: 'Agent pages' },
-  { href: '/contact', label: 'Book a shoot' },
+  { href: '/contact', label: 'Request a shoot' },
   { href: '/terms', label: 'Terms of service' },
 ]
 

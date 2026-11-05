@@ -1,12 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Suspense } from "react"
 import { Mail, Phone, MapPin, MessageSquare } from "lucide-react"
 import { ContactForm } from "@/components/contact/ContactForm"
 import { BUSINESS, SITE_URL, TRAVEL_POLICY, TURNAROUND, STARTING_PRICE } from "@/lib/business"
 
-const title = "Book Real Estate Photography in Clovis NM & Lubbock TX | Lighthaus Studio"
+const title = "Book Real Estate Photography in Clovis NM & Lubbock TX | Request a Shoot | Lighthaus Studio"
 const description =
-  "Request a quote for real estate photography in Clovis, Portales, Cannon AFB, Lubbock, and towns within 100 miles. Call or text 806-341-9922. Packages from $199."
+  "Request a real estate or Airbnb photo shoot in Clovis, Portales, Cannon AFB, Lubbock, Amarillo, and towns in between. Pick a package and date; Natalie confirms by email. From $199."
 
 export const metadata: Metadata = {
   title,
@@ -38,11 +39,12 @@ export default function ContactPage() {
         <div className="container-custom grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <div>
             <h1 className="text-4xl font-bold leading-[1.05] text-neutral-50 sm:text-5xl">
-              Book a shoot in Clovis, Lubbock, or anywhere in between
+              Request a shoot
             </h1>
             <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-neutral-300">
-              Tell us about the listing and we&apos;ll send pricing and the next open dates. Packages start at ${STARTING_PRICE}, and
-              photos arrive within {TURNAROUND.photos} of the shoot.
+              Pick a package and a date that works. Natalie checks her calendar and emails you to confirm the time and total,
+              usually within an hour during business hours. Packages start at ${STARTING_PRICE}, and photos arrive within{" "}
+              {TURNAROUND.photos} of the shoot.
             </p>
 
             <ul className="mt-10 divide-y divide-neutral-800 border-y border-neutral-800">
@@ -77,8 +79,10 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-6 sm:p-8 lg:p-10">
-            <h2 className="mb-6 text-2xl font-bold text-neutral-50">Request a quote</h2>
-            <ContactForm />
+            <h2 className="sr-only">Shoot request form</h2>
+            <Suspense fallback={null}>
+              <ContactForm />
+            </Suspense>
           </div>
         </div>
       </section>

@@ -59,7 +59,7 @@ export function Header() {
             href={ctaHref}
             className="hidden h-10 items-center rounded-md bg-accent px-5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent-hover sm:inline-flex"
           >
-            Get a quote
+            Request a shoot
           </Link>
           <button
             type="button"
@@ -89,7 +89,7 @@ export function Header() {
                 Call
               </a>
               <Link href={ctaHref} onClick={() => setOpen(false)} className="inline-flex h-12 items-center justify-center rounded-md bg-accent font-semibold text-accent-foreground">
-                Get a quote
+                Request a shoot
               </Link>
             </li>
           </ul>

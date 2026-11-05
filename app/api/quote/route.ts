@@ -10,7 +10,10 @@ import { NextResponse } from 'next/server'
 
 export const runtime = 'nodejs'
 
-const FIELDS = ['name', 'email', 'phone', 'city', 'service', 'message', 'page'] as const
+const FIELDS = [
+  'name', 'email', 'phone', 'brokerage', 'city', 'address', 'sqft', 'service', 'addOns',
+  'preferredDate', 'backupDate', 'timeWindow', 'notes', 'message', 'page',
+] as const
 type Lead = Partial<Record<(typeof FIELDS)[number], string>>
 
 function clean(v: unknown, max = 2000) {
@@ -29,7 +32,7 @@ async function sendBackupEmail(lead: Lead) {
       from: process.env.LEAD_FROM_EMAIL || 'Lighthaus Website <onboarding@resend.dev>',
       to: [to],
       reply_to: lead.email || undefined,
-      subject: `New quote request: ${lead.name || 'Website visitor'}${lead.city ? ` (${lead.city})` : ''}`,
+      subject: `Shoot request: ${lead.name || 'Website visitor'}${lead.city ? `, ${lead.city}` : ''}${lead.preferredDate ? ` on ${lead.preferredDate}` : ''}`,
       text: body,
     }),
   })
@@ -55,6 +58,24 @@ export async function POST(req: Request) {
   if (!lead.name || !lead.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
     return NextResponse.json({ ok: false, error: 'Please add your name and a valid email.' }, { status: 400 })
   }
+
+  // Readable summary in `message`, so the existing Zap / email shows the whole
+  // request without remapping fields. Individual fields are sent too.
+  const lines = [
+    'SHOOT REQUEST (not confirmed yet, reply to confirm)',
+    `Package: ${lead.service || '-'}`,
+    lead.addOns && `Add-ons: ${lead.addOns}`,
+    `Town: ${lead.city || '-'}`,
+    lead.address && `Address: ${lead.address}`,
+    lead.sqft && `Square feet: ${lead.sqft}`,
+    lead.preferredDate && `Preferred date: ${lead.preferredDate}${lead.timeWindow ? ` (${lead.timeWindow})` : ''}`,
+    lead.backupDate && `Backup date: ${lead.backupDate}`,
+    lead.brokerage && `Brokerage: ${lead.brokerage}`,
+    lead.phone && `Phone: ${lead.phone}`,
+    lead.notes && `Notes: ${lead.notes}`,
+    lead.message && lead.message !== lead.notes && `Message: ${lead.message}`,
+  ].filter(Boolean)
+  lead.message = lines.join('\n')
 
   const payload = { ...lead, submittedAt: new Date().toISOString(), source: 'lighthausstudio.com' }
   const webhook = process.env.ZAPIER_WEBHOOK_URL || process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL

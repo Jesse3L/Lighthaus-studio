@@ -230,7 +230,7 @@ export default async function ServicesPage() {
                 </p>
                 <div className="flex justify-center gap-4">
                     <Link href="/contact">
-                        <Button size="lg" variant="beam">Request a quote</Button>
+                        <Button size="lg" variant="beam">Request a shoot</Button>
                     </Link>
                 </div>
             </Section>

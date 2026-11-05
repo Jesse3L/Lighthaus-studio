@@ -110,8 +110,8 @@ export default async function ServiceAreaPage({ params }: Props) {
             </div>
           </dl>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="inline-flex h-13 items-center justify-center rounded-md bg-accent px-8 text-base font-semibold text-accent-foreground hover:bg-accent-hover">
-              Get a quote for {a.city}
+            <Link href={`/contact?town=${encodeURIComponent(place)}`} className="inline-flex h-13 items-center justify-center rounded-md bg-accent px-8 text-base font-semibold text-accent-foreground hover:bg-accent-hover">
+              Request a shoot in {a.city}
             </Link>
             <Link
               href={servesHosts ? '/airbnb-photography-lubbock-tx-clovis-nm' : '/portfolio'}

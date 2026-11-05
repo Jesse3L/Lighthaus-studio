@@ -26,7 +26,7 @@ export async function FinalCTA({ heading = 'Get your next listing on the market 
             href="/contact"
             className="inline-flex h-13 items-center justify-center rounded-md bg-accent px-8 text-base font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
           >
-            Request a quote
+            Request a shoot
           </Link>
           <a
             href={BUSINESS.smsHref}

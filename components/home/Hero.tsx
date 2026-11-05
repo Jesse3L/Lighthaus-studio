@@ -56,7 +56,7 @@ export function Hero({ slides }: { slides: HeroSlide[] }) {
                 href="/contact"
                 className="inline-flex h-13 items-center justify-center rounded-md bg-accent px-8 text-base font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
               >
-                Get a quote
+                Request a shoot
               </Link>
               <Link
                 href="/portfolio"
