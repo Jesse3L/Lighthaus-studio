@@ -1,4 +1,4 @@
-// Service-area towns within roughly 100 miles of Clovis, NM.
+// Service-area towns within roughly 100 miles of Clovis, NM, plus Amarillo.
 // Each town has its own copy so the pages are genuinely useful, not templated duplicates.
 // Mileages are approximate road miles from Clovis.
 
@@ -265,7 +265,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
         a: "Yes. Drone aerials are included in the Pro and Ultimate packages, and they're the most useful part of the media for ranch and farm listings.",
       },
     ],
-    nearby: ["real-estate-photography-friona-tx", "real-estate-photography-clovis-nm", "real-estate-photography-tucumcari-nm"],
+    nearby: ["real-estate-photography-canyon-tx", "real-estate-photography-amarillo-tx", "real-estate-photography-friona-tx", "real-estate-photography-tucumcari-nm"],
   },
   {
     slug: "real-estate-photography-littlefield-tx",
@@ -462,6 +462,104 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
     ],
     nearby: ["real-estate-photography-clovis-nm", "real-estate-photography-hereford-tx", "airbnb-photography-lubbock-tx-clovis-nm"],
+  },
+  {
+    slug: "real-estate-photography-canyon-tx",
+    city: "Canyon",
+    state: "TX",
+    stateName: "Texas",
+    county: "Randall County",
+    milesFromClovis: 95,
+    route: "US-60 through Hereford, about an hour and a half northeast of Clovis",
+    travelFee: true,
+    metaTitle: "Real Estate & Airbnb Photographer Canyon TX | Palo Duro Rentals & Listings | Lighthaus Studio",
+    metaDescription:
+      "Real estate and Airbnb / VRBO photography in Canyon, TX. Listing photos for realtors, rental photos for hosts near Palo Duro Canyon and WTAMU, drone aerials, and Matterport 3D tours.",
+    h1: "Real estate and vacation rental photography in Canyon, Texas",
+    intro: [
+      "Canyon works two ways. Realtors list family homes and acreage for buyers who want a small-town feel twenty minutes from Amarillo, and hosts run Airbnb and VRBO rentals for the visitors who come for Palo Duro Canyon and West Texas A&M weekends.",
+      "We shoot for both. Listing photos are built for the MLS and for buyers comparing Canyon against Amarillo. Rental photos are built for booking sites, where guests decide in a few seconds of scrolling whether your place looks like the one they want.",
+    ],
+    listingTypes: [
+      {
+        title: "Airbnb and VRBO rentals near Palo Duro Canyon",
+        body: "Cabins, guest houses, and homes that host canyon visitors need bright, inviting interiors, detail shots of the amenities guests search for, and twilight exteriors that stand out in the search results.",
+      },
+      {
+        title: "Listings for Canyon realtors",
+        body: "Homes near downtown and the West Texas A&M campus, newer subdivisions, and acreage on the edge of town. HDR photos, a 3D tour, and a floor plan help out-of-town buyers shortlist from a distance.",
+      },
+      {
+        title: "Acreage with canyon views",
+        body: "Land near the canyon rim sells on the view. Drone aerials and video show the terrain, the drive in, and how close the property sits to Palo Duro.",
+      },
+    ],
+    recommendation:
+      "Hosts usually book our short-term rental photography. Realtors with acreage or a view get the most from the Ultimate package, which adds drone video to photos and a 3D tour.",
+    faqs: [
+      {
+        q: "Do you photograph Airbnb and VRBO rentals in Canyon?",
+        a: "Yes. We photograph short-term rentals for Airbnb and VRBO hosts, with interiors, amenity details, and twilight exteriors sized for booking sites.",
+      },
+      {
+        q: "Do you work with Canyon realtors too?",
+        a: "Yes. We shoot MLS-ready listing photos, Matterport 3D tours, floor plans, and drone aerials for agents listing homes and land in Canyon and Randall County.",
+      },
+      {
+        q: "Is there a travel fee for Canyon?",
+        a: "Yes, a flat travel fee applies, and we quote it before you book. If you have several listings or rentals, we'll shoot them in one trip and split the fee.",
+      },
+    ],
+    nearby: ["real-estate-photography-amarillo-tx", "real-estate-photography-hereford-tx", "airbnb-photography-lubbock-tx-clovis-nm"],
+  },
+  {
+    slug: "real-estate-photography-amarillo-tx",
+    city: "Amarillo",
+    state: "TX",
+    stateName: "Texas",
+    county: "Potter and Randall Counties",
+    milesFromClovis: 110,
+    route: "US-60 through Hereford and Canyon, under two hours from Clovis",
+    travelFee: true,
+    metaTitle: "Real Estate & Airbnb Photographer Amarillo TX | Listing & Rental Photos | Lighthaus Studio",
+    metaDescription:
+      "Real estate photography for Amarillo realtors and Airbnb / VRBO photography for hosts. HDR listing photos, Matterport 3D tours, drone aerials, and video. Photos in 48 hours.",
+    h1: "Real estate and Airbnb photography in Amarillo, Texas",
+    intro: [
+      "Amarillo is the biggest market in the Panhandle, and it moves on two tracks: realtors selling homes to families relocating for work, and hosts renting to the steady stream of I-40 and Route 66 travelers who need a place for a night or a week.",
+      "We photograph for both. Agents get MLS-ready photos, 3D tours, and floor plans that help remote buyers shortlist a home. Airbnb and VRBO hosts get rental photos built to win the click in crowded search results and set honest expectations, which helps reviews.",
+    ],
+    listingTypes: [
+      {
+        title: "Listings for Amarillo realtors",
+        body: "Established neighborhoods, new construction on the south and west sides, and homes for buyers moving in for healthcare, ag, and industry jobs. HDR photos, a Matterport tour, and a floor plan do the first showing for them.",
+      },
+      {
+        title: "Airbnb and VRBO rentals",
+        body: "Short-term rentals near I-40, Route 66 on Sixth Avenue, and the medical district. We photograph every room, the amenities guests filter for, and twilight exteriors that stand out in search.",
+      },
+      {
+        title: "Investors with several properties",
+        body: "Hosts and landlords with more than one unit can book them in a single trip. Photos stay consistent across every listing, which makes a portfolio look professionally managed.",
+      },
+    ],
+    recommendation:
+      "Realtors usually book the Pro package for its 3D tour and floor plan. Hosts should ask about our short-term rental photography, and anyone with several properties should ask about multi-listing pricing.",
+    faqs: [
+      {
+        q: "Do you photograph Airbnb and VRBO rentals in Amarillo?",
+        a: "Yes. We shoot short-term rentals for Airbnb and VRBO hosts, including amenity details and twilight exteriors, delivered at the sizes booking sites use.",
+      },
+      {
+        q: "Do you work with Amarillo realtors?",
+        a: "Yes. We photograph listings for Amarillo agents and brokerages with HDR photos, Matterport 3D tours, floor plans, drone aerials, and walkthrough video.",
+      },
+      {
+        q: "Is there a travel fee for Amarillo?",
+        a: "Yes. A flat travel fee applies because Amarillo is outside our home zone. We quote it before you book and split it across properties when we shoot several in one trip.",
+      },
+    ],
+    nearby: ["real-estate-photography-canyon-tx", "real-estate-photography-hereford-tx", "airbnb-photography-lubbock-tx-clovis-nm"],
   },
 ];
 

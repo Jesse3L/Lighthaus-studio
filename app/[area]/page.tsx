@@ -46,6 +46,7 @@ export default async function ServiceAreaPage({ params }: Props) {
   const index = SERVICE_AREAS.indexOf(a)
   const url = `${SITE_URL}/${a.slug}`
   const place = `${a.city}, ${a.state}`
+  const servesHosts = a.listingTypes.some((t) => /airbnb|vrbo|short-term/i.test(t.title))
 
   const schemas = [
     {
@@ -117,8 +118,11 @@ export default async function ServiceAreaPage({ params }: Props) {
             <Link href="/contact" className="inline-flex h-13 items-center justify-center rounded-md bg-accent px-8 text-base font-semibold text-accent-foreground hover:bg-accent-hover">
               Get a quote for {a.city}
             </Link>
-            <Link href="/portfolio" className="inline-flex h-13 items-center justify-center rounded-md border border-white/30 px-8 text-base font-semibold text-neutral-50 hover:border-white/70">
-              See recent listings
+            <Link
+              href={servesHosts ? '/airbnb-photography-lubbock-tx-clovis-nm' : '/portfolio'}
+              className="inline-flex h-13 items-center justify-center rounded-md border border-white/30 px-8 text-base font-semibold text-neutral-50 hover:border-white/70"
+            >
+              {servesHosts ? 'Airbnb & VRBO host photography' : 'See recent listings'}
             </Link>
           </div>
         </div>

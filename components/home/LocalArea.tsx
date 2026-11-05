@@ -14,8 +14,10 @@ export function allTowns(): Town[] {
   return towns.sort((a, b) => a.miles - b.miles)
 }
 
-export function LocalArea({ heading = 'Clovis and every town within 100 miles' }: { heading?: string }) {
+export function LocalArea({ heading = 'Clovis, Amarillo, Lubbock, and every town in between' }: { heading?: string }) {
   const towns = allTowns()
+  const max = Math.max(...towns.map((t) => t.miles))
+  const pct = (m: number) => Math.max(2, (m / max) * 100)
 
   return (
     <section className="bg-neutral-950 py-20 md:py-28">
@@ -38,7 +40,7 @@ export function LocalArea({ heading = 'Clovis and every town within 100 miles' }
         <div>
           <div className="mb-3 flex justify-between text-xs text-neutral-500">
             <span>Road miles from Clovis</span>
-            <span>100</span>
+            <span>{max} mi</span>
           </div>
           <ul className="divide-y divide-neutral-800/80 border-y border-neutral-800">
             {towns.map((t) => {
@@ -55,11 +57,11 @@ export function LocalArea({ heading = 'Clovis and every town within 100 miles' }
                   <span className="relative h-px bg-neutral-800" aria-hidden>
                     <span
                       className="absolute inset-y-0 left-0 bg-accent/70"
-                      style={{ width: `${Math.max(2, Math.min(100, t.miles))}%` }}
+                      style={{ width: `${pct(t.miles)}%` }}
                     />
                     <span
                       className="absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-accent"
-                      style={{ left: `calc(${Math.max(2, Math.min(100, t.miles))}% - 3px)` }}
+                      style={{ left: `calc(${pct(t.miles)}% - 3px)` }}
                     />
                   </span>
                   <span className="w-16 text-right text-sm tabular-nums text-neutral-400">

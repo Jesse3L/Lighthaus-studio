@@ -4,6 +4,7 @@ import { H1, H2, H3, Lead } from "@/components/shared/Typography";
 import { Card } from "@/components/shared/Card";
 import { Button } from "@/components/shared/Button";
 import Link from "next/link";
+import { NearbyAreas } from "@/components/shared/NearbyAreas";
 import Image from "next/image";
 import { Check, Star, Shield, Home, Eye, Heart } from "lucide-react";
 
@@ -309,6 +310,8 @@ export default function AirbnbPhotographyPage() {
           </div>
         </div>
       </Section>
+
+      <NearbyAreas heading="Airbnb and VRBO photography across the region" slugs={["real-estate-photography-amarillo-tx", "real-estate-photography-canyon-tx", "real-estate-photography-tucumcari-nm", "real-estate-photography-portales-nm", "real-estate-photography-cannon-afb-nm", "real-estate-photography-muleshoe-tx"]} />
 
       {/* Local FAQ */}
       <Section className="bg-neutral-900/50 border-t border-white/5">

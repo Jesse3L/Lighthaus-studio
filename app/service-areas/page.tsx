@@ -5,9 +5,9 @@ import { SITE_URL } from '@/lib/business'
 import { LocalArea } from '@/components/home/LocalArea'
 import { FinalCTA } from '@/components/home/FinalCTA'
 
-const title = 'Service Areas | Real Estate Photography Within 100 Miles of Clovis NM | Lighthaus Studio'
+const title = 'Service Areas | Real Estate & Airbnb Photography from Clovis NM to Amarillo TX | Lighthaus Studio'
 const description =
-  'Real estate photography across Eastern New Mexico and West Texas: Clovis, Portales, Cannon AFB, Muleshoe, Friona, Hereford, Littlefield, Levelland, Plainview, Lubbock, and Tucumcari.'
+  'Real estate photography across Eastern New Mexico and West Texas: Clovis, Portales, Cannon AFB, Muleshoe, Friona, Hereford, Canyon, Amarillo, Littlefield, Levelland, Plainview, Lubbock, and Tucumcari. Realtors and Airbnb / VRBO hosts.'
 
 export const metadata: Metadata = {
   title,
@@ -40,12 +40,12 @@ export default function ServiceAreasPage() {
       <section className="bg-neutral-950 pt-32 pb-12 md:pt-44">
         <div className="container-custom">
           <h1 className="max-w-[22ch] text-4xl font-bold leading-[1.05] text-neutral-50 sm:text-5xl lg:text-6xl">
-            Real estate photography within 100 miles of Clovis
+            Real estate and Airbnb photography from Clovis to Amarillo
           </h1>
           <div className="horizon mt-8 w-full" />
           <p className="mt-8 max-w-[62ch] text-lg leading-relaxed text-neutral-300">
-            Lighthaus Studio covers both sides of the Texas–New Mexico line, from Tucumcari down to Lubbock. Pick your town
-            to see what we shoot there, travel details, and local pricing.
+            Lighthaus Studio covers both sides of the Texas–New Mexico line, from Amarillo and Tucumcari down to Lubbock, for
+            realtors and Airbnb and VRBO hosts alike. Pick your town to see what we shoot there, travel details, and pricing.
           </p>
         </div>
       </section>
