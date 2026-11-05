@@ -1,10 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
-import { Section } from '@/components/shared/Section'
-import { Card } from '@/components/shared/Card'
-import { H2 } from '@/components/shared/Typography'
-import { Button } from '@/components/shared/Button'
 import { getSelectedWork } from '@/sanity/lib/queries'
 
 // Static fallback images shown until the Sanity "Homepage Settings"
@@ -59,16 +54,6 @@ type SelectedPhoto = {
     propertySlug: string | null
 }
 
-// Determines card layout: positions 0 and 3 (1st and 4th) are wide (16:9),
-// the rest are tall (4:5). Mirrors the original static design.
-function getCardLayout(index: number) {
-    const isWide = index === 0 || index === 3
-    return {
-        colSpan: isWide ? 'lg:col-span-2' : 'lg:col-span-1',
-        aspect: isWide ? 'aspect-[16/9]' : 'aspect-[4/5]',
-    }
-}
-
 export async function PortfolioPreview() {
     // Fetch from Sanity — falls back to static images if no document exists yet
     let works: SelectedPhoto[] = FALLBACK_WORKS
@@ -76,81 +61,63 @@ export async function PortfolioPreview() {
     try {
         const data = await getSelectedWork()
         if (data?.selectedWork && data.selectedWork.length > 0) {
-            works = data.selectedWork
+            works = data.selectedWork.filter((w: SelectedPhoto) => w?.src)
         }
     } catch {
         // Sanity unavailable at build time — use fallback silently
     }
 
+    // Layout: first photo is large (2x2), the rest fill a 3-column grid.
+    // 3, 6 or 9 photos always fill the grid with no ragged gaps.
+    const fit = works.length >= 9 ? 9 : works.length >= 6 ? 6 : works.length >= 3 ? 3 : works.length
+    const shown = works.slice(0, fit)
+
     return (
-        <Section>
-            <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row md:items-end">
-                <div className="max-w-xl">
-                    <div className="flex items-center gap-2 mb-4">
-                        <span className="h-px w-8 bg-accent" />
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                            Selected Work
-                        </span>
-                    </div>
-                    <H2>A look at recent <br /> <span className="text-neutral-400">listings across West Texas and Eastern New Mexico.</span></H2>
+        <section className="bg-neutral-950 py-20 md:py-28">
+            <div className="container-custom">
+                <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+                    <h2 className="max-w-[22ch] text-3xl font-bold leading-[1.1] text-neutral-50 sm:text-4xl">
+                        Recent listings across West Texas and Eastern New Mexico
+                    </h2>
+                    <Link href="/portfolio" className="text-sm font-semibold text-neutral-100 underline decoration-accent decoration-2 underline-offset-[6px] hover:text-white">
+                        View the full portfolio
+                    </Link>
                 </div>
-                <Link href="/portfolio">
-                    <Button variant="link" className="hidden md:flex">
-                        View Full Portfolio <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                </Link>
+
+                <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+                    {shown.map((work, i) => {
+                        const big = i === 0 && shown.length >= 3
+                        const figure = (
+                            <figure className="group">
+                                <div className={`relative overflow-hidden rounded-md bg-neutral-900 ${big ? 'aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[34rem]' : 'aspect-[4/3]'}`}>
+                                    <Image
+                                        src={work.src}
+                                        alt={work.alt || work.label}
+                                        fill
+                                        sizes={big ? '(max-width: 1024px) 100vw, 66vw' : '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'}
+                                        placeholder={work.lqip ? 'blur' : 'empty'}
+                                        blurDataURL={work.lqip}
+                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                                    />
+                                </div>
+                                <figcaption className="mt-2.5 flex items-baseline justify-between gap-4 text-sm">
+                                    <span className="font-medium text-neutral-100">{work.label}</span>
+                                    <span className="text-neutral-500">{work.category}</span>
+                                </figcaption>
+                            </figure>
+                        )
+                        return (
+                            <li key={`${work.src}-${i}`} className={big ? 'sm:col-span-2 lg:row-span-2 flex flex-col [&>a]:h-full [&_figure]:flex [&_figure]:h-full [&_figure]:flex-col [&_figure>div]:flex-1' : ''}>
+                                {work.propertySlug ? (
+                                    <Link href={`/portfolio/${work.propertySlug}`} className="block">{figure}</Link>
+                                ) : (
+                                    figure
+                                )}
+                            </li>
+                        )
+                    })}
+                </ul>
             </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {works.map((work, i) => {
-                    const { colSpan, aspect } = getCardLayout(i)
-                    const cardContent = (
-                        <Card
-                            hover
-                            className={`group relative cursor-pointer border-none bg-neutral-900 overflow-hidden ${colSpan} ${aspect}`}
-                        >
-                            {/* Image */}
-                            <Image
-                                src={work.src}
-                                alt={work.alt || work.label}
-                                width={work.width || 1600}
-                                height={work.height || 900}
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                placeholder={work.lqip ? 'blur' : 'empty'}
-                                blurDataURL={work.lqip}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
-
-                            <div className="absolute bottom-0 left-0 z-20 w-full translate-y-4 p-8 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                                <span className="inline-block rounded-full bg-white/20 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white mb-2 border border-white/20">
-                                    {work.category}
-                                </span>
-                                <h3 className="text-xl font-bold text-white">{work.label}</h3>
-                            </div>
-                        </Card>
-                    )
-
-                    // If this photo is linked to a property, wrap it in a Link
-                    return work.propertySlug ? (
-                        <Link key={i} href={`/portfolio/${work.propertySlug}`} className={`${colSpan}`}>
-                            {cardContent}
-                        </Link>
-                    ) : (
-                        <div key={i} className={colSpan}>
-                            {cardContent}
-                        </div>
-                    )
-                })}
-            </div>
-
-            <div className="mt-12 flex justify-center md:hidden">
-                <Link href="/portfolio">
-                    <Button variant="outline">View All Works</Button>
-                </Link>
-            </div>
-        </Section>
+        </section>
     )
 }

@@ -1,49 +1,24 @@
-import { PackageCheck, Camera, Clock, Star } from 'lucide-react'
-import { Section } from '@/components/shared/Section'
+import { TRAVEL_POLICY, TURNAROUND } from '@/lib/business'
+
+const POINTS = [
+  { title: 'Photos in 48 hours', body: `${TURNAROUND.sentence.split('. ')[1]}` },
+  { title: 'Sized for your MLS', body: 'Files arrive at the dimensions and file sizes the MLS wants. No resizing on your end.' },
+  { title: 'Blue sky, every time', body: 'Gray skies and flat light get swapped for clean blue at no extra charge.' },
+  { title: 'Licensed drone pilot', body: 'FAA Part 107 aerials of the lot, roofline, and acreage, legal for commercial use.' },
+  { title: 'No surprise travel fees', body: TRAVEL_POLICY.short },
+]
 
 export function TrustStrip() {
-    const points = [
-        {
-            icon: Clock,
-            title: "MLS-Ready Files",
-            desc: "Delivered in the exact dimensions and file sizes your MLS requires. No resizing on your end.",
-        },
-        {
-            icon: Camera,
-            title: "Blue-Sky Replacement Included",
-            desc: "Gray skies and flat light get swapped for clean blue at no extra cost.",
-        },
-        {
-            icon: PackageCheck,
-            title: "FAA Part 107 Drone Coverage",
-            desc: "Aerial stills of the lot, roofline, and acreage context. Licensed for commercial use under FAA Part 107.",
-        },
-        {
-            icon: Star,
-            title: "Clovis NM & Lubbock TX — No Travel Fees",
-            desc: "Based in Muleshoe, TX — 30 minutes from Clovis, NM and 90 minutes from Lubbock. No trip charge for Clovis, Portales, Cannon AFB, Lubbock, or Plainview.",
-        },
-    ]
-
-    return (
-        <Section className="border-b border-white/5 bg-neutral-900/50" spacing="sm">
-            <div className="grid grid-cols-2 gap-8 lg:gap-12 lg:grid-cols-5">
-                <div className="col-span-full text-center mb-8 lg:text-left lg:mb-0 lg:col-span-1">
-                    <h3 className="font-bold text-xl leading-tight">48-Hour Turnaround</h3>
-                    <p className="text-sm text-muted-foreground mt-2">Photos in your inbox within two business days of the shoot. Every shoot, no exceptions.</p>
-                </div>
-                {points.map((p, idx) => (
-                    <div key={idx} className="flex flex-col items-start space-y-3 group">
-                        <div className="h-10 w-10 text-neutral-400 transition-colors group-hover:text-accent">
-                            <p.icon className="h-full w-full" />
-                        </div>
-                        <div>
-                            <h3 className="text-sm font-bold uppercase tracking-wider text-primary">{p.title}</h3>
-                            <p className="mt-1 text-sm text-neutral-500 leading-relaxed">{p.desc}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </Section>
-    )
+  return (
+    <section className="border-b border-neutral-800 bg-neutral-950 py-12 md:py-14">
+      <dl className="container-custom grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
+        {POINTS.map((p) => (
+          <div key={p.title} className="border-l border-neutral-700 pl-4">
+            <dt className="font-semibold text-neutral-50">{p.title}</dt>
+            <dd className="mt-1.5 text-sm leading-relaxed text-neutral-400">{p.body}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  )
 }

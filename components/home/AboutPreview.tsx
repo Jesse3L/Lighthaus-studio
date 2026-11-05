@@ -1,43 +1,43 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Section } from "@/components/shared/Section"
-import { H2, Lead } from "@/components/shared/Typography"
-import { Button } from "@/components/shared/Button"
 
 export function AboutPreview() {
-    return (
-        <Section className="border-b border-white/5 bg-neutral-900/30">
-            <div className="grid md:grid-cols-12 gap-10 lg:gap-16 items-center max-w-5xl mx-auto">
-                {/* Image Section */}
-                <div className="md:col-span-4 relative aspect-[4/5] object-cover rounded-2xl overflow-hidden shadow-2xl md:order-last mx-auto w-full max-w-sm">
-                    <Image
-                        src="/images/about/natalie-lighthaus-studio-photographer.jpg"
-                        alt="Natalie — lead real estate photographer and owner of Lighthaus Studio"
-                        width={800}
-                        height={1067}
-                        sizes="(max-width: 768px) 60vw, 400px"
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none" />
-                </div>
+  return (
+    <section className="bg-neutral-900 py-20 md:py-28">
+      <div className="container-custom grid items-center gap-12 md:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-md md:max-w-none">
+          <Image
+            src="/images/about/natalie-lighthaus-studio-photographer.jpg"
+            alt="Natalie, owner and lead real estate photographer at Lighthaus Studio"
+            fill
+            sizes="(max-width: 768px) 80vw, 40vw"
+            className="object-cover"
+          />
+        </div>
 
-                {/* Text Content */}
-                <div className="md:col-span-8 flex flex-col justify-center">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-4">Behind the Lens</span>
-                    <H2 className="mb-6">Meet Natalie, Lead Photographer</H2>
-                    <Lead className="mb-6 text-neutral-400 text-lg leading-relaxed">
-                        I'm Natalie, and every photo, every video, and every delivery from Lighthaus Studio goes through me personally. I shoot stills and video with a Canon R8, capture 3D tours on a Matterport Pro3, and handle the drone work myself. No subcontractors. No shared inbox. No photographer you've never met showing up at your listing.
-                    </Lead>
-                    <p className="text-neutral-500 mb-8 leading-relaxed">
-                        I started Lighthaus because I love what good photography does for a listing — the way the right angle and the right light turn a 1,600-square-foot starter home into somewhere a buyer can picture themselves living. I want to help real estate agents across Lubbock, Clovis, and the surrounding West Texas communities sell faster by giving them media that actually shows what a property has to offer. When your listings move, my business grows. When your business grows, I get to keep doing work I care about. Most of the work happens in <Link href="/real-estate-photography-lubbock-tx" className="text-accent hover:underline">Lubbock and the surrounding West Texas communities</Link>, plus <Link href="/real-estate-photography-clovis-nm" className="text-accent hover:underline">Clovis, NM and Eastern New Mexico</Link>, though I travel for the right listing. That is the relationship I am here to build.
-                    </p>
-                    <div>
-                        <Link href="/about">
-                            <Button variant="primary" size="lg" className="w-full sm:w-auto">Read Her Story</Button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </Section>
-    )
+        <div>
+          <h2 className="text-3xl font-bold leading-[1.1] text-neutral-50 sm:text-4xl">Natalie shoots every listing herself</h2>
+          <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-neutral-200">
+            Every photo, video, 3D tour, and drone flight from Lighthaus Studio is shot and edited by Natalie. Canon R8 for
+            stills and video, a Matterport Pro3 for tours, and her own FAA Part 107 license for aerials. No subcontractors and
+            no stranger showing up at your seller&apos;s door.
+          </p>
+          <p className="mt-4 max-w-[60ch] leading-relaxed text-neutral-400">
+            She started Lighthaus because the right light and the right angle can make a 1,600-square-foot starter home feel
+            like a place a buyer can picture living. Most of the work happens in{" "}
+            <Link href="/real-estate-photography-clovis-nm" className="text-neutral-200 underline decoration-accent underline-offset-4">Clovis and Eastern New Mexico</Link>{" "}
+            and{" "}
+            <Link href="/real-estate-photography-lubbock-tx" className="text-neutral-200 underline decoration-accent underline-offset-4">Lubbock and the South Plains</Link>, with
+            regular trips to the towns in between.
+          </p>
+          <Link
+            href="/about"
+            className="mt-8 inline-flex h-11 items-center rounded-md border border-neutral-600 px-6 text-sm font-semibold text-neutral-100 transition-colors hover:border-neutral-300"
+          >
+            More about Natalie
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
 }

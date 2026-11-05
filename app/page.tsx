@@ -12,104 +12,17 @@ import { LocalArea } from "@/components/home/LocalArea"
 import { FAQ } from "@/components/home/FAQ"
 import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
+import { HOME_FAQS, faqSchema } from "@/lib/home-faq"
 
 export const metadata: Metadata = {
     title: 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio',
-    description: 'Lighthaus Studio is a premier real estate photographer and Lubbock photography studio. Serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D virtual tours, and drone aerials.',
+    description: 'Real estate photographer and Lubbock photography studio serving Clovis NM, Lubbock TX, Portales, Cannon AFB, and towns within 100 miles. HDR listing photos, Matterport 3D tours, drone aerials, and video from $199.',
     alternates: { canonical: "/" },
     openGraph: {
         title: 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio',
-        description: 'Lighthaus Studio is a premier real estate photographer and Lubbock photography studio. Serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D virtual tours, and drone aerials.',
+        description: 'Real estate photographer and Lubbock photography studio serving Clovis NM, Lubbock TX, Portales, Cannon AFB, and towns within 100 miles. HDR listing photos, Matterport 3D tours, drone aerials, and video from $199.',
     }
 }
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://www.lighthausstudio.com/#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is included in basic real estate photography?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our basic package covers every interior room and exterior angle, edited with blue-sky replacement where needed, and delivered within 48 hours of the shoot."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does pricing work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Packages start at $199 for standard homes. Pricing may vary based on square footage, location, and any additional add-ons like video or 3D tours."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your turnaround time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Photos deliver within 48 hours of the shoot. Video walkthroughs and Matterport 3D tours deliver within 72 hours. Need it faster? Rush availability is on request and quoted per job."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you serve Clovis and Portales, New Mexico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — Clovis NM and Portales NM are a core part of our service area. We cover Clovis (Curry County), Portales (Roosevelt County), Texico, Melrose, Farwell, and the surrounding Eastern New Mexico market with no trip charge within 60 miles of Clovis. We're based in Muleshoe, TX — about 30 minutes from Clovis."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you photograph listings near Cannon Air Force Base?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, frequently. Cannon AFB is about 7.5 miles west of Clovis on US-84. PCS listings near Cannon are a specialty — we prioritize the Matterport 3D tour and floor plan for those shoots because most buyers are shopping from out of state and can't visit in person before deciding."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What areas do you service?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We are based in Muleshoe, TX and serve two primary markets: Lubbock, TX and Clovis, NM. The Clovis corridor includes Portales, Cannon AFB, Texico, Farwell, and Melrose in Eastern New Mexico. The Lubbock corridor includes Plainview, Slaton, Wolfforth, and the surrounding South Plains. Travel fees may apply for locations beyond 60 miles from Muleshoe."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How should I prepare the property?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We recommend ensuring the home is clean, decluttered, and well-lit. We will provide a specific prep checklist upon booking."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How are files delivered?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You will receive a link to a private online gallery where you can download high-resolution images and other assets suitable for MLS and print."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who are your services for?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We work with real estate agents, homeowners, builders, and Airbnb/VRBO hosts looking to market their properties professionally. We frequently serve CPAR (Clovis/Portales Association of REALTORS) members and Cannon AFB relocation agents."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get started?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Simply click 'Get a Quote' to fill out our request form. We'll confirm details and schedule your shoot as soon as possible."
-      }
-    }
-  ]
-};
 
 // Home Page Component
 export default function Home() {
@@ -117,19 +30,19 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(HOME_FAQS, "https://www.lighthausstudio.com/#faq")) }}
       />
       <Hero />
       <TrustStrip />
       <PortfolioPreview />
 
-      <section className="bg-neutral-900 py-12 border-b border-white/5">
+      <section className="bg-neutral-900 py-16 md:py-20">
         <div className="container-custom">
-          <div className="mx-auto max-w-4xl text-center mb-8">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Interactive Experience</span>
-            <h2 className="mt-2 text-2xl font-bold text-white">Explore a Virtual Tour</h2>
+          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <h2 className="text-3xl font-bold leading-[1.1] text-neutral-50 sm:text-4xl">Walk a real listing in 3D</h2>
+            <p className="max-w-[46ch] text-neutral-400">This is what out-of-town buyers see. Drag to look around, or switch to the dollhouse view.</p>
           </div>
-          <div className="mx-auto max-w-5xl">
+          <div>
             <MatterportEmbed />
           </div>
         </div>

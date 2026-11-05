@@ -1,145 +1,70 @@
-import { Check } from 'lucide-react'
 import Link from 'next/link'
-import { Section } from '@/components/shared/Section'
-import { Card } from '@/components/shared/Card'
-import { Button } from '@/components/shared/Button'
-import { H2, Lead } from '@/components/shared/Typography'
+import { Check } from 'lucide-react'
+
+const TIERS = [
+  {
+    name: 'Commercial Basic',
+    from: 250,
+    summary: 'Standard commercial listings that need clean, professional coverage for the MLS and marketing.',
+    features: ['Interior and exterior photography', 'Edited images scaled to the property', 'HDR for clean, natural light', 'Floor plan included', 'Web and MLS-ready files', 'Photos in 48 hours'],
+  },
+  {
+    name: 'Commercial Premier',
+    from: 350,
+    summary: 'High-end listings, developers, and businesses that need standout marketing content.',
+    features: ['Expanded interior and exterior coverage', 'Drone photography', 'Matterport 3D tour', 'Detail shots of signage, finishes, and features', 'Advanced editing for a polished look', 'Priority scheduling'],
+  },
+]
+
+const ADD_ONS = [
+  { name: 'Walkthrough video', price: 'From $150' },
+  { name: 'Twilight photos', price: '$100–$200' },
+  { name: 'Teams and brokerages', price: '10–15% off bulk and multi-property work' },
+]
 
 export function CommercialPricing() {
-    return (
-        <Section className="border-t border-white/10 mt-16 pt-16" intent="default">
-            {/* Header */}
-            <div className="text-center mb-16 max-w-3xl mx-auto">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Commercial</span>
-                <H2 className="mt-2">Commercial Photography & Media</H2>
-                <Lead className="mt-4">
-                    Professional media tailored for office, retail, industrial, and investment properties.
-                    Simple, scalable pricing based on property size.
-                </Lead>
-            </div>
-
-            {/* Packages */}
-            <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto items-stretch lg:gap-8">
-                {/* Package 1: Basic */}
-                <Card variant="outline" className="flex flex-col p-6 lg:p-8 bg-transparent border-white/10 hover:border-white/30">
-                    <div className="mb-8">
-                        <h3 className="text-2xl font-bold uppercase tracking-wide opacity-90">Commercial Basic</h3>
-                        <div className="mt-2 flex items-baseline">
-                            <span className="text-accent font-bold tracking-widest text-sm uppercase">Pricing starts at $250</span>
-                        </div>
-                        <p className="mt-4 text-sm text-neutral-400">
-                            Ideal for standard listings that need clean, professional coverage for MLS and marketing.
-                        </p>
-                    </div>
-                    
-                    <ul className="mb-8 flex-1 space-y-4">
-                        {[
-                            "Interior + exterior photography",
-                            "Professionally edited images (scaled to property size)",
-                            "Clean, natural lighting (HDR)",
-                            "Floor plan included",
-                            "Web + MLS-ready delivery",
-                            "48-hour turnaround"
-                        ].map((f, i) => (
-                            <li key={i} className="flex items-start text-sm">
-                                <Check className="mr-3 h-5 w-5 shrink-0 text-accent opacity-80" />
-                                <span className="text-neutral-300">{f}</span>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="mt-auto border-t border-white/10 pt-6">
-                        <p className="text-sm text-neutral-300 font-medium">Every project is quoted based on size and scope.</p>
-                    </div>
-                </Card>
-
-                {/* Package 2: Premier */}
-                <Card variant="default" className="flex flex-col p-6 lg:p-8 bg-neutral-800 text-white border-white/10 shadow-2xl relative lg:scale-105 z-10">
-                    <div className="absolute top-4 right-4 animate-fade-in">
-                        <span className="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-accent text-white rounded-full">
-                            Premier
-                        </span>
-                    </div>
-                    <div className="mb-8">
-                        <h3 className="text-2xl font-bold uppercase tracking-wide opacity-90">Commercial Premier</h3>
-                        <div className="mt-2 flex items-baseline">
-                            <span className="text-accent font-bold tracking-widest text-sm uppercase">Pricing starts at $350</span>
-                        </div>
-                        <p className="mt-4 text-sm text-neutral-300">
-                            Best for high-end listings, developers, and businesses that need standout marketing content.
-                        </p>
-                    </div>
-                    
-                    <ul className="mb-8 flex-1 space-y-4">
-                        {[
-                            "Interior + exterior photography (expanded coverage)",
-                            "Drone photography included",
-                            "Matterport / 3D Tour included",
-                            "Detail + branding shots (signage, finishes, features)",
-                            "Advanced editing for a polished, high-end look",
-                            "Marketing-ready images (MLS, website, social media)",
-                            "Priority scheduling with 48-hour delivery"
-                        ].map((f, i) => (
-                            <li key={i} className="flex items-start text-sm">
-                                <Check className="mr-3 h-5 w-5 shrink-0 text-accent" />
-                                <span className="text-neutral-200">{f}</span>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="mt-auto border-t border-white/10 pt-6">
-                        <p className="text-sm text-neutral-200 font-medium">Every project is quoted based on size and scope.</p>
-                    </div>
-                </Card>
-            </div>
-
-            {/* Add-Ons & Clarity Section */}
-            <div className="max-w-5xl mx-auto grid gap-6 md:grid-cols-2 mt-12 lg:mt-16 items-stretch">
-                {/* Additional Services */}
-                <Card variant="outline" className="bg-transparent border-white/10 p-6 lg:p-8">
-                    <h3 className="text-lg font-bold mb-6 text-white tracking-wide uppercase">Additional Services</h3>
-                    <ul className="space-y-4 text-sm">
-                        <li className="flex justify-between items-center pb-4 border-b border-white/5">
-                            <span className="text-neutral-300">Video Walkthrough</span>
-                            <span className="font-semibold text-accent">Starting at $150</span>
-                        </li>
-                        <li className="flex justify-between items-center pt-2">
-                            <span className="text-neutral-300">Twilight Photos</span>
-                            <span className="font-semibold text-accent">$100 – $200</span>
-                        </li>
-                    </ul>
-                </Card>
-
-                {/* Agency Partnerships */}
-                <Card variant="outline" className="bg-transparent border-white/10 p-6 lg:p-8 flex flex-col justify-center">
-                    <h3 className="text-lg font-bold mb-4 text-white tracking-wide uppercase">Bulk & Agency Partnerships</h3>
-                    <p className="text-sm text-neutral-400 leading-relaxed">
-                        Targeting real estate companies and brokerages looking for a reliable media partner. We offer a <span className="text-accent font-semibold">10% to 15% discount</span> for bulk jobs and multi-property contracts. Every project is quoted individually based on size and specific scope.
-                    </p>
-                </Card>
-            </div>
-
-            {/* Call to Action */}
-            <div className="mt-16 lg:mt-24 text-center bg-neutral-900 py-16 px-6 rounded-3xl border border-white/5 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent pointer-events-none" />
-                <div className="relative z-10">
-                    <h2 className="mb-4 text-3xl lg:text-4xl font-bold tracking-tight text-white">
-                        Have a commercial project? <br className="hidden sm:block" />
-                        <span className="text-accent">Let’s get it scheduled.</span>
-                    </h2>
-                    <p className="text-neutral-400 max-w-lg mx-auto mb-10 text-lg">
-                        We’ll make sure your property is presented at its absolute best.
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link href="/contact" className="w-full sm:w-auto">
-                            <Button variant="primary" size="lg" className="w-full">Book a Shoot</Button>
-                        </Link>
-                        <Link href="/contact" className="w-full sm:w-auto">
-                            <Button variant="outline" size="lg" className="w-full bg-black/20 hover:bg-black/40">Request a Quote</Button>
-                        </Link>
-                    </div>
+  return (
+    <section className="border-t border-neutral-800 bg-neutral-950 pb-20 pt-4 md:pb-28">
+      <div className="container-custom">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
+            <h2 className="text-2xl font-bold leading-[1.15] text-neutral-50 sm:text-3xl">Commercial, new construction, and add-ons</h2>
+            <p className="mt-4 max-w-[48ch] leading-relaxed text-neutral-400">
+              Offices, retail, industrial, investment property, and builder inventory. Every commercial project is quoted on
+              size and scope.
+            </p>
+            <dl className="mt-8 divide-y divide-neutral-800 border-y border-neutral-800">
+              {ADD_ONS.map((a) => (
+                <div key={a.name} className="flex items-baseline justify-between gap-6 py-4 text-sm">
+                  <dt className="text-neutral-200">{a.name}</dt>
+                  <dd className="text-right font-semibold text-neutral-50">{a.price}</dd>
                 </div>
-            </div>
-        </Section>
-    )
+              ))}
+            </dl>
+            <Link href="/contact" className="mt-8 inline-flex h-11 items-center rounded-md border border-neutral-600 px-6 text-sm font-semibold text-neutral-100 hover:border-neutral-300">
+              Get a commercial quote
+            </Link>
+          </div>
+
+          <div className="grid gap-px overflow-hidden rounded-xl border border-neutral-800 bg-neutral-800 sm:grid-cols-2">
+            {TIERS.map((t) => (
+              <div key={t.name} className="bg-neutral-900 p-7">
+                <h3 className="text-lg font-semibold text-neutral-50">{t.name}</h3>
+                <p className="mt-3 text-sm text-neutral-400">From <span className="font-wide text-2xl font-bold text-neutral-50">${t.from}</span></p>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-400">{t.summary}</p>
+                <ul className="mt-6 space-y-2.5">
+                  {t.features.map((f) => (
+                    <li key={f} className="flex gap-3 text-sm text-neutral-200">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

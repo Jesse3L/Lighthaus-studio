@@ -1,115 +1,150 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from "@/components/shared/Button"
+import { usePathname } from 'next/navigation'
+import { Button } from '@/components/shared/Button'
+import { BUSINESS } from '@/lib/business'
+import { SERVICE_AREAS, OTHER_TOWNS } from '@/lib/service-areas'
+
+const SERVICES = [
+  'Listing photos',
+  'Photos + drone + 3D tour (Pro)',
+  'Full package with video (Ultimate)',
+  'Matterport 3D tour',
+  'Drone aerials',
+  'Walkthrough video',
+  'Airbnb / short-term rental',
+  'Commercial or new construction',
+  'Not sure yet',
+]
+
+const TOWNS = Array.from(
+  new Set([...OTHER_TOWNS.map((t) => `${t.city}, ${t.state}`), ...SERVICE_AREAS.map((a) => `${a.city}, ${a.state}`)]),
+)
+
+const field =
+  'w-full rounded-md border border-neutral-700 bg-neutral-950/60 px-3.5 py-3 text-base text-neutral-50 placeholder:text-neutral-500 transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent'
+const label = 'text-sm font-medium text-neutral-200'
+
+type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 export function ContactForm() {
-    const [isLoading, setIsLoading] = useState(false)
-    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<Status>('idle')
+  const [error, setError] = useState('')
+  const pathname = usePathname()
 
-    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-        const form = e.currentTarget
-        setIsLoading(true)
-        setStatus('idle')
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    setStatus('sending')
+    setError('')
 
-        const formData = new FormData(form)
-        const data = Object.fromEntries(formData.entries())
-        const webhookUrl = process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL
+    const data = Object.fromEntries(new FormData(form).entries())
 
-        if (!webhookUrl) {
-            console.error('Zapier Webhook URL is missing.')
-            setStatus('error')
-            setIsLoading(false)
-            return
-        }
-
-        try {
-            const response = await fetch(webhookUrl, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                mode: 'no-cors' // Zapier webhooks often require no-cors to avoid CORS errors, but this means we can't read response
-            })
-
-            // with no-cors we assume success if no network error
-            setStatus('success')
-            // Reset form
-            form.reset()
-        } catch (error) {
-            console.error('Submission error:', error)
-            setStatus('error')
-        } finally {
-            setIsLoading(false)
-        }
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, page: pathname }),
+      })
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok || !json.ok) throw new Error(json.error || 'Request failed')
+      setStatus('sent')
+      form.reset()
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        ;(window as unknown as { gtag: (...a: unknown[]) => void }).gtag('event', 'generate_lead', { page: pathname })
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Request failed')
+      setStatus('error')
     }
+  }
 
-    if (status === 'success') {
-        return (
-            <div className="text-center py-12 space-y-4 animate-fade-in">
-                <div className="h-16 w-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                </div>
-                <h3 className="text-2xl font-bold text-neutral-900">Message Sent!</h3>
-                <p className="text-neutral-500 max-w-md mx-auto">
-                    Thanks for reaching out. We've received your inquiry and will get back to you shortly (usually within 1 hour during business hours).
-                </p>
-                <Button onClick={() => setStatus('idle')} variant="outline" className="mt-8">
-                    Send Another Message
-                </Button>
-            </div>
-        )
-    }
-
+  if (status === 'sent') {
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">Name</label>
-                    <input required type="text" name="name" id="name" className="w-full rounded-md border border-input px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Your Name" />
-                </div>
-                <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">Email</label>
-                    <input required type="email" name="email" id="email" className="w-full rounded-md border border-input px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="name@company.com" />
-                </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium">Phone (Optional)</label>
-                    <input type="tel" name="phone" id="phone" className="w-full rounded-md border border-input px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="(555) 123-4567" />
-                </div>
-                <div className="space-y-2">
-                    <label htmlFor="city" className="text-sm font-medium">Property City</label>
-                    <input type="text" name="city" id="city" className="w-full rounded-md border border-input px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="e.g. Lubbock" />
-                </div>
-            </div>
-
-            <div className="space-y-2">
-                <label htmlFor="service" className="text-sm font-medium">Services Needed</label>
-                <select name="service" id="service" className="w-full rounded-md border border-input px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary">
-                    <option value="Real Estate Photography">Real Estate Photography</option>
-                    <option value="Video Tour">Video Tour</option>
-                    <option value="Drone Photography & Video">Drone Photography & Video</option>
-                    <option value="Matterport 3D Tour">Matterport 3D Tour</option>
-                    <option value="Floor Plan Layouts">Floor Plan Layouts</option>
-                    <option value="Full Marketing Suite">Full Marketing Suite</option>
-                </select>
-            </div>
-
-            <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
-                <textarea required name="message" id="message" rows={4} className="w-full rounded-md border border-input px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Tell us about your listing..."></textarea>
-            </div>
-
-            {status === 'error' && (
-                <div className="p-4 bg-red-50 text-red-600 text-sm rounded-md">
-                    Something went wrong. Please try again or email us directly at {process.env.NEXT_PUBLIC_BUSINESS_EMAIL || 'natalie@lighthausstudio.com'}.
-                </div>
-            )}
-
-            <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? 'Sending...' : 'Get a Quote'}
-            </Button>
-        </form>
+      <div role="status" className="py-10 text-center">
+        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground">
+          <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="text-2xl font-semibold text-neutral-50">Quote request sent</h3>
+        <p className="mx-auto mt-3 max-w-md text-neutral-300">
+          {BUSINESS.photographer} will get back to you with pricing and open dates, usually within an hour during business hours.
+          Need it sooner? Text {BUSINESS.phoneDisplay}.
+        </p>
+        <Button onClick={() => setStatus('idle')} variant="outline" className="mt-8">
+          Send another request
+        </Button>
+      </div>
     )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
+      {/* Honeypot — hidden from people, filled by bots */}
+      <div aria-hidden className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label>
+          Company website
+          <input type="text" name="company_website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div className="space-y-2">
+          <label htmlFor="name" className={label}>Name</label>
+          <input required type="text" name="name" id="name" autoComplete="name" className={field} placeholder="Your name" />
+        </div>
+        <div className="space-y-2">
+          <label htmlFor="email" className={label}>Email</label>
+          <input required type="email" name="email" id="email" autoComplete="email" className={field} placeholder="name@brokerage.com" />
+        </div>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div className="space-y-2">
+          <label htmlFor="phone" className={label}>Phone <span className="font-normal text-neutral-500">(optional)</span></label>
+          <input type="tel" name="phone" id="phone" autoComplete="tel" className={field} placeholder="(806) 555-0123" />
+        </div>
+        <div className="space-y-2">
+          <label htmlFor="city" className={label}>Property town</label>
+          <input type="text" name="city" id="city" list="lighthaus-towns" className={field} placeholder="e.g. Clovis, NM" />
+          <datalist id="lighthaus-towns">
+            {TOWNS.map((t) => <option key={t} value={t} />)}
+          </datalist>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="service" className={label}>What do you need?</label>
+        <select name="service" id="service" className={field} defaultValue={SERVICES[0]}>
+          {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
+        </select>
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="message" className={label}>About the property</label>
+        <textarea
+          required
+          name="message"
+          id="message"
+          rows={4}
+          className={field}
+          placeholder="Address or neighborhood, square footage, and when you'd like to list"
+        />
+      </div>
+
+      {status === 'error' && (
+        <div role="alert" className="rounded-md border border-red-400/40 bg-red-500/10 p-4 text-sm text-red-200">
+          {error || 'We couldn’t send your request.'} Call or text {BUSINESS.phoneDisplay}, or email{' '}
+          <a className="underline" href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>, and we’ll get you scheduled.
+        </div>
+      )}
+
+      <Button type="submit" variant="beam" size="lg" className="w-full" disabled={status === 'sending'}>
+        {status === 'sending' ? 'Sending…' : 'Request a quote'}
+      </Button>
+      <p className="text-center text-xs text-neutral-500">No spam, no mailing list. Your details only go to {BUSINESS.photographer}.</p>
+    </form>
+  )
 }

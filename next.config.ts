@@ -7,7 +7,7 @@ const cspValue = `
   font-src 'self' data: https://fonts.gstatic.com;
   img-src 'self' data: blob: https: https://*.google-analytics.com https://cdn.sanity.io;
   frame-src 'self' https://my.matterport.com https://www.youtube.com https://www.youtube-nocookie.com https://*.sanity.io;
-  connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://*.sanity.io https://*.api.sanity.io https://*.apicdn.sanity.io wss://*.api.sanity.io https://hooks.zapier.com;
+  connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://*.sanity.io https://*.api.sanity.io https://*.apicdn.sanity.io wss://*.api.sanity.io;
   media-src 'self';
   object-src 'none';
   base-uri 'self';
@@ -27,7 +27,6 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  /* config options here */
   trailingSlash: false,
   images: {
     remotePatterns: [
@@ -48,6 +47,17 @@ const nextConfig: NextConfig = {
       {
         source: '/blog',
         destination: '/',
+        permanent: true,
+      },
+      {
+        // Misspelled URL Google picked up at some point
+        source: '/airbnb-photography-lutbbock-tx-clovis-nm',
+        destination: '/airbnb-photography-lubbock-tx-clovis-nm',
+        permanent: true,
+      },
+      {
+        source: '/service-area',
+        destination: '/service-areas',
         permanent: true,
       },
       {

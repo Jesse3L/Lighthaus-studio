@@ -109,6 +109,7 @@ const breadcrumbSchema = {
 export default function ServicesPage() {
     const services = [
         {
+            id: "hdr-photography",
             title: "HDR Photography",
             desc: "Hand-blended HDR frames shot with a Canon R8 on a leveled tripod. Window light holds, verticals stay vertical, floors read flat. Blue-sky replacement is included for the days the West Texas sky does not cooperate.",
             features: ["Blue Sky Guarantee", "TV Screen Replacement", "Fireplace Fire Addition", "Window View Clarity"],
@@ -116,6 +117,7 @@ export default function ServicesPage() {
             imageAlt: "HDR interior photograph of a Lubbock master bathroom with balanced window light and warm fixtures"
         },
         {
+            id: "video",
             title: "Cinematic Video Tours",
             desc: "Stabilized 4K video walk-throughs with licensed music, delivered as a 16:9 cut for MLS and a 9:16 vertical for Reels and stories. One shoot, every format an agent actually posts.",
             features: ["4K Resolution", "Licensed Music", "Branded & Unbranded Links", "Social Media Cut (Vertical)"],
@@ -123,6 +125,7 @@ export default function ServicesPage() {
             imageAlt: "Open-concept dining and living room in a Lubbock listing, framed for video walkthrough"
         },
         {
+            id: "drone",
             title: "Aerial / Drone",
             desc: "FAA Part 107-compliant aerial stills and 4K video, flown to show the lot line, the roof condition, and the approach from the main road. Useful on acreage, corner lots, and rural listings where the structure is only half the story.",
             features: ["High-Res Stills", "4K Aerial Video", "Lot and Approach Context", "Roof Condition Coverage"],
@@ -130,6 +133,7 @@ export default function ServicesPage() {
             imageAlt: "Exterior of a modern Lubbock home, the type of property where drone coverage adds lot and roofline context"
         },
         {
+            id: "matterport",
             title: "Matterport 3D Tours",
             desc: "Captured with a Matterport Pro3 so buyers walk the floor plan themselves, measure rooms, and see the doll-house view before they ever book a showing. Cuts the tire-kicker tours out of your calendar.",
             features: ["Dollhouse View", "Measurement Tool", "Schematic Floor Plan Generation", "VR Compatible"],
@@ -151,7 +155,7 @@ export default function ServicesPage() {
             <Section className="bg-neutral-900 text-white text-center" intent="dark">
                 <H1 className="text-white mb-4">Real Estate Photography, Drone & 3D Tours — Clovis NM & Lubbock TX</H1>
                 <Lead className="text-neutral-400 mx-auto max-w-2xl">
-                    Five deliverables, one photographer, 48-hour turnaround. Book one package, mix and match, or build a custom shoot around the listing in front of you.
+                    Five deliverables, one photographer. Photos in 48 hours, video and 3D tours in 72. Book one package, mix and match, or build a custom shoot around the listing in front of you.
                 </Lead>
                 <div className="mt-6 mx-auto max-w-2xl">
                     <p className="text-neutral-300">
@@ -163,7 +167,7 @@ export default function ServicesPage() {
             <Section>
                 <div className="space-y-24">
                     {services.map((s, i) => (
-                        <div key={i} className={`grid gap-12 lg:grid-cols-2 items-center ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                        <div key={i} id={s.id} className={`scroll-mt-28 grid gap-12 lg:grid-cols-2 items-center ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                             <div className={`${i % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                                 <H2 className="mb-4">{s.title}</H2>
                                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
@@ -198,10 +202,9 @@ export default function ServicesPage() {
 
 
                 {/* Floor Plan Feature */}
-                <div className="mt-32 grid gap-12 lg:grid-cols-2 lg:items-center">
+                <div id="floor-plans" className="mt-32 scroll-mt-28 grid gap-12 lg:grid-cols-2 lg:items-center">
                     <div>
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Floor Plans</span>
-                        <H2 className="mt-2 mb-6">Clear Layouts for Buyers</H2>
+                        <H2 className="mb-6">Clear Layouts for Buyers</H2>
                         <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                             Clean schematic 2D floor plans with room dimensions, generated from the Matterport scan so the numbers on the plan match the tour. Delivered as JPG and PDF for MLS, brochures, and open-house handouts.
                         </p>
@@ -214,7 +217,7 @@ export default function ServicesPage() {
                     <div className="bg-neutral-800 p-8 rounded-lg">
                         <img
                             src="/images/services/floor-plan-example.jpg"
-                            alt="Floor Plan Example"
+                            alt="Example 2D floor plan with room dimensions generated from a Matterport scan"
                             className="w-full h-auto shadow-lg rounded"
                         />
                     </div>
@@ -228,7 +231,7 @@ export default function ServicesPage() {
                 </p>
                 <div className="flex justify-center gap-4">
                     <Link href="/contact">
-                        <Button size="lg" variant="primary">Contact Us</Button>
+                        <Button size="lg" variant="beam">Request a quote</Button>
                     </Link>
                 </div>
             </Section>

@@ -3,6 +3,7 @@ import { H1, Lead } from "@/components/shared/Typography"
 import { PricingPreview } from "@/components/home/PricingPreview"
 import { CommercialPricing } from "@/components/home/CommercialPricing"
 import { FAQ } from "@/components/home/FAQ"
+import { HOME_FAQS, faqSchema as buildFaqSchema } from "@/lib/home-faq"
 
 import { Metadata } from "next"
 
@@ -16,77 +17,7 @@ export const metadata: Metadata = {
     }
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://www.lighthausstudio.com/pricing#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is included in basic real estate photography?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our basic package covers every interior room and exterior angle, edited with blue-sky replacement where needed, and delivered within 48 hours of the shoot."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does pricing work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Packages start at $199 for standard homes. Pricing may vary based on square footage, location, and any additional add-ons like video or 3D tours."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your turnaround time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Photos deliver within 48 hours of the shoot. Video walkthroughs and Matterport 3D tours deliver within 72 hours. Need it faster? Rush availability is on request and quoted per job."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How should I prepare the property?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Counters clear, floors clean, blinds open, pets out of sight, all lamps and ceiling lights on. You will get a one-page prep checklist the night before the shoot."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What areas do you service?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We are based in Muleshoe, TX and serve two primary markets: Lubbock, TX and Clovis, NM. The Clovis corridor includes Portales, Cannon AFB, Texico, Farwell, and Melrose in Eastern New Mexico. The Lubbock corridor includes Plainview, Slaton, Wolfforth, and the surrounding South Plains. Travel fees may apply for locations beyond 60 miles from Muleshoe."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How are files delivered?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You will receive a link to a private online gallery where you can download high-resolution images and other assets suitable for MLS and print."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who are your services for?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Real estate agents listing in Lubbock, Clovis, Portales, or the surrounding area; short-term rental hosts on Airbnb and VRBO; builders and small developers; and homeowners preparing a for-sale-by-owner listing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get started?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Click Get a Quote, fill in the listing address and the package you want, and I will confirm the shoot time within the same business day."
-      }
-    }
-  ]
-};
+const pricingFaqSchema = buildFaqSchema(HOME_FAQS, "https://www.lighthausstudio.com/pricing#faq");
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -100,7 +31,7 @@ const breadcrumbSchema = {
 export default function PricingPage() {
     return (
         <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Section className="text-center pb-8" intent="default">
                 <H1 className="mb-4">Real Estate Photography Pricing — Clovis NM & Lubbock TX</H1>

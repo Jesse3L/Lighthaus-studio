@@ -11,15 +11,15 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 
         const intentStyles = {
             default: 'bg-background text-foreground',
-            muted: 'bg-secondary text-secondary-foreground',
-            dark: 'bg-[#0a0a0a] text-white',
+            muted: 'bg-neutral-900 text-neutral-50',
+            dark: 'bg-neutral-900 text-neutral-50',
             primary: 'bg-primary text-primary-foreground',
             accent: 'bg-accent text-accent-foreground',
         }
 
         const spacingStyles = {
             sm: 'py-12 md:py-16',
-            default: 'py-20 md:py-32',
+            default: 'py-20 md:py-28',
             lg: 'py-24 md:py-40',
             none: 'py-0'
         }

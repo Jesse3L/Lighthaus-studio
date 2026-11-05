@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NearbyAreas } from "@/components/shared/NearbyAreas";
 
 export const metadata: Metadata = {
   title: "Real Estate Photographer Clovis NM | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
@@ -26,7 +27,7 @@ const clovisFaqSchema = {
       "name": "Who is the best real estate photographer in Clovis NM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Lighthaus Studio is a real estate photographer based in Muleshoe, TX — about 30 minutes from Clovis, NM. Owner-operator Natalie shoots, edits, and delivers every listing herself. Services include HDR interior photography, Matterport 3D virtual tours, aerial drone photography, and walk-through video. Files are delivered within 48 hours."
+        "text": "Lighthaus Studio is a real estate photographer based in Muleshoe, TX — about 35 minutes from Clovis, NM. Owner-operator Natalie shoots, edits, and delivers every listing herself. Services include HDR interior photography, Matterport 3D virtual tours, aerial drone photography, and walk-through video. Files are delivered within 48 hours."
       }
     },
     {
@@ -408,6 +409,8 @@ export default function ClovisPage() {
           </div>
         </div>
       </section>
+
+      <NearbyAreas heading="Also serving towns around Clovis" slugs={["real-estate-photography-portales-nm", "real-estate-photography-cannon-afb-nm", "real-estate-photography-friona-tx", "real-estate-photography-muleshoe-tx", "real-estate-photography-hereford-tx", "real-estate-photography-tucumcari-nm"]} />
 
       {/* FAQ with FAQPage schema */}
       <section className="px-6 py-20 max-w-5xl mx-auto">

@@ -1,90 +1,87 @@
-import { Section } from "@/components/shared/Section"
-import { H1, H2, Lead } from "@/components/shared/Typography"
-import { Button } from "@/components/shared/Button"
-import { Card } from "@/components/shared/Card"
-import { Mail, Phone, MapPin } from "lucide-react"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { Mail, Phone, MapPin, MessageSquare } from "lucide-react"
 import { ContactForm } from "@/components/contact/ContactForm"
+import { BUSINESS, SITE_URL, TRAVEL_POLICY, TURNAROUND, STARTING_PRICE } from "@/lib/business"
 
-import { Metadata } from "next"
+const title = "Book Real Estate Photography in Clovis NM & Lubbock TX | Lighthaus Studio"
+const description =
+  "Request a quote for real estate photography in Clovis, Portales, Cannon AFB, Lubbock, and towns within 100 miles. Call or text 806-341-9922. Packages from $199."
 
 export const metadata: Metadata = {
-    title: "Book Real Estate Photography — Clovis NM & Lubbock TX | Lighthaus Studio",
-    description: "Schedule a real estate photo shoot in Clovis NM, Portales NM, Lubbock TX, or Cannon AFB. Call 806-341-9922 or request a quote in under two minutes.",
-    alternates: { canonical: "/contact" },
-    openGraph: {
-        title: "Book Real Estate Photography — Clovis NM & Lubbock TX | Lighthaus Studio",
-        description: "Schedule a real estate photo shoot in Clovis NM, Portales NM, Lubbock TX, or Cannon AFB. Call 806-341-9922 or request a quote in under two minutes.",
-    }
+  title,
+  description,
+  alternates: { canonical: "/contact" },
+  openGraph: { title, description, url: `${SITE_URL}/contact` },
 }
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://www.lighthausstudio.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.lighthausstudio.com/contact" }
-  ]
-};
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+    { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
+  ],
+}
+
+const methods = [
+  { icon: MessageSquare, label: "Text", value: BUSINESS.phoneDisplay, href: BUSINESS.smsHref, note: "Fastest way to reach Natalie" },
+  { icon: Phone, label: "Call", value: BUSINESS.phoneDisplay, href: BUSINESS.phoneHref, note: BUSINESS.hours },
+  { icon: Mail, label: "Email", value: BUSINESS.email, href: `mailto:${BUSINESS.email}`, note: "For listing details and files" },
+]
 
 export default function ContactPage() {
-    return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            <Section className="bg-neutral-900 text-white text-center" intent="dark">
-                <H1 className="text-white mb-4">Book Your Real Estate Photo Shoot — Clovis NM & Lubbock TX</H1>
-                <Lead className="text-neutral-400 mx-auto max-w-2xl">
-                    Serving Clovis NM, Portales NM, Cannon AFB, and Lubbock TX. Book a shoot, get a quote, or ask a quick question. The form below sends straight to my phone.
-                </Lead>
-            </Section>
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <section className="bg-neutral-950 pt-32 pb-20 md:pt-40">
+        <div className="container-custom grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+          <div>
+            <h1 className="text-4xl font-bold leading-[1.05] text-neutral-50 sm:text-5xl">
+              Book a shoot in Clovis, Lubbock, or anywhere in between
+            </h1>
+            <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-neutral-300">
+              Tell us about the listing and we&apos;ll send pricing and the next open dates. Packages start at ${STARTING_PRICE}, and
+              photos arrive within {TURNAROUND.photos} of the shoot.
+            </p>
 
-            <Section>
-                <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
-                    {/* Info */}
-                    <div className="space-y-8">
-                        <H2>Get in Touch</H2>
-                        <p className="text-muted-foreground leading-relaxed">
-                            I answer the contact form from my phone. Inquiries during business hours usually get a reply the same day. For anything urgent, call or text 806-341-9922.
-                        </p>
+            <ul className="mt-10 divide-y divide-neutral-800 border-y border-neutral-800">
+              {methods.map((m) => (
+                <li key={m.label}>
+                  <a href={m.href} className="group flex items-center gap-4 py-5">
+                    <m.icon className="h-5 w-5 shrink-0 text-accent" aria-hidden />
+                    <span className="w-14 shrink-0 text-sm text-neutral-400">{m.label}</span>
+                    <span className="min-w-0">
+                      <span className="block break-all text-lg font-semibold text-neutral-50 group-hover:underline group-hover:decoration-accent group-hover:underline-offset-4">
+                        {m.value}
+                      </span>
+                      <span className="block text-sm text-neutral-500">{m.note}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+              <li className="flex items-center gap-4 py-5">
+                <MapPin className="h-5 w-5 shrink-0 text-accent" aria-hidden />
+                <span className="w-14 shrink-0 text-sm text-neutral-400">Based</span>
+                <span className="text-lg font-semibold text-neutral-50">Muleshoe, TX 79347</span>
+              </li>
+            </ul>
 
-                        <div className="space-y-6">
-                            <Card className="flex items-center p-6 gap-4 border-none shadow-none bg-secondary/30">
-                                <div className="h-10 w-10 flex items-center justify-center rounded-full bg-white text-black">
-                                    <Phone className="h-5 w-5" />
-                                </div>
-                                <div>
-                                    <p className="text-xs font-bold uppercase text-muted-foreground">Phone</p>
-                                    <p className="font-bold text-lg">806-341-9922</p>
-                                </div>
-                            </Card>
+            <p className="mt-8 max-w-[56ch] text-sm leading-relaxed text-neutral-400">
+              {TRAVEL_POLICY.long}{" "}
+              <Link href="/service-areas" className="text-neutral-200 underline decoration-accent underline-offset-4">
+                See every town we cover
+              </Link>
+              .
+            </p>
+          </div>
 
-                            <Card className="flex items-center p-6 gap-4 border-none shadow-none bg-secondary/30">
-                                <div className="h-10 w-10 flex items-center justify-center rounded-full bg-white text-black">
-                                    <Mail className="h-5 w-5" />
-                                </div>
-                                <div>
-                                    <p className="text-xs font-bold uppercase text-muted-foreground">Email</p>
-                                    <p className="font-bold text-lg">{process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "natalie@lighthausstudio.com"}</p>
-                                </div>
-                            </Card>
-
-                            <Card className="flex items-center p-6 gap-4 border-none shadow-none bg-secondary/30">
-                                <div className="h-10 w-10 flex items-center justify-center rounded-full bg-white text-black">
-                                    <MapPin className="h-5 w-5" />
-                                </div>
-                                <div>
-                                    <p className="text-xs font-bold uppercase text-muted-foreground">Location</p>
-                                    <p className="font-bold text-lg">Muleshoe, TX 79347</p>
-                                </div>
-                            </Card>
-                        </div>
-                    </div>
-
-                    {/* Form */}
-                    <Card className="p-8 shadow-lg">
-                        <ContactForm />
-                    </Card>
-                </div>
-            </Section>
-        </>
-    )
+          <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-6 sm:p-8 lg:p-10">
+            <h2 className="mb-6 text-2xl font-bold text-neutral-50">Request a quote</h2>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }

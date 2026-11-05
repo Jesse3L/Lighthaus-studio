@@ -1,104 +1,95 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Archivo } from 'next/font/google'
 import './globals.css'
 import { MainLayout } from '@/components/layout/MainLayout'
 import { GoogleAnalytics } from '@/components/shared/GoogleAnalytics'
+import { BUSINESS, SITE_URL } from '@/lib/business'
+import { SERVICE_AREAS, OTHER_TOWNS } from '@/lib/service-areas'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const archivo = Archivo({
+  variable: '--font-archivo',
   subsets: ['latin'],
+  axes: ['wdth'],
+  display: 'swap',
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+const title = 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio'
+const description =
+  'Real estate photographer serving Clovis NM, Lubbock TX, Portales, Cannon AFB, and towns within 100 miles. HDR listing photos, Matterport 3D tours, drone aerials, and video. Photos in 48 hours.'
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.lighthausstudio.com"),
-  title: 'Lighthaus Studio — Real Estate Photographer & Lubbock Photography Studio',
-  description: 'Real estate photographer and Lubbock photography studio serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D tours, drone aerials, and video.',
+  metadataBase: new URL(SITE_URL),
+  title,
+  description,
   openGraph: {
-    title: 'Lighthaus Studio — Real Estate Photographer & Lubbock Photography Studio',
-    description: 'Real estate photographer and Lubbock photography studio serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D tours, drone aerials, and video.',
+    title,
+    description,
     siteName: 'Lighthaus Studio',
     locale: 'en_US',
     type: 'website',
+    url: SITE_URL,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lighthaus Studio — Real Estate Photographer & Lubbock Photography Studio',
-    description: 'Real estate photographer and Lubbock photography studio serving Lubbock TX, Clovis NM, and surrounding areas. HDR listing photos, Matterport 3D tours, drone aerials, and video.',
-  }
+    title,
+    description,
+  },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://www.lighthausstudio.com/#organization",
-    "name": "Lighthaus Studio",
-    "description": "Real estate photographer serving Clovis NM, Lubbock TX, Portales NM, and Cannon AFB. Specializing in HDR listing photos, Matterport 3D virtual tours, cinematic walk-through video, and FAA Part 107 aerial drone photography. MLS-ready files delivered within 48 hours.",
-    "image": "https://www.lighthausstudio.com/og-image.jpg",
-    "telephone": "806-341-9922",
-    "email": "natalie@lighthausstudio.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Muleshoe",
-      "addressRegion": "TX",
-      "postalCode": "79347",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 34.2238,
-      "longitude": -102.7238
-    },
-    "url": "https://www.lighthausstudio.com",
-    "priceRange": "$$",
-    "areaServed": [
-      { "@type": "City", "name": "Muleshoe", "containedInPlace": { "@type": "State", "name": "Texas" } },
-      { "@type": "City", "name": "Lubbock", "containedInPlace": { "@type": "State", "name": "Texas" } },
-      { "@type": "City", "name": "Clovis", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
-      { "@type": "City", "name": "Portales", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
-      { "@type": "City", "name": "Cannon Air Force Base", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
-      { "@type": "City", "name": "Plainview", "containedInPlace": { "@type": "State", "name": "Texas" } },
-      { "@type": "AdministrativeArea", "name": "Curry County", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
-      { "@type": "AdministrativeArea", "name": "Roosevelt County", "containedInPlace": { "@type": "State", "name": "New Mexico" } },
-      { "@type": "AdministrativeArea", "name": "West Texas" },
-      { "@type": "AdministrativeArea", "name": "Eastern New Mexico" }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    }
-  }
+export const viewport: Viewport = {
+  themeColor: '#0f1620',
+}
 
+const towns = [
+  ...SERVICE_AREAS.map((a) => ({ name: a.city === 'Cannon AFB' ? 'Cannon Air Force Base' : a.city, state: a.stateName })),
+  ...OTHER_TOWNS.map((t) => ({ name: t.city, state: t.state === 'NM' ? 'New Mexico' : 'Texas' })),
+]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  '@id': `${SITE_URL}/#organization`,
+  name: BUSINESS.name,
+  description:
+    'Real estate photographer serving Clovis NM, Lubbock TX, Portales NM, Cannon AFB, and communities within about 100 miles of Clovis. HDR listing photos, Matterport 3D virtual tours, cinematic walkthrough video, and FAA Part 107 aerial drone photography.',
+  image: `${SITE_URL}/opengraph-image`,
+  logo: `${SITE_URL}/images/brand/lighthaus-logo.png`,
+  telephone: '+1-806-341-9922',
+  email: BUSINESS.email,
+  url: SITE_URL,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: BUSINESS.homeBase.city,
+    addressRegion: BUSINESS.homeBase.state,
+    postalCode: BUSINESS.homeBase.zip,
+    addressCountry: 'US',
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: BUSINESS.geo.lat, longitude: BUSINESS.geo.lng },
+  areaServed: [
+    {
+      '@type': 'GeoCircle',
+      geoMidpoint: { '@type': 'GeoCoordinates', latitude: 34.4048, longitude: -103.2052 },
+      geoRadius: '160934',
+      description: 'About 100 miles around Clovis, New Mexico',
+    },
+    ...towns.map((t) => ({ '@type': 'City', name: t.name, containedInPlace: { '@type': 'State', name: t.state } })),
+  ],
+  sameAs: [BUSINESS.social.instagram, BUSINESS.social.facebook],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning
-      >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <MainLayout>
-          {children}
-        </MainLayout>
+    <html lang="en" className={archivo.variable} suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <MainLayout>{children}</MainLayout>
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
         )}

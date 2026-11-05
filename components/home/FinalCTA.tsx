@@ -1,30 +1,38 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import { Section } from '@/components/shared/Section'
-import { H2, Lead } from '@/components/shared/Typography'
-import { Button } from '@/components/shared/Button'
+import { BUSINESS, STARTING_PRICE } from '@/lib/business'
 
-export function FinalCTA() {
-    return (
-        <Section className="relative bg-neutral-900 text-white text-center overflow-hidden py-40 border-t border-white/5" intent="dark">
-            {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[150%] bg-accent/5 blur-[100px] rounded-full pointer-events-none" />
-            <div className="absolute -bottom-[20%] -right-[10%] w-[50%] h-[150%] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
-
-            <div className="relative z-10 mx-auto max-w-4xl space-y-10">
-                <H2 className="text-white text-6xl md:text-7xl">Next Shoot Starts at $199</H2>
-                <Lead className="text-neutral-400 max-w-2xl mx-auto">
-                    Photos in your inbox in 48 hours. Every package includes a floor plan, blue-sky replacement, and MLS-sized files.
-                </Lead>
-
-                <div className="flex justify-center">
-                    <Link href="/contact">
-                        <Button size="lg" className="h-16 px-12 text-lg bg-white text-black hover:bg-neutral-200">
-                            Request a Quote
-                        </Button>
-                    </Link>
-                </div>
-            </div>
-        </Section>
-    )
+export function FinalCTA({ heading = 'Get your next listing on the market looking its best' }: { heading?: string }) {
+  return (
+    <section className="relative isolate overflow-hidden bg-neutral-950">
+      <Image
+        src="/images/home/open-concept-dining-living-lubbock.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="-z-20 object-cover opacity-40"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-neutral-950/30" />
+      <div className="container-custom py-24 md:py-32">
+        <h2 className="max-w-[20ch] text-3xl font-bold leading-[1.08] text-neutral-50 sm:text-5xl">{heading}</h2>
+        <p className="mt-5 max-w-[50ch] text-lg leading-relaxed text-neutral-300">
+          Packages start at ${STARTING_PRICE}. Photos land in your inbox within 48 hours, sized for the MLS and ready to post.
+        </p>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Link
+            href="/contact"
+            className="inline-flex h-13 items-center justify-center rounded-md bg-accent px-8 text-base font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
+          >
+            Request a quote
+          </Link>
+          <a
+            href={BUSINESS.smsHref}
+            className="inline-flex h-13 items-center justify-center rounded-md border border-white/30 px-8 text-base font-semibold text-neutral-50 transition-colors hover:border-white/70"
+          >
+            Text {BUSINESS.phoneDisplay}
+          </a>
+        </div>
+      </div>
+    </section>
+  )
 }

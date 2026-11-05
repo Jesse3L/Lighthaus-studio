@@ -1,98 +1,151 @@
 @import "tailwindcss";
 
+/*
+  Lighthaus Studio — "Twilight on the High Plains"
+  Blue-slate dusk tones with a single lighthouse-yellow beam.
+  The neutral scale is remapped here, so every neutral-* utility on the site
+  picks up the dusk palette without per-page changes.
+*/
+
 @theme {
-  --color-primary: #ffffff;
-  --color-primary-foreground: #000000;
+  --color-neutral-50: #f4f6f9;
+  --color-neutral-100: #e8ecf1;
+  --color-neutral-200: #d6dde6;
+  --color-neutral-300: #b7c1cf;
+  --color-neutral-400: #8e9bae;
+  --color-neutral-500: #66768c;
+  --color-neutral-600: #44546a;
+  --color-neutral-700: #2c3a4b;
+  --color-neutral-800: #1f2b3a;
+  --color-neutral-900: #16202c;
+  --color-neutral-950: #0f1620;
 
-  --color-secondary: #1a1a1a;
-  --color-secondary-foreground: #ffffff;
+  --color-primary: #f4f6f9;
+  --color-primary-foreground: #0f1620;
 
-  --color-accent: #c6a87c;
-  --color-accent-hover: #b09265;
-  --color-accent-foreground: #ffffff;
+  --color-secondary: #1f2b3a;
+  --color-secondary-foreground: #f4f6f9;
 
-  --color-muted: #555555;
-  --color-muted-foreground: #a1a1a1;
+  /* The beam. Used for primary actions and focus only. */
+  --color-accent: #f5c542;
+  --color-accent-hover: #ffd666;
+  --color-accent-foreground: #0f1620;
 
-  --color-background: #050505;
-  --color-foreground: #ededed;
+  --color-muted: #44546a;
+  --color-muted-foreground: #9aa7b8;
 
-  --color-border: #262626;
+  --color-background: #0f1620;
+  --color-foreground: #e8ecf1;
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-border: #263345;
+  --color-input: #2c3a4b;
+  --color-ring: #f5c542;
 
-  --radius-sm: 0.125rem;
-  --radius-md: 0.25rem;
-  --radius-lg: 0.5rem;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.75rem;
 
   --animate-fade-in: fade-in 0.6s ease-out forwards;
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   --animate-scale-in: scale-in 0.4s ease-out forwards;
 
   @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes scale-in {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
   }
 }
 
 @layer base {
-  body {
-    @apply antialiased bg-background text-foreground selection:bg-accent/20 selection:text-black;
-    overflow-x: hidden;
-    width: 100%;
-  }
-
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     width: 100%;
   }
+
+  body {
+    @apply antialiased bg-background text-foreground selection:bg-accent/30 selection:text-neutral-950;
+    overflow-x: hidden;
+    width: 100%;
+    font-stretch: 100%;
+    font-variation-settings: "wdth" 100;
+  }
+
+  /* Headlines use Archivo's expanded width: wide like the horizon. */
+  h1,
+  h2 {
+    font-family: var(--font-display);
+    font-stretch: 125%;
+    font-variation-settings: "wdth" 125;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-stretch: 110%;
+    font-variation-settings: "wdth" 110;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer utilities {
   .container-custom {
-    @apply max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12;
+    @apply max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-12;
   }
 
   .text-balance {
     text-wrap: balance;
   }
 
+  .font-wide {
+    font-stretch: 125%;
+    font-variation-settings: "wdth" 125;
+  }
+
+  .font-condensed {
+    font-stretch: 85%;
+  }
+
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-400;
+    @apply text-neutral-100;
   }
 
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/10;
+    @apply bg-neutral-900/70 backdrop-blur-md border border-white/10;
+  }
+
+  /* The horizon line used under the hero headline. */
+  .horizon {
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-accent) 0%, rgba(245, 197, 66, 0.35) 35%, rgba(255, 255, 255, 0.08) 100%);
   }
 }

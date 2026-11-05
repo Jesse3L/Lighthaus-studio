@@ -1,45 +1,68 @@
 import Link from 'next/link'
-import { Camera, Video, Box, Scan, Map, ChevronRight } from 'lucide-react'
-import { Section } from '@/components/shared/Section'
-import { Card } from '@/components/shared/Card'
-import { H2, Lead } from '@/components/shared/Typography'
+import Image from 'next/image'
+
+const SERVICES = [
+  {
+    href: '/services#hdr-photography',
+    title: 'HDR listing photography',
+    body: '20 to 30 hand-blended HDR photos per listing. Window light holds, verticals stay straight, and every key room is covered, plus twilight exteriors when the light works.',
+  },
+  {
+    href: '/services#matterport',
+    title: 'Matterport 3D tours',
+    body: 'Captured on a Matterport Pro3. Buyers walk the home and measure rooms from anywhere, which matters when half your buyer pool is relocating.',
+  },
+  {
+    href: '/services#drone',
+    title: 'FAA Part 107 drone aerials',
+    body: 'Stills and 4K video of the lot, roofline, and approach. On acreage and ranch listings, the aerial is usually the photo that sells it.',
+  },
+  {
+    href: '/services#video',
+    title: 'Cinematic walkthrough video',
+    body: 'A 60 to 90 second cut for the MLS and YouTube, plus a vertical version for Reels and TikTok from the same shoot.',
+  },
+  {
+    href: '/services#floor-plans',
+    title: '2D floor plans',
+    body: 'Generated from the 3D scan during the same visit, with room dimensions. Delivered as JPG and PDF for the MLS and handouts.',
+  },
+]
 
 export function ServicesGrid() {
-    const services = [
-        { icon: Camera, title: "HDR Real Estate Photography", desc: "20 to 30 HDR stills per listing, shot on a Canon R8. Every room, every key angle, exterior fronts, and twilight shots when the light works." },
-        { icon: Video, title: "Cinematic Video Tours", desc: "60 to 90 second walkthrough video, cut to music and branded with your logo and contact info. Uploads clean to MLS video fields and Instagram Reels." },
-        { icon: Scan, title: "Matterport Pro3 3D Tours", desc: "Dollhouse and walkthrough views captured on a Matterport Pro3. One shareable link — buyers qualify themselves before ever requesting a showing." },
-        { icon: Box, title: "FAA Part 107 Drone Coverage", desc: "Aerial stills and video of the lot, roofline, and acreage context. Especially useful for ranch listings and properties where location is part of the story." },
-        { icon: Map, title: "2D Floor Plans with Room Dimensions", desc: "Generated on-site during the shoot, no second visit needed. Branded with your contact info for MLS, brochures, and open-house handouts." },
-    ]
+  return (
+    <section className="bg-neutral-900 py-20 md:py-28">
+      <div className="container-custom grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <h2 className="text-3xl font-bold leading-[1.1] text-neutral-50 sm:text-4xl">Everything a listing needs, in one visit</h2>
+          <p className="mt-5 max-w-[46ch] text-lg leading-relaxed text-neutral-300">
+            Photos, 3D tour, drone, video, and floor plan are captured in a single 60 to 90 minute appointment, so the
+            seller only has to get the house ready once.
+          </p>
+          <div className="relative mt-10 hidden aspect-[4/3] overflow-hidden rounded-lg lg:block">
+            <Image
+              src="/images/services/floor-plan-example.jpg"
+              alt="2D floor plan with room dimensions created from a Matterport scan"
+              fill
+              sizes="40vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
 
-    return (
-        <Section className="bg-secondary/50">
-            <div className="mb-12 lg:mb-20 text-center max-w-3xl mx-auto">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Offers</span>
-                <H2 className="mt-4 mb-6">What Lighthaus Delivers</H2>
-                <Lead>
-                    Five services, one shoot. Photos, video, 3D tour, drone, and floor plan captured in a single on-site visit.
-                </Lead>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {services.map((s, i) => (
-                    <Link key={i} href="/services" className="group block h-full">
-                        <Card variant="default" hover className="flex h-full flex-col p-6 lg:p-8 transition-colors hover:border-accent/40 bg-neutral-900 border-white/5">
-                            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-sm bg-secondary text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                                <s.icon className="h-6 w-6" />
-                            </div>
-                            <h3 className="mb-3 text-xl font-bold text-primary">{s.title}</h3>
-                            <p className="text-muted-foreground mb-6 flex-1 leading-relaxed">{s.desc}</p>
-
-                            <div className="flex items-center text-xs font-bold uppercase tracking-widest text-accent group-hover:text-primary transition-colors">
-                                Learn More <ChevronRight className="ml-1 h-3 w-3" />
-                            </div>
-                        </Card>
-                    </Link>
-                ))}
-            </div>
-        </Section>
-    )
+        <ul className="divide-y divide-neutral-800 border-y border-neutral-800">
+          {SERVICES.map((s) => (
+            <li key={s.href}>
+              <Link href={s.href} className="group block py-7">
+                <h3 className="text-xl font-semibold text-neutral-50 decoration-accent decoration-2 underline-offset-[6px] group-hover:underline">
+                  {s.title}
+                </h3>
+                <p className="mt-2 max-w-[60ch] leading-relaxed text-neutral-400">{s.body}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
 }

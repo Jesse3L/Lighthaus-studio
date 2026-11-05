@@ -58,7 +58,7 @@ export function PortfolioGallery({ properties }: { properties: Property[] }) {
             <section className="py-16 md:py-24 border-t border-neutral-800 mt-16">
                 <div className="max-w-2xl mx-auto text-center px-4">
                     <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">Ready to book your shoot?</h2>
-                    <p className="text-neutral-400 mb-8">Same-day reply during business hours. 48-hour delivery on every shoot.</p>
+                    <p className="text-neutral-400 mb-8">Same-day reply during business hours. Photos delivered within 48 hours.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-white text-black font-medium rounded-md hover:bg-neutral-200 transition">Get a Quote</Link>
                         <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 text-white hover:text-neutral-300 transition">See packages →</Link>

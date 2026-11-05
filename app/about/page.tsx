@@ -88,7 +88,7 @@ export default function AboutPage() {
                             </p>
 
                             <p>
-                                My workflow is built around one rule: the photos an agent gets back should help them list the next business day. I shoot interiors in hand-blended HDR on a Canon R8, film 4K walkthroughs on a stabilized rig, scan homes with a Matterport Pro3 for full 3D tours, and add drone coverage for acreage, curb appeal, and neighborhood context. Every shoot delivers within 48 hours.
+                                My workflow is built around one rule: the photos an agent gets back should help them list the next business day. I shoot interiors in hand-blended HDR on a Canon R8, film 4K walkthroughs on a stabilized rig, scan homes with a Matterport Pro3 for full 3D tours, and add drone coverage for acreage, curb appeal, and neighborhood context. Photos are delivered within 48 hours, with video and 3D tours within 72.
                             </p>
 
                             <p>

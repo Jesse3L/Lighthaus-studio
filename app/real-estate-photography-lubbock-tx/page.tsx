@@ -3,6 +3,7 @@ import { Section } from "@/components/shared/Section";
 import { H1, H2, Lead } from "@/components/shared/Typography";
 import { Card } from "@/components/shared/Card";
 import { Button } from "@/components/shared/Button";
+import { NearbyAreas } from "@/components/shared/NearbyAreas"
 import Link from "next/link";
 import Image from "next/image";
 
@@ -177,7 +178,7 @@ export default function LubbockRealEstatePhotographyPage() {
                     <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
                         <H1 className="text-white">Real Estate Photographer in Lubbock, TX</H1>
                         <Lead className="max-w-xl text-neutral-400">
-                            HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for Lubbock TX agents and the South Plains MLS. As one of the leading Lubbock photography studios, we deliver every shoot within 48 hours.
+                            HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for Lubbock TX agents and the South Plains MLS. As one of the leading Lubbock photography studios, we deliver photos within 48 hours and video and 3D tours within 72.
                         </Lead>
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <Link href="/contact" className="w-full sm:w-auto">
@@ -358,6 +359,8 @@ export default function LubbockRealEstatePhotographyPage() {
                     </div>
                 </div>
             </Section>
+
+            <NearbyAreas heading="Also serving the South Plains" slugs={["real-estate-photography-levelland-tx", "real-estate-photography-plainview-tx", "real-estate-photography-littlefield-tx", "real-estate-photography-muleshoe-tx"]} />
 
             {/* Section 8 - Final CTA */}
             <Section className="relative bg-neutral-900 text-white text-center overflow-hidden py-32 border-t border-white/5" intent="dark">
