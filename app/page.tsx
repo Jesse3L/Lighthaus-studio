@@ -16,11 +16,11 @@ import { HOME_FAQS, faqSchema } from "@/lib/home-faq"
 import { getSitePhotos } from "@/sanity/lib/site-photos"
 
 export const metadata: Metadata = {
-    title: 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio',
+    title: 'Real Estate Photographer & Lubbock Photography Studio',
     description: 'Real estate photographer and Lubbock photography studio serving Clovis NM, Lubbock TX, Portales, Cannon AFB, and towns within 100 miles. HDR listing photos, Matterport 3D tours, drone aerials, and video from $199.',
     alternates: { canonical: "/" },
     openGraph: {
-        title: 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio',
+        title: 'Real Estate Photographer & Lubbock Photography Studio',
         description: 'Real estate photographer and Lubbock photography studio serving Clovis NM, Lubbock TX, Portales, Cannon AFB, and towns within 100 miles. HDR listing photos, Matterport 3D tours, drone aerials, and video from $199.',
     }
 }

@@ -8,11 +8,11 @@ import { HOME_FAQS, faqSchema as buildFaqSchema } from "@/lib/home-faq"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Real Estate Photography Pricing — Clovis NM & Lubbock TX | Lighthaus Studio",
+    title: "Real Estate Photography Pricing & Packages | Lighthaus",
     description: "Transparent pricing for real estate photography in Clovis NM and Lubbock TX. Base $199, Pro $275, Ultimate $350. HDR photos, 3D tours, drone, and video. No hidden fees.",
     alternates: { canonical: "/pricing" },
     openGraph: {
-        title: "Real Estate Photography Pricing — Clovis NM & Lubbock TX | Lighthaus Studio",
+        title: "Real Estate Photography Pricing & Packages | Lighthaus",
         description: "Transparent pricing for real estate photography in Clovis NM and Lubbock TX. Base $199, Pro $275, Ultimate $350. HDR photos, 3D tours, drone, and video. No hidden fees.",
     }
 }

@@ -14,7 +14,7 @@ const archivo = Archivo({
   display: 'swap',
 })
 
-const title = 'Real Estate Photographer & Lubbock Photography Studio | Lighthaus Studio'
+const title = 'Real Estate Photographer & Lubbock Photography Studio'
 const description =
   'Real estate photographer serving Clovis NM, Lubbock TX, Portales, Cannon AFB, and towns within 100 miles. HDR listing photos, Matterport 3D tours, drone aerials, and video. Photos in 48 hours.'
 

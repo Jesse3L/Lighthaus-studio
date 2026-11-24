@@ -3,14 +3,14 @@ import Link from "next/link";
 import { NearbyAreas } from "@/components/shared/NearbyAreas";
 
 export const metadata: Metadata = {
-  title: "Real Estate Photographer Clovis NM | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
+  title: "Real Estate Photographer Clovis NM | Lighthaus Studio",
   description:
     "Real estate photographer serving Clovis NM, Portales NM, and Cannon AFB. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages start at $199.",
   alternates: {
     canonical: "/real-estate-photography-clovis-nm",
   },
   openGraph: {
-    title: "Real Estate Photographer Clovis NM | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
+    title: "Real Estate Photographer Clovis NM | Lighthaus Studio",
     description:
       "Real estate photographer serving Clovis NM, Portales NM, and Cannon AFB. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages start at $199.",
     type: "website",

@@ -1,3 +1,4 @@
+import { absUrl, fitTitle } from "@/lib/business";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortBio = agent.bio.split(".")[0] + ".";
 
   return {
-    title: `${agent.name} — ${agent.brokerage} | Lighthaus Real Estate Photography`,
+    title: fitTitle(`${agent.name}, ${agent.brokerage} | Lighthaus`, `${agent.name} | Listings by Lighthaus Studio`, `${agent.name} | Lighthaus`),
     description: shortBio.length > 155 ? shortBio.substring(0, 152) + "..." : shortBio,
     alternates: {
       canonical: `/agents/${agent.slug}`
@@ -49,6 +50,17 @@ export default async function AgentDetailPage({ params }: Props) {
   if (!agent) notFound();
 
   const agentProperties = await getPropertiesForAgent(slug);
+  const SERVICE_NAMES: Record<string, string> = {
+    photography: "HDR listing photos",
+    drone: "drone aerials",
+    matterport: "Matterport 3D tours",
+    video: "walkthrough video",
+    "floor-plan": "floor plans",
+    twilight: "twilight exteriors",
+  };
+  const usedServices = Array.from(new Set(agentProperties.flatMap((p) => p.services || [])))
+    .map((s) => SERVICE_NAMES[s])
+    .filter(Boolean);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -56,9 +68,9 @@ export default async function AgentDetailPage({ params }: Props) {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lighthausstudio.com" },
-          { "@type": "ListItem", "position": 2, "name": "Partner Agents", "item": "https://lighthausstudio.com/agents" },
-          { "@type": "ListItem", "position": 3, "name": agent.name, "item": `https://lighthausstudio.com/agents/${agent.slug}` }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lighthausstudio.com" },
+          { "@type": "ListItem", "position": 2, "name": "Partner Agents", "item": "https://www.lighthausstudio.com/agents" },
+          { "@type": "ListItem", "position": 3, "name": agent.name, "item": `https://www.lighthausstudio.com/agents/${agent.slug}` }
         ]
       },
       {
@@ -77,8 +89,8 @@ export default async function AgentDetailPage({ params }: Props) {
         },
         "telephone": agent.phone,
         "email": agent.email,
-        "image": `https://lighthausstudio.com${agent.headshot.src}`,
-        "url": `https://lighthausstudio.com/agents/${agent.slug}`,
+        "image": absUrl(agent.headshot.src),
+        "url": `https://www.lighthausstudio.com/agents/${agent.slug}`,
         "areaServed": agent.areasServed
       }
     ]
@@ -186,6 +198,26 @@ export default async function AgentDetailPage({ params }: Props) {
           </div>
         </Section>
       )}
+
+      <Section className="py-16 border-t border-neutral-800/50">
+        <div className="max-w-3xl mx-auto space-y-5 text-neutral-300 leading-relaxed text-lg">
+          <H2>How {agent.name.split(' ')[0]}&apos;s listings are marketed</H2>
+          <p>
+            Every listing {agent.name.split(' ')[0]} brings to Lighthaus Studio is photographed and edited by Natalie, with
+            photos delivered within 48 hours so the home can hit the market on schedule.
+            {usedServices.length > 0 && <> Recent shoots for {agent.name.split(' ')[0]} have included {usedServices.join(', ')}.</>}
+          </p>
+          <p>
+            Sellers working with {agent.name} at {agent.brokerage} get the same complete media package we build for
+            agents across {agent.areasServed && agent.areasServed.length > 0 ? agent.areasServed.join(', ') : 'West Texas and eastern New Mexico'}:
+            bright, straight HDR photos, and where the property calls for it, drone aerials, a Matterport 3D tour, and video.
+          </p>
+          <p className="text-base text-neutral-400">
+            Agents can see how this works on the <Link href="/photography-for-real-estate-agents" className="text-accent hover:underline">agents and brokerages page</Link>,
+            or browse the <Link href="/agents" className="text-accent hover:underline">other partner agents</Link>.
+          </p>
+        </div>
+      </Section>
 
       <section className="py-24 border-t border-neutral-800 mt-16 text-center px-4">
         <H2 className="mb-4">Want {agent.name.split(' ')[0]} to list your property?</H2>

@@ -10,11 +10,11 @@ import { Check } from "lucide-react"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Real Estate Photography Services — Clovis NM & Lubbock TX | Lighthaus Studio",
+    title: "Real Estate Photography Services | Lighthaus Studio",
     description: "HDR listing photos, Matterport 3D virtual tours, drone photography, 4K video, and floor plans for Clovis NM, Portales NM, Lubbock TX, and Eastern New Mexico. 48-hour delivery.",
     alternates: { canonical: "/services" },
     openGraph: {
-        title: "Real Estate Photography Services — Clovis NM & Lubbock TX | Lighthaus Studio",
+        title: "Real Estate Photography Services | Lighthaus Studio",
         description: "HDR listing photos, Matterport 3D virtual tours, drone photography, 4K video, and floor plans for Clovis NM, Portales NM, Lubbock TX, and Eastern New Mexico. 48-hour delivery.",
     }
 }
@@ -114,6 +114,7 @@ export default async function ServicesPage() {
             id: "hdr-photography",
             title: "HDR Photography",
             desc: "Hand-blended HDR frames shot with a Canon R8 on a leveled tripod. Window light holds, verticals stay vertical, floors read flat. Blue-sky replacement is included for the days the West Texas sky does not cooperate.",
+            more: { href: "/photography-for-real-estate-agents", label: "How we work with agents and brokerages" },
             features: ["Blue Sky Guarantee", "TV Screen Replacement", "Fireplace Fire Addition", "Window View Clarity"],
             photo: sp.hdr
         },
@@ -121,6 +122,7 @@ export default async function ServicesPage() {
             id: "video",
             title: "Cinematic Video Tours",
             desc: "Stabilized 4K video walk-throughs with licensed music, delivered as a 16:9 cut for MLS and a 9:16 vertical for Reels and stories. One shoot, every format an agent actually posts.",
+            more: { href: "/real-estate-video-lubbock-tx-clovis-nm", label: "Real estate video in Lubbock & Clovis" },
             features: ["4K Resolution", "Licensed Music", "Branded & Unbranded Links", "Social Media Cut (Vertical)"],
             photo: sp.video
         },
@@ -128,6 +130,7 @@ export default async function ServicesPage() {
             id: "drone",
             title: "Aerial / Drone",
             desc: "FAA Part 107-compliant aerial stills and 4K video, flown to show the lot line, the roof condition, and the approach from the main road. Useful on acreage, corner lots, and rural listings where the structure is only half the story.",
+            more: { href: "/drone-photography-lubbock-tx-clovis-nm", label: "Drone photography in Lubbock & Clovis" },
             features: ["High-Res Stills", "4K Aerial Video", "Lot and Approach Context", "Roof Condition Coverage"],
             photo: sp.drone
         },
@@ -135,6 +138,7 @@ export default async function ServicesPage() {
             id: "matterport",
             title: "Matterport 3D Tours",
             desc: "Captured with a Matterport Pro3 so buyers walk the floor plan themselves, measure rooms, and see the doll-house view before they ever book a showing. Cuts the tire-kicker tours out of your calendar.",
+            more: { href: "/matterport-3d-tours-lubbock-tx-clovis-nm", label: "Matterport 3D tours in Lubbock & Clovis" },
             features: ["Dollhouse View", "Measurement Tool", "Schematic Floor Plan Generation", "VR Compatible"],
             photo: sp.matterport
         }
@@ -179,9 +183,14 @@ export default async function ServicesPage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link href="/pricing">
-                                    <Button variant="outline">View Pricing</Button>
-                                </Link>
+                                <div className="flex flex-wrap items-center gap-5">
+                                    <Link href="/pricing">
+                                        <Button variant="outline">View Pricing</Button>
+                                    </Link>
+                                    <Link href={s.more.href} className="text-accent font-medium hover:underline">
+                                        {s.more.label} &rarr;
+                                    </Link>
+                                </div>
                             </div>
                             <div className={`${i % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                                 <div className="relative aspect-video rounded-lg overflow-hidden bg-neutral-800">
@@ -222,6 +231,28 @@ export default async function ServicesPage() {
                     </div>
                 </div>
             </Section >
+
+            <Section className="border-t border-white/5">
+                <H2 className="mb-4">Photography for every kind of property</H2>
+                <p className="text-lg text-muted-foreground mb-10 max-w-3xl leading-relaxed">
+                    Listings are most of what we shoot, but the same gear and eye work for short-term rentals, rent houses, and commercial space.
+                </p>
+                <ul className="grid gap-px overflow-hidden rounded-xl border border-neutral-800 bg-neutral-800 sm:grid-cols-2">
+                    {[
+                        { href: "/airbnb-photography-lubbock-tx-clovis-nm", title: "Airbnb & VRBO photography", body: "Hero shots, amenity details, and twilight exteriors that win the click in search results." },
+                        { href: "/rental-property-photography-lubbock-tx-clovis-nm", title: "Rental property photography", body: "Fast, honest photos for rent houses, duplexes, and apartments, with volume pricing for landlords." },
+                        { href: "/commercial-photography-lubbock-tx-clovis-nm", title: "Commercial photography", body: "Offices, retail, restaurants, shops, and multifamily, with drone and 3D options." },
+                        { href: "/photography-for-real-estate-agents", title: "For agents & brokerages", body: "Easy booking, 48-hour delivery, and 10–15% off for teams with steady volume." },
+                    ].map((c) => (
+                        <li key={c.href} className="bg-neutral-900">
+                            <Link href={c.href} className="block h-full p-7 hover:bg-neutral-950">
+                                <h3 className="text-lg font-semibold text-neutral-50">{c.title}</h3>
+                                <p className="mt-2 text-neutral-400 leading-relaxed">{c.body}</p>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </Section>
 
             <Section className="bg-neutral-900 border-t border-white/5 text-center py-20 lg:py-32" intent="dark">
                 <H2 className="text-white mb-6">Not sure what you need?</H2>

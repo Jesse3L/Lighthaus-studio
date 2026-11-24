@@ -75,3 +75,16 @@ export const TRAVEL_POLICY = {
   long:
     "There's no travel fee anywhere within 60 miles of Clovis or Muleshoe, and none inside Lubbock or Plainview. That covers Portales, Cannon AFB, Texico, Farwell, Melrose, Friona, Littlefield, and the towns in between. For listings farther out, like Hereford, Levelland, or Tucumcari, we add a flat travel fee and tell you the exact amount before you book.",
 };
+
+/** Make an image/asset path absolute. Sanity URLs are already absolute. */
+export function absUrl(src: string) {
+  return /^https?:\/\//.test(src) ? src : `${SITE_URL}${src.startsWith("/") ? "" : "/"}${src}`;
+}
+
+/** Return the first candidate title that fits Google's ~60 character display limit. */
+export function fitTitle(...candidates: string[]) {
+  const fit = candidates.find((t) => t.length <= 60);
+  if (fit) return fit;
+  const last = candidates[candidates.length - 1];
+  return last.length <= 60 ? last : last.slice(0, 57).replace(/\s+\S*$/, "") + "…";
+}

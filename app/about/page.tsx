@@ -5,11 +5,11 @@ import { FinalCTA } from "@/components/home/FinalCTA"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "About Natalie — Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus",
+    title: "About Natalie, Real Estate Photographer | Lighthaus Studio",
     description: "Meet Natalie, the photographer behind Lighthaus Studio. Real estate photography, drone aerials, and Matterport 3D tours for agents in Clovis NM, Portales NM, and Lubbock TX.",
     alternates: { canonical: "/about" },
     openGraph: {
-        title: "About Natalie — Real Estate Photographer Clovis NM & Lubbock TX | Lighthaus",
+        title: "About Natalie, Real Estate Photographer | Lighthaus Studio",
         description: "Meet Natalie, the photographer behind Lighthaus Studio. Real estate photography, drone aerials, and Matterport 3D tours for agents in Clovis NM, Portales NM, and Lubbock TX.",
     }
 }

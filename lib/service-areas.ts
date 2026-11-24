@@ -31,7 +31,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 19,
     route: "US-70, about 20 minutes south of Clovis",
     travelFee: false,
-    metaTitle: "Real Estate Photographer Portales NM | Photos, 3D Tours & Drone | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Portales NM | Lighthaus Studio",
     metaDescription:
       "Real estate photography in Portales, NM and Roosevelt County. HDR listing photos, Matterport 3D tours, drone aerials, and video. No travel fee. Photos in 48 hours, packages from $199.",
     h1: "Real estate photography in Portales, New Mexico",
@@ -80,7 +80,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 8,
     route: "US-60/84, about 10 minutes west of Clovis",
     travelFee: false,
-    metaTitle: "Cannon AFB Real Estate Photographer | PCS Listing Photos & 3D Tours | Lighthaus Studio",
+    metaTitle: "Cannon AFB Real Estate Photographer | Lighthaus Studio",
     metaDescription:
       "Real estate photography for Cannon AFB PCS listings in Clovis, Portales, Texico, and Melrose. Matterport 3D tours and floor plans for buyers shopping from out of state. No travel fee.",
     h1: "Real estate photography for Cannon AFB moves",
@@ -129,7 +129,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 35,
     route: "US-84, about 35 minutes southeast of Clovis",
     travelFee: false,
-    metaTitle: "Real Estate Photographer Muleshoe TX | Listing Photos, Drone & 3D Tours | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Muleshoe TX | Lighthaus Studio",
     metaDescription:
       "Muleshoe, TX real estate photography from a studio based right here in Bailey County. HDR photos, drone aerials, Matterport 3D tours, and video. No travel fee, photos in 48 hours.",
     h1: "Real estate photography in Muleshoe, Texas",
@@ -178,7 +178,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 35,
     route: "US-60, about 35 minutes northeast of Clovis",
     travelFee: false,
-    metaTitle: "Real Estate Photographer Friona TX | Parmer County Listing Photos | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Friona TX | Lighthaus Studio",
     metaDescription:
       "Real estate photography in Friona, Bovina, and Farwell, TX. HDR listing photos, drone aerials for farm and ranch land, and Matterport 3D tours. No travel fee, packages from $199.",
     h1: "Real estate photography in Friona and Parmer County",
@@ -227,7 +227,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 65,
     route: "US-60, a little over an hour northeast of Clovis",
     travelFee: true,
-    metaTitle: "Real Estate Photographer Hereford TX | Listing Photos, Drone & 3D Tours | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Hereford TX | Lighthaus Studio",
     metaDescription:
       "Real estate photography in Hereford, TX and Deaf Smith County. HDR listing photos, FAA Part 107 drone aerials for farm and ranch listings, Matterport 3D tours, and video. Photos in 48 hours.",
     h1: "Real estate photography in Hereford, Texas",
@@ -276,7 +276,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 80,
     route: "US-84, about 40 minutes from Muleshoe toward Lubbock",
     travelFee: false,
-    metaTitle: "Real Estate Photographer Littlefield TX | Lamb County Listing Photos | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Littlefield TX | Lighthaus Studio",
     metaDescription:
       "Real estate photography in Littlefield, Amherst, Sudan, and Lamb County, TX. HDR listing photos, drone aerials, Matterport 3D tours, and video. No travel fee, photos in 48 hours.",
     h1: "Real estate photography in Littlefield and Lamb County",
@@ -325,7 +325,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 95,
     route: "about 30 minutes west of Lubbock on TX-114",
     travelFee: true,
-    metaTitle: "Real Estate Photographer Levelland TX | New Construction & Listing Photos | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Levelland TX | Lighthaus Studio",
     metaDescription:
       "Real estate and new construction photography in Levelland, TX. HDR photos for builders and agents, Matterport 3D tours, drone aerials of new subdivisions, and video. Photos in 48 hours.",
     h1: "Real estate and new construction photography in Levelland, Texas",
@@ -374,7 +374,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 100,
     route: "I-27, about 45 minutes north of Lubbock",
     travelFee: false,
-    metaTitle: "Real Estate Photographer Plainview TX | Listing Photos, Drone & 3D Tours | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Plainview TX | Lighthaus Studio",
     metaDescription:
       "Real estate photography in Plainview, TX and Hale County. HDR listing photos, Matterport 3D tours, drone aerials, and video for agents and builders. No travel fee, photos in 48 hours.",
     h1: "Real estate photography in Plainview, Texas",
@@ -423,7 +423,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 85,
     route: "NM-209, about an hour and a half north of Clovis",
     travelFee: true,
-    metaTitle: "Real Estate Photographer Tucumcari NM | Listing & Short-Term Rental Photos | Lighthaus Studio",
+    metaTitle: "Real Estate Photographer Tucumcari NM | Lighthaus Studio",
     metaDescription:
       "Real estate and short-term rental photography in Tucumcari, NM and Quay County. HDR photos, drone aerials, Matterport 3D tours, and video for agents, owners, and Route 66 businesses.",
     h1: "Real estate photography in Tucumcari, New Mexico",
@@ -472,7 +472,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 95,
     route: "US-60 through Hereford, about an hour and a half northeast of Clovis",
     travelFee: true,
-    metaTitle: "Real Estate & Airbnb Photographer Canyon TX | Palo Duro Rentals & Listings | Lighthaus Studio",
+    metaTitle: "Real Estate & Airbnb Photographer Canyon TX | Lighthaus",
     metaDescription:
       "Real estate and Airbnb / VRBO photography in Canyon, TX. Listing photos for realtors, rental photos for hosts near Palo Duro Canyon and WTAMU, drone aerials, and Matterport 3D tours.",
     h1: "Real estate and vacation rental photography in Canyon, Texas",
@@ -521,7 +521,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     milesFromClovis: 110,
     route: "US-60 through Hereford and Canyon, under two hours from Clovis",
     travelFee: true,
-    metaTitle: "Real Estate & Airbnb Photographer Amarillo TX | Listing & Rental Photos | Lighthaus Studio",
+    metaTitle: "Real Estate & Airbnb Photographer Amarillo TX | Lighthaus",
     metaDescription:
       "Real estate photography for Amarillo realtors and Airbnb / VRBO photography for hosts. HDR listing photos, Matterport 3D tours, drone aerials, and video. Photos in 48 hours.",
     h1: "Real estate and Airbnb photography in Amarillo, Texas",

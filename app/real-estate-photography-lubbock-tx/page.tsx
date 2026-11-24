@@ -9,13 +9,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Real Estate Photographer Lubbock TX | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
+  title: "Real Estate Photographer Lubbock TX | Lighthaus Studio",
   description: "Real estate photographer serving Lubbock TX and the South Plains. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages from $199.",
   alternates: {
     canonical: "/real-estate-photography-lubbock-tx",
   },
   openGraph: {
-    title: "Real Estate Photographer Lubbock TX | MLS Photos, 3D Tours & Drone | Lighthaus Studio",
+    title: "Real Estate Photographer Lubbock TX | Lighthaus Studio",
     description: "Real estate photographer serving Lubbock TX and the South Plains. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages from $199.",
     type: "website",
   },

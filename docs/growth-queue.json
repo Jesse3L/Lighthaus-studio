@@ -1,0 +1,74 @@
+{
+  "notes": "One item per run, top to bottom. status: todo | pr-open | done | blocked | needs-jesse. Keyword numbers are Ubersuggest (volume / SD), checked 2026-11-24. Local volumes for town keywords read as 0-10 in Ubersuggest; they still bring real leads, so judge local items by intent, not volume.",
+  "items": [
+    {
+      "id": "lubbock-page-strength",
+      "title": "Make the Lubbock page the page Google ranks for Lubbock searches",
+      "type": "fix",
+      "keyword": "real estate photographer lubbock / real estate photography lubbock",
+      "why": "On 2026-11-18 Ubersuggest showed Lubbock searches landing on the Littlefield (#69-77) and Plainview pages instead of /real-estate-photography-lubbock-tx, which means the Lubbock page is losing to its own neighbors. Strengthen it: Lubbock neighborhoods and suburbs (Wolfforth, Slaton, Shallowater, Ransom Canyon, Lake Ridge, Vintage Township), Texas Tech relocations, links to the new drone/Matterport/video/rental/agents pages, and make the town pages link to Lubbock with the anchor 'Lubbock real estate photography' instead of repeating Lubbock keywords in their own copy.",
+      "status": "todo"
+    },
+    {
+      "id": "virtual-staging-guide",
+      "title": "Guide: virtual staging for real estate listings (cost, before and after, when it helps)",
+      "type": "guide",
+      "keyword": "virtual staging real estate",
+      "volume": 1600,
+      "sd": 23,
+      "variants": ["virtual staging cost (70 / 27)", "how much does virtual staging cost (50 / 26)", "virtual staging before and after (40 / 23)"],
+      "why": "Lighthaus already sells virtual staging at $35 per photo (see /pricing). High-volume, low-difficulty keyword that agents search.",
+      "status": "todo"
+    },
+    {
+      "id": "twilight-photography-guide",
+      "title": "Guide: twilight real estate photography, when it is worth it",
+      "type": "guide",
+      "keyword": "twilight real estate photography",
+      "volume": 390,
+      "sd": 29,
+      "why": "Already tracked, not ranking. Twilight is an add-on on /pricing and a strong Airbnb cover-photo angle.",
+      "status": "todo"
+    },
+    {
+      "id": "cannon-afb-pcs-selling-guide",
+      "title": "Guide: selling a home before a PCS move from Cannon AFB",
+      "type": "guide",
+      "keyword": "selling house before pcs",
+      "why": "Ubersuggest's suggested topic for this project. Cannon AFB relocation agents are a core client group. Check variants with keyword_overview first; if all are zero, still build it as a local trust page and link from the Cannon AFB town page.",
+      "status": "todo"
+    },
+    {
+      "id": "home-photo-prep-checklist",
+      "title": "Guide: how to prepare a home for real estate photos (seller checklist)",
+      "type": "guide",
+      "keyword": "how to prepare for real estate photos",
+      "why": "Agents send this to sellers before every shoot, which earns repeat visits and links. The site promises a prep checklist when you book; this makes it public. Check volume of variants first.",
+      "status": "todo"
+    },
+    {
+      "id": "matterport-vs-zillow-guide",
+      "title": "Guide: Matterport vs Zillow 3D Home tours for listings",
+      "type": "guide",
+      "keyword": "matterport vs zillow 3d tour",
+      "why": "Tracked keyword and an Ubersuggest suggested topic. Supports the Matterport service page. Verify Zillow 3D Home facts on zillow.com before writing.",
+      "status": "todo"
+    },
+    {
+      "id": "vrbo-photo-guide",
+      "title": "Guide: VRBO listing photos, what VRBO asks for and what gets bookings",
+      "type": "guide",
+      "keyword": "vrbo listing photos",
+      "why": "Tracked keyword. Verify VRBO's own photo guidance on vrbo.com before writing; never state a requirement from memory.",
+      "status": "todo"
+    },
+    {
+      "id": "is-it-worth-it-guide",
+      "title": "Guide: is professional real estate photography worth it?",
+      "type": "guide",
+      "keyword": "is real estate photography worth it",
+      "why": "Tracked keyword, sellers and new agents search it. No invented statistics; only cite studies you can open and link.",
+      "status": "todo"
+    }
+  ]
+}
