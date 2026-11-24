@@ -3,6 +3,7 @@ import { Archivo } from 'next/font/google'
 import './globals.css'
 import { MainLayout } from '@/components/layout/MainLayout'
 import { GoogleAnalytics } from '@/components/shared/GoogleAnalytics'
+import { Analytics } from '@vercel/analytics/next'
 import { BUSINESS, SITE_URL } from '@/lib/business'
 import { SERVICE_AREAS, OTHER_TOWNS } from '@/lib/service-areas'
 
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
         )}
+        <Analytics />
       </body>
     </html>
   )
