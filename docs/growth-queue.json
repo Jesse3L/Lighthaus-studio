@@ -6,7 +6,14 @@
       "title": "Make the Lubbock page the page Google ranks for Lubbock searches",
       "type": "fix",
       "keyword": "real estate photographer lubbock / real estate photography lubbock",
-      "why": "On 2026-11-18 Ubersuggest showed Lubbock searches landing on the Littlefield (#69-77) and Plainview pages instead of /real-estate-photography-lubbock-tx, which means the Lubbock page is losing to its own neighbors. Strengthen it: Lubbock neighborhoods and suburbs (Wolfforth, Slaton, Shallowater, Ransom Canyon, Lake Ridge, Vintage Township), Texas Tech relocations, links to the new drone/Matterport/video/rental/agents pages, and make the town pages link to Lubbock with the anchor 'Lubbock real estate photography' instead of repeating Lubbock keywords in their own copy.",
+      "why": "Search Console (2026-11-24): /real-estate-photography-lubbock-tx was NOT indexed (Discovered - currently not indexed), which is why Lubbock searches landed on the Littlefield and Plainview pages. Indexing was requested 2026-11-24. On 2026-11-18 Ubersuggest showed Lubbock searches landing on the Littlefield (#69-77) and Plainview pages instead of /real-estate-photography-lubbock-tx, which means the Lubbock page is losing to its own neighbors. Strengthen it: Lubbock neighborhoods and suburbs (Wolfforth, Slaton, Shallowater, Ransom Canyon, Lake Ridge, Vintage Township), Texas Tech relocations, links to the new drone/Matterport/video/rental/agents pages, and make the town pages link to Lubbock with the anchor 'Lubbock real estate photography' instead of repeating Lubbock keywords in their own copy. Re-inspect the URL in Search Console first; if it is still not indexed, add more internal links to it from the home page body, services page, and new service pages.",
+      "status": "todo"
+    },
+    {
+      "id": "gsc-unindexed-pages",
+      "title": "Get the 20 'Discovered - currently not indexed' pages indexed",
+      "type": "fix",
+      "why": "Search Console on 2026-11-24: 17 indexed, 20 discovered but not indexed (about, agents, contact, portfolio and most portfolio/agent detail pages, Lubbock page), 3 redirects. The 2026-11-24 update added content to the portfolio/agent pages. Check the Pages report each run; for pages still not indexed, strengthen internal links (home page portfolio preview, town pages linking to their local portfolio shoots) and request indexing for up to 5 per run.",
       "status": "todo"
     },
     {
@@ -16,7 +23,11 @@
       "keyword": "virtual staging real estate",
       "volume": 1600,
       "sd": 23,
-      "variants": ["virtual staging cost (70 / 27)", "how much does virtual staging cost (50 / 26)", "virtual staging before and after (40 / 23)"],
+      "variants": [
+        "virtual staging cost (70 / 27)",
+        "how much does virtual staging cost (50 / 26)",
+        "virtual staging before and after (40 / 23)"
+      ],
       "why": "Lighthaus already sells virtual staging at $35 per photo (see /pricing). High-volume, low-difficulty keyword that agents search.",
       "status": "todo"
     },
