@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/business'
 import { LocalArea } from '@/components/home/LocalArea'
 import { FinalCTA } from '@/components/home/FinalCTA'
 
-const title = 'Service Areas | Real Estate & Airbnb Photography from Clovis NM to Amarillo TX | Lighthaus Studio'
+const title = 'Service Areas: Clovis NM to Amarillo TX | Lighthaus Studio'
 const description =
   'Real estate photography across Eastern New Mexico and West Texas: Clovis, Portales, Cannon AFB, Muleshoe, Friona, Hereford, Canyon, Amarillo, Littlefield, Levelland, Plainview, Lubbock, and Tucumcari. Realtors and Airbnb / VRBO hosts.'
 

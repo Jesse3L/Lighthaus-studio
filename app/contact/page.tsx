@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, MessageSquare } from "lucide-react"
 import { ContactForm } from "@/components/contact/ContactForm"
 import { BUSINESS, SITE_URL, TRAVEL_POLICY, TURNAROUND, STARTING_PRICE } from "@/lib/business"
 
-const title = "Book Real Estate Photography in Clovis NM & Lubbock TX | Lighthaus Studio"
+const title = "Book a Real Estate Photographer | Lighthaus Studio"
 const description =
   "Request a quote for real estate photography in Clovis, Portales, Cannon AFB, Lubbock, and towns within 100 miles. Call or text 806-341-9922. Packages from $199."
 

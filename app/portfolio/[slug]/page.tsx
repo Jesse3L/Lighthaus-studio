@@ -1,3 +1,4 @@
+import { absUrl, fitTitle } from "@/lib/business";
 import { notFound } from "next/navigation";
 import { getAllPropertySlugs, getPropertyBySlug } from "@/sanity/lib/queries";
 import { PropertyHero } from "@/components/portfolio/detail/PropertyHero";
@@ -8,6 +9,7 @@ import { PropertyFloorPlan } from "@/components/portfolio/detail/PropertyFloorPl
 import { PropertyFacts } from "@/components/portfolio/detail/PropertyFacts";
 import { PropertyAgent } from "@/components/portfolio/detail/PropertyAgent";
 import { PropertyCTA } from "@/components/portfolio/detail/PropertyCTA";
+import { PropertyShootNotes } from "@/components/portfolio/detail/PropertyShootNotes";
 import { PropertyBreadcrumb } from "@/components/portfolio/detail/PropertyBreadcrumb";
 
 export async function generateStaticParams() {
@@ -19,17 +21,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const property = await getPropertyBySlug(slug);
   if (!property) return {};
-  const title = `${property.title} — ${property.city} Real Estate Photography | Lighthaus`;
+  const title = fitTitle(
+    `${property.title} | ${property.city} Real Estate Photography`,
+    `${property.title} | ${property.city} Listing Photos`,
+    `${property.title} | Lighthaus Studio`,
+    property.title,
+  );
   const description = property.shortDescription;
   return {
-    title: title.length > 60 ? `${property.title} — Real Estate Photography | Lighthaus` : title,
+    title,
     description,
     alternates: { canonical: `/portfolio/${property.slug}` },
     openGraph: {
       title,
       description,
       type: "article",
-      url: `https://lighthausstudio.com/portfolio/${property.slug}`,
+      url: `https://www.lighthausstudio.com/portfolio/${property.slug}`,
       images: [{ url: property.images[0].src, alt: property.images[0].alt }],
     },
   };
@@ -46,17 +53,17 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lighthausstudio.com" },
-          { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://lighthausstudio.com/portfolio" },
-          { "@type": "ListItem", "position": 3, "name": property.title, "item": `https://lighthausstudio.com/portfolio/${property.slug}` }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lighthausstudio.com" },
+          { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.lighthausstudio.com/portfolio" },
+          { "@type": "ListItem", "position": 3, "name": property.title, "item": `https://www.lighthausstudio.com/portfolio/${property.slug}` }
         ]
       },
       {
         "@type": "ImageGallery",
         "name": `${property.title} — ${property.city} Real Estate Photography`,
         "description": property.description,
-        "url": `https://lighthausstudio.com/portfolio/${property.slug}`,
-        "creator": { "@id": "https://lighthausstudio.com/#localbusiness" },
+        "url": `https://www.lighthausstudio.com/portfolio/${property.slug}`,
+        "creator": { "@id": "https://www.lighthausstudio.com/#organization" },
         "contentLocation": {
           "@type": "Place",
           "address": {
@@ -68,16 +75,16 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
         },
         "image": property.images.map(img => ({
           "@type": "ImageObject",
-          "contentUrl": `https://lighthausstudio.com${img.src}`,
+          "contentUrl": absUrl(img.src),
           "description": img.alt,
-          "creator": { "@id": "https://lighthausstudio.com/#localbusiness" }
+          "creator": { "@id": "https://www.lighthausstudio.com/#organization" }
         }))
       },
       ...(property.videoUrl ? [{
         "@type": "VideoObject",
         "name": `${property.title} Video Tour`,
         "description": property.description,
-        "thumbnailUrl": `https://lighthausstudio.com${property.images[0].src}`,
+        "thumbnailUrl": absUrl(property.images[0].src),
         "uploadDate": property.publishedAt,
         "contentUrl": property.videoUrl
       }] : [])
@@ -98,6 +105,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
         {property.videoUrl && <PropertyVideo url={property.videoUrl} title={`${property.title} Video Tour`} />}
         {(property.matterportUrls || property.matterportUrl) && <PropertyMatterport urls={property.matterportUrls} url={property.matterportUrl} title={`${property.title} 3D Tour`} />}
         {property.floorPlanImage && <PropertyFloorPlan image={property.floorPlanImage} />}
+        <PropertyShootNotes property={property} />
         {property.agentSlug && <PropertyAgent agentSlug={property.agentSlug} />}
       </article>
       <PropertyCTA propertyTitle={property.title} />

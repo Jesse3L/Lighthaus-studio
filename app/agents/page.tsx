@@ -23,21 +23,21 @@ export default async function AgentsIndexPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lighthausstudio.com" },
-          { "@type": "ListItem", "position": 2, "name": "Partner Agents", "item": "https://lighthausstudio.com/agents" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lighthausstudio.com" },
+          { "@type": "ListItem", "position": 2, "name": "Partner Agents", "item": "https://www.lighthausstudio.com/agents" }
         ]
       },
       {
         "@type": "CollectionPage",
         "name": "Partner Agents",
-        "url": "https://lighthausstudio.com/agents",
+        "url": "https://www.lighthausstudio.com/agents",
         "mainEntity": {
           "@type": "ItemList",
           "numberOfItems": agents.length,
           "itemListElement": agents.map((a, i) => ({
             "@type": "ListItem",
             "position": i + 1,
-            "url": `https://lighthausstudio.com/agents/${a.slug}`,
+            "url": `https://www.lighthausstudio.com/agents/${a.slug}`,
             "name": a.name
           }))
         }

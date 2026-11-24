@@ -10,13 +10,13 @@ import Image from "next/image";
 import { Check, Star, Shield, Home, Eye, Heart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Airbnb Photographer Lubbock TX & Clovis NM | Vacation Rental Photography | Lighthaus Studio",
+  title: "Airbnb & VRBO Photographer Lubbock & Clovis | Lighthaus",
   description: "Specialized Airbnb and vacation rental photographer in Lubbock TX and Clovis NM. Editorial-style interior photos, drone aerials, Matterport 3D tours, and floor plans. Built to increase click-through rates, nightly bookings, and guest reviews.",
   alternates: {
     canonical: "/airbnb-photography-lubbock-tx-clovis-nm",
   },
   openGraph: {
-    title: "Airbnb Photographer Lubbock TX & Clovis NM | Vacation Rental Photography | Lighthaus Studio",
+    title: "Airbnb & VRBO Photographer Lubbock & Clovis | Lighthaus",
     description: "Specialized Airbnb and vacation rental photographer in Lubbock TX and Clovis NM. Editorial-style interior photos, drone aerials, Matterport 3D tours, and floor plans. Built to increase click-through rates, nightly bookings, and guest reviews.",
     type: "website",
   },
@@ -169,7 +169,7 @@ export default async function AirbnbPhotographyPage() {
         <div className="container-custom relative z-10 grid gap-12 lg:grid-cols-2 items-center">
           <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FCD34D] block">Vacation Rental Media</span>
-            <H1 className="text-white text-5xl md:text-6xl lg:text-7xl leading-tight">Airbnb Photography in Lubbock & Clovis</H1>
+            <H1 className="text-white text-5xl md:text-6xl lg:text-7xl leading-tight">Airbnb & VRBO Photography in Lubbock & Clovis</H1>
             <Lead className="max-w-xl text-neutral-400">
               High-end editorial, lifestyle, and drone photography styled to elevate your short-term rental. Capture more bookings, higher nightly rates, and better guest reviews across West Texas and Eastern New Mexico.
             </Lead>
@@ -339,6 +339,25 @@ export default async function AirbnbPhotographyPage() {
                 </p>
               </details>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section className="border-t border-white/5">
+        <div className="mx-auto max-w-4xl grid gap-8 md:grid-cols-2">
+          <div>
+            <H2 className="text-2xl md:text-3xl mb-3">Long-term rentals too</H2>
+            <p className="text-muted-foreground leading-relaxed">
+              Landlords and property managers use the same shoot to fill rent houses, duplexes, and apartments faster.{" "}
+              <Link href="/rental-property-photography-lubbock-tx-clovis-nm" className="text-accent hover:underline">Rental property photography</Link>
+            </p>
+          </div>
+          <div>
+            <H2 className="text-2xl md:text-3xl mb-3">Shooting it yourself?</H2>
+            <p className="text-muted-foreground leading-relaxed">
+              Our free guide covers the cover shot, staging, and photo order that win bookings.{" "}
+              <Link href="/guides/airbnb-vrbo-photography-tips" className="text-accent hover:underline">Airbnb and VRBO photography tips</Link>
+            </p>
           </div>
         </div>
       </Section>

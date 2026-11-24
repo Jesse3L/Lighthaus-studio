@@ -1,3 +1,4 @@
+import { absUrl } from "@/lib/business";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllAgentSlugs, getAgentBySlug, getPropertiesForAgent, getPropertyBySlug } from "@/sanity/lib/queries";
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: Props) {
       title,
       description,
       type: "article",
-      url: `https://lighthausstudio.com/agents/${agent.slug}/${property.slug}`,
+      url: `https://www.lighthausstudio.com/agents/${agent.slug}/${property.slug}`,
       images: [{ url: property.images[0].src, alt: property.images[0].alt }],
     },
   };
@@ -63,18 +64,18 @@ export default async function CoBrandedPropertyPage({ params }: Props) {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lighthausstudio.com" },
-          { "@type": "ListItem", "position": 2, "name": "Partner Agents", "item": "https://lighthausstudio.com/agents" },
-          { "@type": "ListItem", "position": 3, "name": agent.name, "item": `https://lighthausstudio.com/agents/${agent.slug}` },
-          { "@type": "ListItem", "position": 4, "name": property.title, "item": `https://lighthausstudio.com/agents/${agent.slug}/${property.slug}` }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lighthausstudio.com" },
+          { "@type": "ListItem", "position": 2, "name": "Partner Agents", "item": "https://www.lighthausstudio.com/agents" },
+          { "@type": "ListItem", "position": 3, "name": agent.name, "item": `https://www.lighthausstudio.com/agents/${agent.slug}` },
+          { "@type": "ListItem", "position": 4, "name": property.title, "item": `https://www.lighthausstudio.com/agents/${agent.slug}/${property.slug}` }
         ]
       },
       {
         "@type": "ImageGallery",
         "name": `${property.title} — ${property.city} Real Estate Photography`,
         "description": property.description,
-        "url": `https://lighthausstudio.com/agents/${agent.slug}/${property.slug}`,
-        "creator": { "@id": "https://lighthausstudio.com/#localbusiness" },
+        "url": `https://www.lighthausstudio.com/agents/${agent.slug}/${property.slug}`,
+        "creator": { "@id": "https://www.lighthausstudio.com/#organization" },
         "contentLocation": {
           "@type": "Place",
           "address": {
@@ -86,16 +87,16 @@ export default async function CoBrandedPropertyPage({ params }: Props) {
         },
         "image": property.images.map(img => ({
           "@type": "ImageObject",
-          "contentUrl": `https://lighthausstudio.com${img.src}`,
+          "contentUrl": absUrl(img.src),
           "description": img.alt,
-          "creator": { "@id": "https://lighthausstudio.com/#localbusiness" }
+          "creator": { "@id": "https://www.lighthausstudio.com/#organization" }
         }))
       },
       ...(property.videoUrl ? [{
         "@type": "VideoObject",
         "name": `${property.title} Video Tour`,
         "description": property.description,
-        "thumbnailUrl": `https://lighthausstudio.com${property.images[0].src}`,
+        "thumbnailUrl": absUrl(property.images[0].src),
         "uploadDate": property.publishedAt,
         "contentUrl": property.videoUrl
       }] : [])

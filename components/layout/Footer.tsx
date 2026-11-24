@@ -13,12 +13,17 @@ const AREA_LINKS = [
   ...SERVICE_AREAS.map((a) => ({ href: `/${a.slug}`, label: `${a.city}, ${a.state}` })),
 ]
 
+// Kept as a plain list (not imported from lib/service-pages) so the page copy
+// isn't shipped in the client bundle. Add new service pages here too.
 const SERVICE_LINKS = [
   { href: '/services#hdr-photography', label: 'HDR listing photos' },
-  { href: '/services#matterport', label: 'Matterport 3D tours' },
-  { href: '/services#drone', label: 'Drone aerials' },
-  { href: '/services#video', label: 'Walkthrough video' },
-  { href: '/airbnb-photography-lubbock-tx-clovis-nm', label: 'Airbnb photography' },
+  { href: '/matterport-3d-tours-lubbock-tx-clovis-nm', label: 'Matterport 3D tours' },
+  { href: '/drone-photography-lubbock-tx-clovis-nm', label: 'Drone photography' },
+  { href: '/real-estate-video-lubbock-tx-clovis-nm', label: 'Real estate video' },
+  { href: '/airbnb-photography-lubbock-tx-clovis-nm', label: 'Airbnb & VRBO photography' },
+  { href: '/rental-property-photography-lubbock-tx-clovis-nm', label: 'Rental property photos' },
+  { href: '/commercial-photography-lubbock-tx-clovis-nm', label: 'Commercial photography' },
+  { href: '/photography-for-real-estate-agents', label: 'For agents & brokerages' },
 ]
 
 const COMPANY_LINKS = [
@@ -26,6 +31,7 @@ const COMPANY_LINKS = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/about', label: 'About Natalie' },
   { href: '/agents', label: 'Agent pages' },
+  { href: '/guides', label: 'Guides' },
   { href: '/contact', label: 'Book a shoot' },
   { href: '/terms', label: 'Terms of service' },
 ]

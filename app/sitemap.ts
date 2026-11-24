@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 import { getAllPropertySlugs, getAllAgentSlugs } from '@/sanity/lib/queries'
 import { SITE_URL } from '@/lib/business'
 import { SERVICE_AREAS } from '@/lib/service-areas'
+import { SERVICE_PAGES } from '@/lib/service-pages'
+import { GUIDES } from '@/lib/guides'
 
 // Regenerate hourly. Never fails: if the CMS is unreachable, the static pages
 // are still served so Google always gets a valid sitemap.
@@ -9,7 +11,7 @@ export const revalidate = 3600
 
 // Bump when page content meaningfully changes. A constant date (instead of
 // "now" on every request) keeps lastmod trustworthy to Google.
-const CONTENT_UPDATED = new Date('2026-11-05')
+const CONTENT_UPDATED = new Date('2026-11-24')
 
 async function safe<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -41,6 +43,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     page('/service-areas', 0.8),
     ...SERVICE_AREAS.map((a) => page(`/${a.slug}`, 0.8)),
     page('/services', 0.8),
+    ...SERVICE_PAGES.map((s) => ({ ...page(`/${s.slug}`, 0.8), lastModified: new Date(s.updated) })),
+    page('/guides', 0.7, 'weekly'),
+    ...GUIDES.map((g) => ({ ...page(`/guides/${g.slug}`, 0.6), lastModified: new Date(g.updated) })),
     page('/pricing', 0.8),
     page('/portfolio', 0.8, 'weekly'),
     page('/contact', 0.8, 'yearly'),
