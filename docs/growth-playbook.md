@@ -105,9 +105,13 @@ redirects without listing them in the PR.
 
 Branch `growth/YYYY-MM-DD-<item-id>`, commit as Claude <noreply@anthropic.com>,
 PR titled `Growth: <item title>`. Wait for the Vercel preview to be Ready and
-open the new page on the preview. Leave the PR open for Jesse to merge unless
-Jesse has said in chat that growth PRs may be merged automatically (record that
-permission here with the date if he gives it).
+open the new page on the preview. **Auto-merge is approved** (Jesse, in chat, 2026-11-24): once every check
+passes and the Vercel preview is Ready, squash-merge the PR
+(`gh api -X PUT repos/Jesse3L/lighthaus-studio/pulls/<n>/merge -f merge_method=squash -f sha=<head sha>`),
+wait for the production deployment to be Ready, and open the new URLs on
+https://www.lighthausstudio.com to confirm they load. Leave the PR open for Jesse
+instead if it touches anything in "Off limits", changes prices or policies, or a
+check failed and could not be fixed.
 
 ## Monthly check (first run of each month)
 
