@@ -57,7 +57,7 @@ export default async function GuidePage({ params }: Props) {
       dateModified: g.updated,
       mainEntityOfPage: url,
       image: `${SITE_URL}/opengraph-image`,
-      author: { '@type': 'Person', name: BUSINESS.photographer, url: `${SITE_URL}/about` },
+      author: { '@id': `${SITE_URL}/#organization` },
       publisher: { '@id': `${SITE_URL}/#organization` },
     },
     {
@@ -88,7 +88,7 @@ export default async function GuidePage({ params }: Props) {
             </nav>
             <h1 className="text-4xl font-bold leading-[1.08] text-neutral-50 sm:text-5xl">{g.title}</h1>
             <p className="mt-6 text-sm text-neutral-400">
-              By <Link href="/about" className="text-neutral-200 hover:text-white">{BUSINESS.photographer}</Link>, Lighthaus Studio ·
+              By <Link href="/about" className="text-neutral-200 hover:text-white">Lighthaus Studio</Link> ·
               Updated {formatDate(g.updated)} · {g.readingMinutes} min read
             </p>
           </div>

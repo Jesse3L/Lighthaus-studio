@@ -52,7 +52,9 @@ export function PropertyShootNotes({ property }: { property: Property }) {
   const isRental = property.category === 'Airbnb' || /airbnb|vrbo|rental|loft|condo/i.test(property.propertyType || '')
   const isCommercial = /commercial/i.test(`${property.propertyType} ${property.title}`)
   const place = `${property.city}, ${property.state}`
-  const type = (property.propertyType || 'property').toLowerCase()
+  const rawType = property.propertyType || 'property'
+  // Keep brand names capitalized ("Airbnb", "VRBO"); lowercase ordinary nouns.
+  const type = rawType.toLowerCase().replace(/\bairbnb\b/g, 'Airbnb').replace(/\bvrbo\b/g, 'VRBO')
 
   return (
     <section aria-labelledby="shoot-notes" className="grid gap-10 border-t border-neutral-800 pt-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
