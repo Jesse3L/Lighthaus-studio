@@ -7,7 +7,14 @@
       "type": "fix",
       "keyword": "real estate photographer lubbock / real estate photography lubbock",
       "why": "Search Console (2026-11-24): /real-estate-photography-lubbock-tx was NOT indexed (Discovered - currently not indexed), which is why Lubbock searches landed on the Littlefield and Plainview pages. Indexing was requested 2026-11-24. On 2026-11-18 Ubersuggest showed Lubbock searches landing on the Littlefield (#69-77) and Plainview pages instead of /real-estate-photography-lubbock-tx, which means the Lubbock page is losing to its own neighbors. Strengthen it: Lubbock neighborhoods and suburbs (Wolfforth, Slaton, Shallowater, Ransom Canyon, Lake Ridge, Vintage Township), Texas Tech relocations, links to the new drone/Matterport/video/rental/agents pages, and make the town pages link to Lubbock with the anchor 'Lubbock real estate photography' instead of repeating Lubbock keywords in their own copy. Re-inspect the URL in Search Console first; if it is still not indexed, add more internal links to it from the home page body, services page, and new service pages.",
-      "status": "todo"
+      "status": "done",
+      "date": "2026-11-26",
+      "pr": 5,
+      "urls": [
+        "/real-estate-photography-lubbock-tx"
+      ],
+      "keyword_numbers": "lubbock real estate photographer: 10/mo in Lubbock, SD 8; real estate photographer lubbock and real estate photography lubbock: 0 (US), SD 4 (checked 2026-11-26)",
+      "result": "Lubbock page: meta trimmed to 157, new sections (Texas Tech and out-of-town buyers, shoot prep, service and guide links), Ransom Canyon/Idalou/New Deal added, duplicate FAQ and 'leading studio' claim removed, em dashes removed. Town pages now link to it with the anchor 'Lubbock real estate photography' (Muleshoe added); all 6 service pages link to it. Home and Muleshoe pages left alone since they now rank #7 and #5 for Lubbock queries."
     },
     {
       "id": "gsc-unindexed-pages",
@@ -15,6 +22,13 @@
       "type": "fix",
       "why": "Search Console on 2026-11-24: 17 indexed, 20 discovered but not indexed (about, agents, contact, portfolio and most portfolio/agent detail pages, Lubbock page), 3 redirects. The 2026-11-24 update added content to the portfolio/agent pages. Check the Pages report each run; for pages still not indexed, strengthen internal links (home page portfolio preview, town pages linking to their local portfolio shoots) and request indexing for up to 5 per run.",
       "status": "todo"
+    },
+    {
+      "id": "lubbock-travel-fee-wording",
+      "title": "Confirm Lubbock travel-fee wording",
+      "type": "needs-jesse",
+      "why": "The Lubbock page says no travel fee 'inside Lubbock city limits, including Wolfforth, Slaton, and Shallowater' and 'listings more than 20 miles outside Lubbock proper may carry a modest travel quote'. Wolfforth, Slaton and Shallowater are outside city limits, and lib/business.ts only says no fee 'in Lubbock and Plainview'. Question for Jesse/Natalie: are Wolfforth, Slaton, Shallowater, Ransom Canyon and Idalou no-fee? Then the page copy can be made consistent (policy change, so not done automatically).",
+      "status": "needs-jesse"
     },
     {
       "id": "virtual-staging-guide",
