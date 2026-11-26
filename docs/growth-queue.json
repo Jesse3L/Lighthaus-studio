@@ -9,7 +9,7 @@
       "why": "Search Console (2026-11-24): /real-estate-photography-lubbock-tx was NOT indexed (Discovered - currently not indexed), which is why Lubbock searches landed on the Littlefield and Plainview pages. Indexing was requested 2026-11-24. On 2026-11-18 Ubersuggest showed Lubbock searches landing on the Littlefield (#69-77) and Plainview pages instead of /real-estate-photography-lubbock-tx, which means the Lubbock page is losing to its own neighbors. Strengthen it: Lubbock neighborhoods and suburbs (Wolfforth, Slaton, Shallowater, Ransom Canyon, Lake Ridge, Vintage Township), Texas Tech relocations, links to the new drone/Matterport/video/rental/agents pages, and make the town pages link to Lubbock with the anchor 'Lubbock real estate photography' instead of repeating Lubbock keywords in their own copy. Re-inspect the URL in Search Console first; if it is still not indexed, add more internal links to it from the home page body, services page, and new service pages.",
       "status": "done",
       "date": "2026-11-26",
-      "pr": null,
+      "pr": 5,
       "urls": [
         "/real-estate-photography-lubbock-tx"
       ],
