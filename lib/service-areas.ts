@@ -167,7 +167,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
         a: "No. Muleshoe and the surrounding Bailey County area are inside our no-travel-fee zone.",
       },
     ],
-    nearby: ["real-estate-photography-clovis-nm", "real-estate-photography-littlefield-tx", "real-estate-photography-friona-tx"],
+    nearby: ["real-estate-photography-clovis-nm", "real-estate-photography-lubbock-tx", "real-estate-photography-littlefield-tx", "real-estate-photography-friona-tx"],
   },
   {
     slug: "real-estate-photography-friona-tx",
@@ -582,7 +582,7 @@ export function getServiceArea(slug: string) {
 
 const EXISTING_PAGES: Record<string, string> = {
   "real-estate-photography-clovis-nm": "Clovis, NM",
-  "real-estate-photography-lubbock-tx": "Lubbock, TX",
+  "real-estate-photography-lubbock-tx": "Lubbock real estate photography",
   "airbnb-photography-lubbock-tx-clovis-nm": "Airbnb photography",
 };
 

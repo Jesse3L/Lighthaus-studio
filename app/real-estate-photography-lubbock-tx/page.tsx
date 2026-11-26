@@ -10,13 +10,13 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Real Estate Photographer Lubbock TX | Lighthaus Studio",
-  description: "Real estate photographer serving Lubbock TX and the South Plains. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages from $199.",
+  description: "Lubbock real estate photographer for agents, hosts, and landlords. HDR photos, drone, Matterport 3D tours, and video. Photos in 48 hours, packages from $199.",
   alternates: {
     canonical: "/real-estate-photography-lubbock-tx",
   },
   openGraph: {
     title: "Real Estate Photographer Lubbock TX | Lighthaus Studio",
-    description: "Real estate photographer serving Lubbock TX and the South Plains. HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video. MLS-ready files in 48 hours. Packages from $199.",
+    description: "Lubbock real estate photographer for agents, hosts, and landlords. HDR photos, drone, Matterport 3D tours, and video. Photos in 48 hours, packages from $199.",
     type: "website",
   },
 };
@@ -71,7 +71,7 @@ const lubbockFaqSchema = {
       "name": "How fast can you book a Lubbock listing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most Lubbock shoots get scheduled within one business day of your request. Weekend availability is subject to booking load — text 806-341-9922 if you need same-day scheduling."
+        "text": "Most Lubbock shoots get scheduled within one business day of your request. Weekend availability is subject to booking load. Text 806-341-9922 if you need same-day scheduling."
       }
     },
     {
@@ -79,7 +79,7 @@ const lubbockFaqSchema = {
       "name": "What time of day works best for Lubbock exterior shots?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "West Texas exteriors photograph best about two hours after sunrise or two hours before sunset, when the sun is angled enough to show texture on brick and siding without blowing out the sky. Twilight exteriors — shot during the 20-minute blue hour after sunset — work especially well for higher-end LakeRidge and Vintage Township listings."
+        "text": "West Texas exteriors photograph best about two hours after sunrise or two hours before sunset, when the sun is angled enough to show texture on brick and siding without blowing out the sky. Twilight exteriors, shot during the 20-minute blue hour after sunset, work especially well for higher-end LakeRidge and Vintage Township listings."
       }
     },
     {
@@ -87,7 +87,7 @@ const lubbockFaqSchema = {
       "name": "What if my Lubbock listing has a pool, a large lot, or an outbuilding?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pool photos are included in every standard package. Large lots, acreage, and outbuildings are where the FAA Part 107 drone coverage pays off the most — aerial stills give buyers a sense of property scale and neighborhood context that interior photos cannot show."
+        "text": "Pool photos are included in every standard package. Large lots, acreage, and outbuildings are where the FAA Part 107 drone coverage pays off the most. Aerial stills give buyers a sense of property scale and neighborhood context that interior photos cannot show."
       }
     },
     {
@@ -131,7 +131,7 @@ export default async function LubbockRealEstatePhotographyPage() {
     const faqs = [
         {
             q: "Who is the best real estate photographer in Lubbock TX?",
-            a: "Lighthaus Studio is a real estate photographer serving Lubbock TX and the South Plains. Owner-operator Natalie shoots, edits, and delivers every listing herself — HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video, all delivered within 48 hours."
+            a: "Lighthaus Studio is a real estate photographer serving Lubbock TX and the South Plains. Owner-operator Natalie shoots, edits, and delivers every listing herself: HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video, all delivered within 48 hours."
         },
         {
             q: "Do you offer listing photos for the Lubbock TX MLS?",
@@ -147,19 +147,15 @@ export default async function LubbockRealEstatePhotographyPage() {
         },
         {
             q: "How fast can you book a Lubbock listing?",
-            a: "Most Lubbock shoots get scheduled within one business day of your request. Weekend availability is subject to booking load — text 806-341-9922 if you need same-day scheduling."
+            a: "Most Lubbock shoots get scheduled within one business day of your request. Weekend availability is subject to booking load. Text 806-341-9922 if you need same-day scheduling."
         },
         {
             q: "What time of day works best for Lubbock exterior shots?",
-            a: "West Texas exteriors photograph best about two hours after sunrise or two hours before sunset, when the sun is angled enough to show texture on brick and siding without blowing out the sky. Twilight exteriors — shot during the 20-minute blue hour after sunset — work especially well for higher-end LakeRidge and Vintage Township listings where the interior lights pull a buyer's eye into the frame."
-        },
-        {
-            q: "Do you deliver files in the format the Lubbock MLS requires?",
-            a: "Yes. Photos are delivered in the exact dimensions and file sizes the Lubbock Association of Realtors MLS requires, sized for both thumbnail and full-gallery display. No resizing work on your end."
+            a: "West Texas exteriors photograph best about two hours after sunrise or two hours before sunset, when the sun is angled enough to show texture on brick and siding without blowing out the sky. Twilight exteriors, shot during the 20-minute blue hour after sunset, work especially well for higher-end LakeRidge and Vintage Township listings where the interior lights pull a buyer's eye into the frame."
         },
         {
             q: "What if my Lubbock listing has a pool, a large lot, or an outbuilding?",
-            a: "Pool photos are included in every standard package. Large lots, acreage, and outbuildings are where the FAA Part 107 drone coverage pays off the most — aerial stills give buyers a sense of property scale and neighborhood context that interior photos cannot show. Ranch-style listings outside the city are a common use case."
+            a: "Pool photos are included in every standard package. Large lots, acreage, and outbuildings are where the FAA Part 107 drone coverage pays off the most. Aerial stills give buyers a sense of property scale and neighborhood context that interior photos cannot show. Ranch-style listings outside the city are a common use case."
         },
         {
             q: "What is the story behind the name Lighthaus Studio?",
@@ -180,7 +176,7 @@ export default async function LubbockRealEstatePhotographyPage() {
                     <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
                         <H1 className="text-white">Real Estate Photographer in Lubbock, TX</H1>
                         <Lead className="max-w-xl text-neutral-400">
-                            HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for Lubbock TX agents and the South Plains MLS. As one of the leading Lubbock photography studios, we deliver photos within 48 hours and video and 3D tours within 72.
+                            HDR listing photos, Matterport 3D virtual tours, aerial drone photography, and walk-through video for Lubbock TX agents and the South Plains MLS. Natalie shoots every Lubbock listing herself and delivers photos within 48 hours, video and 3D tours within 72.
                         </Lead>
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <Link href="/contact" className="w-full sm:w-auto">
@@ -228,25 +224,25 @@ export default async function LubbockRealEstatePhotographyPage() {
                 <div className="mb-12 max-w-3xl">
                     <H2 className="mb-6">Real estate media services for Lubbock TX listings</H2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Every Lubbock shoot combines five deliverables in a single on-site visit — no scheduling a second appointment, no paying a separate vendor for video or drone coverage. While many general <strong>photography studios in Lubbock</strong> focus on traditional portraits, Lighthaus Studio is a dedicated <strong>Lubbock photography studio</strong> specializing exclusively in high-end real estate, architecture, and commercial space marketing. If you are comparing local <strong>Lubbock photo studios</strong> to find the right partner for your listings, here is what is included in our comprehensive photography packages:
+                        Every Lubbock shoot combines five deliverables in a single on-site visit. No scheduling a second appointment, no paying a separate vendor for video or drone coverage. While many general <strong>photography studios in Lubbock</strong> focus on traditional portraits, Lighthaus Studio is a dedicated <strong>Lubbock photography studio</strong> specializing exclusively in high-end real estate, architecture, and commercial space marketing. If you are comparing local <strong>Lubbock photo studios</strong> to find the right partner for your listings, here is what is included in our comprehensive photography packages:
                     </p>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
-                        <h3 className="mb-3 text-xl font-bold text-primary">HDR Listing Photos — Lubbock TX</h3>
+                        <h3 className="mb-3 text-xl font-bold text-primary">HDR Listing Photos in Lubbock</h3>
                         <p className="text-muted-foreground leading-relaxed">20 to 30 hand-blended HDR stills per Lubbock listing, shot on a Canon R8. Every room, every exterior angle, and twilight exteriors when the West Texas sky cooperates. MLS-ready file sizes delivered with every package.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
-                        <h3 className="mb-3 text-xl font-bold text-primary">3D Virtual Tours — Lubbock TX</h3>
-                        <p className="text-muted-foreground leading-relaxed">Matterport 3D virtual tours captured with a Matterport Pro3. Let out-of-town buyers tour a Lubbock home from anywhere — useful for Texas Tech families, relocations from Dallas and Austin, and listings aimed at buyers who cannot tour in person before making an offer.</p>
+                        <h3 className="mb-3 text-xl font-bold text-primary">3D Virtual Tours in Lubbock</h3>
+                        <p className="text-muted-foreground leading-relaxed">Matterport 3D virtual tours captured with a Matterport Pro3. Let out-of-town buyers tour a Lubbock home from anywhere. Useful for Texas Tech families, relocations from Dallas and Austin, and listings aimed at buyers who cannot tour in person before making an offer.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
                         <h3 className="mb-3 text-xl font-bold text-primary">Cinematic Video Tours</h3>
                         <p className="text-muted-foreground leading-relaxed">60 to 90 second branded video for Lubbock MLS video fields, Instagram Reels, and agent social posts. Music-matched and cut to highlight the home's flow.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
-                        <h3 className="mb-3 text-xl font-bold text-primary">Aerial Drone Photography — Lubbock TX</h3>
-                        <p className="text-muted-foreground leading-relaxed">FAA Part 107 licensed aerial drone photography and video of the lot, roofline, and neighborhood context — especially valuable for listings in LakeRidge, Vintage Township, and properties on larger lots where location is part of the story.</p>
+                        <h3 className="mb-3 text-xl font-bold text-primary">Aerial Drone Photography in Lubbock</h3>
+                        <p className="text-muted-foreground leading-relaxed">FAA Part 107 licensed aerial drone photography and video of the lot, roofline, and neighborhood context, especially valuable for listings in LakeRidge, Vintage Township, and properties on larger lots where location is part of the story.</p>
                     </Card>
                     <Card variant="default" hover className="flex flex-col p-6 lg:p-8 bg-neutral-900 border-white/5">
                         <h3 className="mb-3 text-xl font-bold text-primary">2D Floor Plans with Room Dimensions</h3>
@@ -260,7 +256,7 @@ export default async function LubbockRealEstatePhotographyPage() {
                 <div className="mb-12 max-w-3xl">
                     <H2 className="mb-6">Lubbock Neighborhoods We Cover</H2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Lighthaus Studio shoots listings across every corner of Lubbock — inside Loop 289 and out to the surrounding towns that sit inside the Lubbock Association of Realtors MLS coverage area. A few neighborhoods and subdivisions where we frequently work:
+                        Lighthaus Studio shoots listings across every corner of Lubbock, from inside Loop 289 and out to the surrounding towns that sit inside the Lubbock Association of Realtors MLS coverage area. A few neighborhoods and subdivisions where we frequently work:
                     </p>
                 </div>
                 <div className="grid gap-8 md:grid-cols-2">
@@ -282,12 +278,82 @@ export default async function LubbockRealEstatePhotographyPage() {
                     </div>
                     <div>
                         <h3 className="text-lg font-bold mb-2">Surrounding towns</h3>
-                        <p className="text-muted-foreground">Wolfforth, Slaton, Shallowater, Abernathy, Levelland, Littlefield, Idalou, and Plainview — all inside the Lubbock MLS coverage area.</p>
+                        <p className="text-muted-foreground">Wolfforth, Slaton, Shallowater, Ransom Canyon, Idalou, New Deal, Abernathy, Levelland, Littlefield, and Plainview, all inside the Lubbock MLS coverage area. Ransom Canyon homes along the lake and canyon rim are a natural fit for drone aerials, since the setting is a big part of what a buyer is paying for.</p>
                     </div>
                 </div>
                 <div className="mt-12 p-6 rounded-lg bg-secondary/50 border border-white/10">
                     <p className="font-medium">Listings more than 20 miles outside Lubbock proper may carry a modest travel quote. Anything inside Lubbock city limits has no travel fee, ever.</p>
                 </div>
+            </Section>
+
+            {/* Section 4b - Texas Tech and out-of-town buyers */}
+            <Section className="bg-secondary/50">
+                <div className="max-w-3xl">
+                    <H2 className="mb-6">Selling to Texas Tech families and out-of-town buyers</H2>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                        A lot of Lubbock buyers are shopping from somewhere else. Faculty and staff moving for Texas Tech or the Health Sciences Center, doctors and nurses starting at the hospitals in the Medical District, and parents buying a house near campus for a student all tend to narrow their list before they ever drive into town.
+                    </p>
+                    <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                        For those buyers, the photos have to answer the questions they would normally answer on a walk-through. A <Link href="/matterport-3d-tours-lubbock-tx-clovis-nm" className="text-accent hover:underline font-medium">Matterport 3D tour</Link> lets them check how the rooms connect, and the 2D floor plan from the same scan shows whether their furniture fits. A short <Link href="/real-estate-video-lubbock-tx-clovis-nm" className="text-accent hover:underline font-medium">walk-through video</Link> is easy to text to a spouse or parent who has to sign off. The Pro package covers the 3D tour, floor plan, and drone. Ultimate adds the video.
+                    </p>
+                </div>
+            </Section>
+
+            {/* Section 4c - Shoot prep */}
+            <Section>
+                <div className="max-w-3xl">
+                    <H2 className="mb-6">Getting a Lubbock listing ready for photos</H2>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                        Most homes take one 60 to 90 minute visit for photos, drone, the 3D scan, and video together. A little prep before that visit makes the biggest difference. Here is what we ask Lubbock sellers to do:
+                    </p>
+                    <ul className="mt-6 space-y-3 text-lg text-muted-foreground leading-relaxed list-disc pl-6">
+                        <li>Turn on every light and replace dead bulbs, so rooms read bright and even.</li>
+                        <li>Open blinds, clear kitchen and bathroom counters, and put away towels, rugs, and pet bowls.</li>
+                        <li>Move cars off the driveway and away from the curb so the front of the house is clear.</li>
+                        <li>Mow, sweep the walk, and roll trash cans out of sight. South Plains wind can scatter yard debris overnight, so a quick check that morning helps.</li>
+                        <li>Tell us ahead of time about a pool, shop, or acreage so we plan the drone and exterior shots.</li>
+                        <li>Send the lockbox code or let us know who will meet us at the door.</li>
+                    </ul>
+                </div>
+            </Section>
+
+            {/* Section 4d - Services and guides for Lubbock */}
+            <Section className="bg-secondary/50">
+                <div className="max-w-3xl">
+                    <H2 className="mb-6">More for Lubbock agents, hosts, and owners</H2>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                        Each service has its own page that explains what is included:
+                    </p>
+                </div>
+                <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <li className="border-l border-neutral-700 pl-4">
+                        <Link href="/drone-photography-lubbock-tx-clovis-nm" className="font-semibold underline underline-offset-4 hover:text-accent">Drone photography in Lubbock</Link>
+                        <p className="mt-1 text-sm text-muted-foreground">FAA Part 107 aerials for big lots, acreage, and neighborhood context.</p>
+                    </li>
+                    <li className="border-l border-neutral-700 pl-4">
+                        <Link href="/matterport-3d-tours-lubbock-tx-clovis-nm" className="font-semibold underline underline-offset-4 hover:text-accent">Matterport 3D tours</Link>
+                        <p className="mt-1 text-sm text-muted-foreground">Captured on a Matterport Pro3, delivered within 72 hours.</p>
+                    </li>
+                    <li className="border-l border-neutral-700 pl-4">
+                        <Link href="/real-estate-video-lubbock-tx-clovis-nm" className="font-semibold underline underline-offset-4 hover:text-accent">Real estate video</Link>
+                        <p className="mt-1 text-sm text-muted-foreground">A 60 to 90 second walk-through with a vertical cut for Reels.</p>
+                    </li>
+                    <li className="border-l border-neutral-700 pl-4">
+                        <Link href="/rental-property-photography-lubbock-tx-clovis-nm" className="font-semibold underline underline-offset-4 hover:text-accent">Rental property photography</Link>
+                        <p className="mt-1 text-sm text-muted-foreground">Rent houses, duplexes, and apartments near Texas Tech and across town.</p>
+                    </li>
+                    <li className="border-l border-neutral-700 pl-4">
+                        <Link href="/commercial-photography-lubbock-tx-clovis-nm" className="font-semibold underline underline-offset-4 hover:text-accent">Commercial photography</Link>
+                        <p className="mt-1 text-sm text-muted-foreground">Offices, retail, restaurants, and multifamily.</p>
+                    </li>
+                    <li className="border-l border-neutral-700 pl-4">
+                        <Link href="/photography-for-real-estate-agents" className="font-semibold underline underline-offset-4 hover:text-accent">Teams and brokerages</Link>
+                        <p className="mt-1 text-sm text-muted-foreground">10 to 15% off bulk and multi-property work.</p>
+                    </li>
+                </ul>
+                <p className="mt-10 max-w-3xl text-muted-foreground leading-relaxed">
+                    Still deciding? Read <Link href="/guides/how-much-does-real-estate-photography-cost" className="text-accent hover:underline font-medium">what real estate photography costs in West Texas</Link>, the <Link href="/guides/rent-house-listing-photos" className="text-accent hover:underline font-medium">rent house photo guide</Link>, or see every package on the <Link href="/pricing" className="text-accent hover:underline font-medium">pricing page</Link>.
+                </p>
             </Section>
 
             {/* Section 5 - Who We Work With */}
@@ -296,7 +362,7 @@ export default async function LubbockRealEstatePhotographyPage() {
                 <div className="space-y-8 max-w-4xl mx-auto">
                     <section>
                         <h3 className="text-xl font-bold mb-3">Lubbock real estate agents</h3>
-                        <p className="text-lg text-muted-foreground leading-relaxed">Agents listing $200k starter homes in Tech Terrace, $600k builder homes in Kelsey Park, luxury properties in LakeRidge, and everything between. If you are a member of the Lubbock Association of Realtors — the same association that built the first MLS in Texas — Lighthaus is set up to deliver media that drops into the Lubbock MLS clean, sized, and named correctly.</p>
+                        <p className="text-lg text-muted-foreground leading-relaxed">Agents listing $200k starter homes in Tech Terrace, $600k builder homes in Kelsey Park, luxury properties in LakeRidge, and everything between. If you are a member of the Lubbock Association of Realtors, the same association that built the first MLS in Texas, Lighthaus is set up to deliver media that drops into the Lubbock MLS clean, sized, and named correctly.</p>
                     </section>
                     <section>
                         <h3 className="text-xl font-bold mb-3">Homeowners selling for sale by owner</h3>
@@ -327,7 +393,7 @@ export default async function LubbockRealEstatePhotographyPage() {
                     </Card>
                     <Card className="p-8 bg-neutral-900 border-none">
                         <h3 className="text-xl font-bold mb-3 text-primary">48 hours, not a week</h3>
-                        <p className="text-muted-foreground leading-relaxed">Lubbock market velocity is fast enough that a week-long photo turnaround costs you days on market. Lighthaus delivers within 48 hours of the shoot, every time — not just on easy jobs.</p>
+                        <p className="text-muted-foreground leading-relaxed">Lubbock market velocity is fast enough that a week-long photo turnaround costs you days on market. Lighthaus delivers photos within 48 hours of the shoot.</p>
                     </Card>
                     <Card className="p-8 bg-neutral-900 border-none">
                         <h3 className="text-xl font-bold mb-3 text-primary">Local to West Texas, not a dropship vendor</h3>
@@ -340,7 +406,7 @@ export default async function LubbockRealEstatePhotographyPage() {
             <Section className="bg-transparent">
                 <div className="mx-auto max-w-4xl">
                     <div className="mb-10 lg:mb-16 text-center">
-                        <H2 className="mt-4">Lubbock TX Real Estate Photographer — Common Questions</H2>
+                        <H2 className="mt-4">Lubbock real estate photographer: common questions</H2>
                     </div>
 
                     <div className="divide-y divide-white/10">

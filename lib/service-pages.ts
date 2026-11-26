@@ -92,7 +92,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         a: "Yes. We fly for builders, commercial properties, ag operations, and businesses that need aerial marketing photos. Tell us what you need and we'll quote it.",
       },
     ],
-    related: ["matterport-3d-tours-lubbock-tx-clovis-nm", "real-estate-video-lubbock-tx-clovis-nm", "commercial-photography-lubbock-tx-clovis-nm"],
+    related: ["matterport-3d-tours-lubbock-tx-clovis-nm", "real-estate-video-lubbock-tx-clovis-nm", "commercial-photography-lubbock-tx-clovis-nm", "real-estate-photography-lubbock-tx"],
     updated: "2026-11-24",
   },
   {
@@ -162,7 +162,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         a: "Yes. We scan offices, retail spaces, event venues, and short-term rentals. Commercial scans are quoted on square footage.",
       },
     ],
-    related: ["drone-photography-lubbock-tx-clovis-nm", "real-estate-video-lubbock-tx-clovis-nm", "real-estate-photography-cannon-afb-nm"],
+    related: ["drone-photography-lubbock-tx-clovis-nm", "real-estate-video-lubbock-tx-clovis-nm", "real-estate-photography-cannon-afb-nm", "real-estate-photography-lubbock-tx"],
     updated: "2026-11-24",
   },
   {
@@ -216,7 +216,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         a: "Yes. Short-term rental hosts use our videos on their listings and social pages, and we film commercial spaces for leasing and marketing.",
       },
     ],
-    related: ["drone-photography-lubbock-tx-clovis-nm", "matterport-3d-tours-lubbock-tx-clovis-nm", "photography-for-real-estate-agents"],
+    related: ["drone-photography-lubbock-tx-clovis-nm", "matterport-3d-tours-lubbock-tx-clovis-nm", "photography-for-real-estate-agents", "real-estate-photography-lubbock-tx"],
     updated: "2026-11-24",
   },
   {
@@ -279,7 +279,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         a: "Yes. We shoot interiors, exteriors, and detail photos sized for websites, social media, and Google Business Profiles.",
       },
     ],
-    related: ["drone-photography-lubbock-tx-clovis-nm", "matterport-3d-tours-lubbock-tx-clovis-nm", "photography-for-real-estate-agents"],
+    related: ["drone-photography-lubbock-tx-clovis-nm", "matterport-3d-tours-lubbock-tx-clovis-nm", "photography-for-real-estate-agents", "real-estate-photography-lubbock-tx"],
     updated: "2026-11-24",
   },
   {
@@ -348,7 +348,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         a: "Yes. We photograph turnovers for property managers and investors, and we offer volume pricing for owners with several units.",
       },
     ],
-    related: ["airbnb-photography-lubbock-tx-clovis-nm", "matterport-3d-tours-lubbock-tx-clovis-nm", "real-estate-photography-canyon-tx"],
+    related: ["airbnb-photography-lubbock-tx-clovis-nm", "matterport-3d-tours-lubbock-tx-clovis-nm", "real-estate-photography-canyon-tx", "real-estate-photography-lubbock-tx"],
     updated: "2026-11-24",
   },
   {
@@ -409,7 +409,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         a: "Yes. We cover towns within about 100 miles of Clovis, plus Amarillo and Canyon. There's no travel fee within 60 miles of Clovis or Muleshoe, or in Lubbock and Plainview.",
       },
     ],
-    related: ["matterport-3d-tours-lubbock-tx-clovis-nm", "drone-photography-lubbock-tx-clovis-nm", "real-estate-video-lubbock-tx-clovis-nm"],
+    related: ["matterport-3d-tours-lubbock-tx-clovis-nm", "drone-photography-lubbock-tx-clovis-nm", "real-estate-video-lubbock-tx-clovis-nm", "real-estate-photography-lubbock-tx"],
     updated: "2026-11-24",
   },
 ];
